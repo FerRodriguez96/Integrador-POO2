@@ -16,7 +16,7 @@ La solucion propuesta se trata de un sistema de gestion de pedidos al cual se po
 
 El sistema debera permitir el registro de dos tipos diferentes de empleados, jornaleros de la fabrica y repartidores de pedidos.
 
-El sistema debera permitir que los empleados registren a nuevos clientes.
+El sistema debera permitir que los los clientes se registren en el sistema.
 
 El sistema debera permitir que los clientes puedan realizar pedidos a la heladeria.
 
@@ -37,7 +37,7 @@ El sistema podria poseer una pantalla de estadisticas que indique la consumicion
 
 El sistema podria poseer la capacidad de alertar cuando hay bajo stock de un insumo al administrador del sistema.
 
-El sistema podria poseer la capacidad de alertar cuando hay bajo stock de un producto a un empleado.
+El sistema podria poseer la capacidad de alertar cuando hay bajo stock de un producto a un cliente.
 
 ## Arquitectura de software
 
