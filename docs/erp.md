@@ -14,30 +14,30 @@ La solucion propuesta se trata de un sistema de gestion de pedidos al cual se po
 
 **Requisitos Funcionales**
 
-El sistema debera permitir el registro de dos tipos diferentes de empleados, jornaleros de la fabrica y repartidores de pedidos.
+- El sistema debera permitir el registro de dos tipos diferentes de empleados, jornaleros de la fabrica y repartidores de pedidos.
 
-El sistema debera permitir que los los clientes se registren en el sistema.
+- El sistema debera permitir que los los clientes se registren en el sistema.
 
-El sistema debera permitir que los clientes puedan realizar pedidos a la heladeria.
+- El sistema debera permitir que los clientes puedan realizar pedidos a la heladeria.
 
-Cada pedido debera tener un numero de identificacion unico.
+- Cada pedido debera tener un numero de identificacion unico.
 
-El sistema debera permitir asignar un pedido a un repartidor para que este lo entregue.
+- El sistema debera permitir asignar un pedido a un repartidor para que este lo entregue.
 
-El sistema debe permitir que el repartidor notifique que el pedido fue completado
+- El sistema debe permitir que el repartidor notifique que el pedido fue completado
 
-El sistema debera permitir que se registren los pagos de los pedidos.
+- El sistema debera permitir que se registren los pagos de los pedidos.
 
-El sistema debera permitir llevar un control de stock de los insumos necesarios.
+- El sistema debera permitir llevar un control de stock de los insumos necesarios.
 
 
 **Requisitos no Funcionales**
 
-El sistema podria poseer una pantalla de estadisticas que indique la consumicion de los diferentes productos.
+- El sistema podria poseer una pantalla de estadisticas que indique la consumicion de los diferentes productos.
 
-El sistema podria poseer la capacidad de alertar cuando hay bajo stock de un insumo al administrador del sistema.
+- El sistema podria poseer la capacidad de alertar cuando hay bajo stock de un insumo al administrador del sistema.
 
-El sistema podria poseer la capacidad de alertar cuando hay bajo stock de un producto a un cliente.
+- El sistema podria poseer la capacidad de alertar cuando hay bajo stock de un producto a un cliente.
 
 ## Arquitectura de software
 
