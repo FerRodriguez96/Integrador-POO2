@@ -1,19 +1,31 @@
 package com.modelo;
 
-public class Empleados {
-    
-    private int dni;
-    private int idEmpleado;
-    private String nombre;
-    private String apellido;
-    private String telefono;
-    private String mail;
+import javax.persistence.*;
 
-    public Empleados(){
+@Entity
+@Table(name="Empleados")
+@Inheritance (strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="tipo_empleado")
+public abstract class Empleados {
+
+    @Id
+    protected int dni;
+
+    protected int idEmpleado;
+
+    protected String nombre;
+
+    protected String apellido;
+
+    protected String telefono;
+
+    protected String mail;
+
+    protected Empleados(){
 
     }
 
-    public Empleados(int dni, int idEmpleado, String nombre, String apellido, String telefono, String mail) {
+    protected Empleados(int dni, int idEmpleado, String nombre, String apellido, String telefono, String mail) {
         this.dni = dni;
         this.idEmpleado = idEmpleado;
         this.nombre = nombre;

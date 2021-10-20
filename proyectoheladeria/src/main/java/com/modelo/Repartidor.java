@@ -2,17 +2,19 @@ package com.modelo;
 
 import java.util.List;
 
+import javax.persistence.*;
+
+@Entity
+@DiscriminatorValue("Repartidor")
 public class Repartidor extends Empleados {
 
     private List<String> repartidor_pedidos;
 
     public Repartidor(){
-
+        super();
     }
 
-    public Repartidor(int dni, int idEmpleado, String nombre, String apellido, String telefono, String mail,
-            List<String> repartidor_pedidos) {
-        super(dni, idEmpleado, nombre, apellido, telefono, mail);
+    public Repartidor(List<String> repartidor_pedidos) {
         this.repartidor_pedidos = repartidor_pedidos;
     }
 
