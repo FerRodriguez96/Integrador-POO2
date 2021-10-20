@@ -6,7 +6,9 @@
 
   <persistence-unit name="Persistencia">
  
-  	<class>com.modelo.Empleados</class>
+  	<class>modelo.Empleados</class>
+    <class>modelo.Jornalero</class>
+    <class>modelo.Repartidor</class>
 
     <properties>
        <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/Heladeria"/>

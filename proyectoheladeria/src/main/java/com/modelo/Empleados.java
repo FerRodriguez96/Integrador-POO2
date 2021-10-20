@@ -3,7 +3,6 @@ package com.modelo;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Empleados")
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="tipo_empleado")
 public abstract class Empleados {
@@ -82,7 +81,13 @@ public abstract class Empleados {
         this.mail = mail;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Empleados [apellido=" + apellido + ", dni=" + dni + ", idEmpleado=" + idEmpleado + ", mail=" + mail
+                + ", nombre=" + nombre + ", telefono=" + telefono + "]";
+    }
 
+    
+    
     
 }
