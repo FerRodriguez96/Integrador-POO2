@@ -1,0 +1,6 @@
+com\App.class
+com\modelo\Jornalero.class
+com\modelo\Repartidor.class
+com\modelo\Empleados.class
+com\persistencia\Persistencia.class
+com\controladores\ControladorRepartidor.class

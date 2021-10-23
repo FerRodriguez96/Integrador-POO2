@@ -7,6 +7,10 @@ import javax.persistence.*;
 public class Jornalero extends Empleados {
 
     private int produccion;
+    
+    public Jornalero(){
+    	
+    }
 
     public Jornalero(int dni, int idEmpleado, String nombre, String apellido, String telefono, String mail,
             int produccion) {
