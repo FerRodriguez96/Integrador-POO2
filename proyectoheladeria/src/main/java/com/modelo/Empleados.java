@@ -9,7 +9,9 @@ public abstract class Empleados {
 
     @Id
     protected int dni;
-
+    
+    @SequenceGenerator(name = "sec_comi",initialValue = 1,allocationSize = 1)
+    @GeneratedValue(generator = "sec_comi", strategy = GenerationType.SEQUENCE)
     protected int idEmpleado;
 
     protected String nombre;
@@ -24,9 +26,8 @@ public abstract class Empleados {
 
     }
 
-    protected Empleados(int dni, int idEmpleado, String nombre, String apellido, String telefono, String mail) {
+    protected Empleados(int dni, String nombre, String apellido, String telefono, String mail) {
         this.dni = dni;
-        this.idEmpleado = idEmpleado;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;

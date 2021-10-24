@@ -10,8 +10,8 @@ public class Repartidor extends Empleados {
 		
 	}
 
-    public Repartidor(int dni, int idEmpleado, String nombre, String apellido, String telefono, String mail) {
-        super(dni, idEmpleado, nombre, apellido, telefono, mail);
+    public Repartidor(int dni, String nombre, String apellido, String telefono, String mail) {
+        super(dni, nombre, apellido, telefono, mail);
     }
 
 }

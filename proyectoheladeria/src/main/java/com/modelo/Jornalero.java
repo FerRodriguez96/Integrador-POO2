@@ -12,9 +12,9 @@ public class Jornalero extends Empleados {
     	
     }
 
-    public Jornalero(int dni, int idEmpleado, String nombre, String apellido, String telefono, String mail,
+    public Jornalero(int dni, String nombre, String apellido, String telefono, String mail,
             int produccion) {
-        super(dni, idEmpleado, nombre, apellido, telefono, mail);
+        super(dni, nombre, apellido, telefono, mail);
         this.produccion = produccion;
     }
 
