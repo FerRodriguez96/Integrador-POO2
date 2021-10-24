@@ -1,6 +1,7 @@
 package com;
 
 import io.javalin.*;
+import io.javalin.http.Context;
 
 public class App 
 {
@@ -8,6 +9,10 @@ public class App
     {
 
         Javalin app = Javalin.create().start(7000);
-        app.get("/", ctx -> ctx.render("index.jte"));
+        app.get("/", App::mostrarIndex); // muestra el index
+    }
+    
+    private static void mostrarIndex(Context ctx) {
+        ctx.render("index.jte");
     }
 }

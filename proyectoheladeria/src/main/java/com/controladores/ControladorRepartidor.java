@@ -1,5 +1,9 @@
 package com.controladores;
 
-public interface ControladorRepartidor {
+import java.util.Collections;
+
+public class ControladorRepartidor {
+	
+	
     
 }
