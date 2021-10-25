@@ -1,7 +1,12 @@
 package com.persistencia;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+import java.util.List;
+
+import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import javax.persistence.metamodel.SingularAttribute;
 
 public class Persistencia  {
     
@@ -39,10 +44,31 @@ public class Persistencia  {
         this.em.refresh(o);
     }
     
-    // Metodo generico
-    // Acepta cualquier tipo (T) que extienda de Object
-    // Devuelve un objeto de tipo (T)    
-    public <T extends Object> T buscar(Class<T> clase, Object id) {
-        return (T) this.em.find(clase, id);
-    }    
+	// Metodo generico
+	// Acepta cualquier tipo (T) que extienda de Object
+	// Devuelve un objeto de tipo (T)
+	public <T extends Object> T buscar(Class<T> clase, Object id) {
+		return (T) this.em.find(clase, id);
+	}
+
+	// Metodo generico
+	// Acepta cualquier tipo (T) que extienda de Object
+	// Devuelve una lista de ese tipo (T)
+	public <T extends Object> List<T> buscarTodos(Class<T> clase) {
+		CriteriaBuilder cb = this.em.getCriteriaBuilder();
+		CriteriaQuery<T> consulta = cb.createQuery(clase);
+		Root<T> inicio = consulta.from(clase);
+		return em.createQuery(consulta).getResultList();
+	}
+
+	// el parametro de orden a pasar se obtiene del metamodelo generado por
+	// EclipseLink
+	public <T extends Object, P extends Object> List<T> buscarTodosOrdenadosPor(Class<T> clase,
+			SingularAttribute<T, P> orden) {
+		CriteriaBuilder cb = this.em.getCriteriaBuilder();
+		CriteriaQuery<T> consulta = cb.createQuery(clase);
+		Root<T> inicio = consulta.from(clase);
+		consulta.orderBy(cb.asc(inicio.get(orden)));
+		return em.createQuery(consulta).getResultList();
+	}
 }
