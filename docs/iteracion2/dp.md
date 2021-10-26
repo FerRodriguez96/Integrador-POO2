@@ -4,7 +4,7 @@
 
 El lider del equipo para esta iteración ha sido Rodriguez Fernando.
 
-El trabajo realizado ha sido atender las dos historias de usuario planificadas en el roadmap general del proyecto, correspondientes a la iteración 2. Donde cada uno de los integrantes del grupo atendio una historia. Haciendo por separado el wireframe y los casos de uso correspondientes a cada una de ellas.
+El trabajo realizado ha sido atender las dos historias de usuario planificadas en el roadmap general del proyecto, correspondientes a la iteración 2. Donde cada uno de los integrantes del grupo atendió una historia. Haciendo por separado el wireframe y los casos de uso correspondientes a cada una de ellas.
   
 # Diseño Orientado a Objetos
 
@@ -18,7 +18,7 @@ Clases que se pretenden implementar en esta iteración
 
  - El usuario visita la aplicacion web mediante un navegador web.
  - El sistema muestra la pagina index de la aplicacion web.
- - El usuario presiona el boton de crear un nuevo producto
+ - El usuario presiona el boton de crear un nuevo producto.
  - El sistema muestra dos botones donde cada uno muestra un tipo de producto diferente que se puede crear. Puede tratarse de dos tipos diferentes de bolsas de helados: bombon o picole.
  - El usuario selecciona uno de las dos opciones.
  - El sistema muestra una opcion para seleccionar el tipo de sabor del producto.
@@ -39,8 +39,8 @@ Clases que se pretenden implementar en esta iteración
 
 - El usuario ejecuta el caso de uso Listar productos.
 - El usuario presiona el boton de eliminar ubicado en la fila correspondiente del producto que pretende eliminar.
-- El sistema devuelve un mensaje de advertencia.preguntando si el usuario esta seguro de eliminar el registro del producto.
-- El usuario selecciona que si esta seguro de eliminar el registro del empleado.
+- El sistema devuelve un mensaje de advertencia,preguntando si el usuario esta seguro de eliminar el registro del producto.
+- El usuario selecciona que si esta seguro de eliminar el registro del producto.
 - El sistema elimina el registro del producto correspondiente en la base de datos.
   
 ### Caso de uso: Listar Producto
@@ -59,7 +59,7 @@ Clases que se pretenden implementar en esta iteración
  - El sistema guarda el pedido en la base de datos.
 
 ### Caso de uso: Modificar Pedido
-- El usuario ejecuta el caso de uso Listar Empleado.
+- El usuario ejecuta el caso de uso Listar Pedido.
 - El usuario presiona el boton de editar ubicado en la fila correspondiente del pedido que pretende modificar.
 - El sistema devuelve un formulario editable con los datos del pedido seleccionado.
 - El usuario edita los campos habilitados del pedido.
@@ -69,7 +69,7 @@ Clases que se pretenden implementar en esta iteración
 ### Caso de uso: Eliminar Pedido
 - El usuario ejecuta el caso de uso Listar pedidos.
 - El usuario presiona el boton de eliminar ubicado en la fila correspondiente del pedido que pretende eliminar
-- El sistema devuelve un mensaje de advertencia preguntando si el usuario esta seguro de eliminar el registro del empleado
+- El sistema devuelve un mensaje de advertencia preguntando si el usuario esta seguro de eliminar el registro del pedido
 - El usuario selecciona que si esta seguro de eliminar el registro del pedido
 - El sistema elimina el registro del pedido correspondiente en la base de datos.
   
