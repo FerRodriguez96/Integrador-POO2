@@ -108,6 +108,4 @@ Clases que se pretenden implementar en esta iteración
 - Crear las relaciones entre las clases
 - Verificar que estas persisten en la base de datos
 - Crear el controlador correspondiente
-- Implementar las vistas
-
-# Retrospectiva
+- Implementar las vistas.
