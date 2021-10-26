@@ -25,6 +25,14 @@ Clases que se pretenden implementar en esta iteración
  - El usuario selecciona el tipo de sabor.
  - El usuario presiona el boton de agregar.
  - El sistema crea en la base de datos el producto.
+
+![](imagenes/Pantalla-principal.png)
+
+![](imagenes/Tipo-Producto.png)
+
+![](imagenes/Creacion-de-Picoles.png)
+
+![](imagenes/Creacion-de-Bombones.png)
   
 ### Caso de uso: Modificar Producto
 
@@ -35,6 +43,8 @@ Clases que se pretenden implementar en esta iteración
 - El usuario presionar el boton de guardar.
 - El sistema edita los campos modificados en el registro del producto correspondiente en la base de datos.
 
+![](imagenes/Modificar-productos.png)
+
 ### Caso de uso: Eliminar Producto
 
 - El usuario ejecuta el caso de uso Listar productos.
@@ -43,10 +53,14 @@ Clases que se pretenden implementar en esta iteración
 - El usuario selecciona que si esta seguro de eliminar el registro del producto.
 - El sistema elimina el registro del producto correspondiente en la base de datos.
   
+![](imagenes/Eliminar-Productos.png)
+
 ### Caso de uso: Listar Producto
 
 - El usuario selecciona el item productos en la barra de navegacion del sistema.
 - El sistema devuelve la lista de productos registrados en la base de datos.
+
+![](imagenes/Listar-Productos.png)
   
 ### Caso de uso: Crear Pedido
  - El usuario visita la aplicacion web mediante un navegador web.
@@ -58,6 +72,10 @@ Clases que se pretenden implementar en esta iteración
  - El usuario confirma el pedido
  - El sistema guarda el pedido en la base de datos.
 
+![](imagenes/Creacion-de-pedidos.png)
+
+![](imagenes/Confirmacion-de-pedidos.png)
+
 ### Caso de uso: Modificar Pedido
 - El usuario ejecuta el caso de uso Listar Pedido.
 - El usuario presiona el boton de editar ubicado en la fila correspondiente del pedido que pretende modificar.
@@ -65,6 +83,8 @@ Clases que se pretenden implementar en esta iteración
 - El usuario edita los campos habilitados del pedido.
 - El usuario presionar el boton de guardar.
 - El sistema edita los campos modificados en el registro del pedido correspondiente en la base de datos.
+
+![](imagenes/Modificar-pedidos.png)
   
 ### Caso de uso: Eliminar Pedido
 - El usuario ejecuta el caso de uso Listar pedidos.
@@ -72,10 +92,14 @@ Clases que se pretenden implementar en esta iteración
 - El sistema devuelve un mensaje de advertencia preguntando si el usuario esta seguro de eliminar el registro del pedido
 - El usuario selecciona que si esta seguro de eliminar el registro del pedido
 - El sistema elimina el registro del pedido correspondiente en la base de datos.
+
+![](imagenes/Eliminar-pedidos.png)
   
 ### Caso de uso: Listar Pedido
 - El usuario selecciona el item pedidos en la barra de navegacion del sistema.
 - El sistema devuelve la lista de pedidos registrados en la base de datos.
+
+![](imagenes/Listar-pedidos.png)
 
 # Backlog de iteración
 
