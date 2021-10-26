@@ -12,10 +12,8 @@ public class Jornalero extends Empleados {
     	
     }
 
-    public Jornalero(int dni, String nombre, String apellido, String telefono, String mail,
-            int produccion) {
+    public Jornalero(int dni, String nombre, String apellido, String telefono, String mail) {
         super(dni, nombre, apellido, telefono, mail);
-        this.produccion = produccion;
     }
 
     public int getProduccion() {

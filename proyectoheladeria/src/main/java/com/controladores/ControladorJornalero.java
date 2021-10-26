@@ -17,7 +17,7 @@ public class ControladorJornalero {
 
     public void agregarJornalero(int dni,String nombre, String apellido, String telefono, String mail, int produccion) {
         this.persistencia.iniciarTransaccion();
-        Jornalero jor = new Jornalero(dni,nombre,apellido,telefono,mail, produccion);
+        Jornalero jor = new Jornalero(dni,nombre,apellido,telefono,mail);
         this.persistencia.insertar(jor);
         this.persistencia.confirmarTransaccion();
     }

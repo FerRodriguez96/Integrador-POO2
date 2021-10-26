@@ -16,10 +16,10 @@
 
 		<div class="row justify-content-md-center">
 		    <div class="col-md-2 col-xs-6">
-		      <a href="/" class="btn btn-success">Crear Cliente</a>
+		      <a href="/crearJornalero" class="btn btn-success">Jornalero</a>
 		    </div>
 		    <div class="col-md-2 col-xs-6">
-		      <a href="/tipoEmpleado" class="btn btn-success">Crear Empleado</a>
+		      <a href="/crearRepartidor" class="btn btn-success">Repartidor</a>
 		    </div>
 	  	</div>
 

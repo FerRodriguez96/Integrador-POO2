@@ -15,7 +15,7 @@
         <div id="my-nav" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{url_for('index')}}">Inicio<span class="sr-only"></span></a>
+                    <a class="nav-link" href="/">Inicio<span class="sr-only"></span></a>
                 </li>
                 <li>
                     <a class="nav-link" href="{{url_for('index')}}">Clientes<span class="sr-only"></span></a>
