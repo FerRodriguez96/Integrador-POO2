@@ -1,6 +1,7 @@
 package com.modelo;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 /**
  * Representa un repartidor
@@ -8,6 +9,10 @@ import javax.persistence.*;
 @Entity
 @DiscriminatorValue("Repartidor")
 public class Repartidor extends Empleados {
+	
+	@OneToMany
+	@Column(name="pedidos")
+	private ArrayList<Pedidos> pedidos;
 
     public Repartidor() {
 
@@ -26,5 +31,25 @@ public class Repartidor extends Empleados {
     public Repartidor(int dni, String nombre, String apellido, String telefono, String mail) {
         super(dni, nombre, apellido, telefono, mail);
     }
+
+    /**
+     * Obtiene los pedidos
+     * 
+     * @return pedidos del empleado
+     */
+	public ArrayList<Pedidos> getPedidos() {
+		return pedidos;
+	}
+
+	 /**
+     * Establece un pedido
+     * 
+     * @param pedidos del repartidor
+     */
+	public void setPedidos(ArrayList<Pedidos> pedidos) {
+		this.pedidos = pedidos;
+	}
+    
+    
 
 }
