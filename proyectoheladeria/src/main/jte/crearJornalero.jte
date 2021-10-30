@@ -10,28 +10,28 @@
             <p class="card-text">
 
                 <div class="form-group">
-                    <label for="txtNombre">DNI:</label>
-                    <input id="txtNombre" class="form-control" type="text" name="textNombre">
+                    <label for="txtDni">DNI:</label>
+                    <input id="txtDni" class="form-control" type="text" name="textDni">
                 </div>
 
                 <div class="form-group">
-                    <label for="txtCorreo">Nombre:</label>
+                    <label for="txtNombre">Nombre:</label>
+                    <input id="txtNombre" class="form-control" type="text" name="txtNombre">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtApellido">Apellido:</label>
+                    <input id="txtApellido" class="form-control" type="text" name="txtApellido">
+                </div>
+                
+                <div class="form-group">
+                    <label for="txtTelefono">Telefono:</label>
+                    <input id="txtTelefono" class="form-control" type="text" name="txtTelefono">
+                </div>
+                
+                <div class="form-group">
+                    <label for="txtCorreo">Correo:</label>
                     <input id="txtCorreo" class="form-control" type="text" name="txtCorreo">
-                </div>
-
-                <div class="form-group">
-                    <label for="txtFoto">Apellido:</label>
-                    <input id="txtFoto" class="form-control" type="text" name="txtFoto">
-                </div>
-                
-                <div class="form-group">
-                    <label for="txtFoto">Telefono:</label>
-                    <input id="txtFoto" class="form-control" type="text" name="txtFoto">
-                </div>
-                
-                <div class="form-group">
-                    <label for="txtFoto">Correo:</label>
-                    <input id="txtFoto" class="form-control" type="text" name="txtFoto">
                 </div>
                 <br>
                 <div class="form-group">
