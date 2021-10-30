@@ -23,6 +23,12 @@
                 <li>
                     <a class="nav-link" href="{{url_for('index')}}">Empleados<span class="sr-only"></span></a>
                 </li>
+                <li>
+                    <a class="nav-link" href="{{url_for('index')}}">Productos<span class="sr-only"></span></a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{{url_for('index')}}">Pedidos<span class="sr-only"></span></a>
+                </li>
             </ul>
         </div>
     </nav>
