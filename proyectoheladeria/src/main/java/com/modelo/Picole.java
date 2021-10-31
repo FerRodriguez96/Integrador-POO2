@@ -2,11 +2,16 @@ package com.modelo;
 
 import javax.persistence.*;
 
+@Entity
+@DiscriminatorValue("Picole")
 public class Picole extends Productos {
 
-    @OneToMany
+	private static final long serialVersionUID = 1L;
+	
+	@OneToMany
     @Column(name = "SABORES")
-    public Sabores sabor;
+    public Sabor sabor;
+	@Column(name = "CANTIDAD")
     public int cantidad;
 
     public Picole() {
@@ -14,16 +19,15 @@ public class Picole extends Productos {
     }
 
     /**
-     * Crea un Picole al que se le pasa los datos del id, precio, sabor y cantidad
-     * del picole
+     * Crea un Picole al que se le pasa los datos precio, sabor y cantidad
+     * de un paquete de picole
      * 
-     * @param idProducto Id del Picole
      * @param precio     Precio del Picole
      * @param sabor      Sabor del Picole
      * @param cantidad   Cantidad de Picoles
      */
-    public Picole(int idProducto, float precio, Sabores sabor, int cantidad) {
-        super(idProducto, precio);
+    public Picole(float precio, Sabor sabor, int cantidad) {
+        super(precio);
         this.sabor = sabor;
         this.cantidad = cantidad;
     }
@@ -33,7 +37,7 @@ public class Picole extends Productos {
      * 
      * @return String
      */
-    public Sabores getSabor() {
+    public Sabor getSabor() {
         return sabor;
     }
 
@@ -42,7 +46,7 @@ public class Picole extends Productos {
      * 
      * @param sabor
      */
-    public void setSabor(Sabores sabor) {
+    public void setSabor(Sabor sabor) {
         this.sabor = sabor;
     }
 

@@ -68,7 +68,7 @@ public class ControladorCliente {
 	/**
 	 * @param context
 	 */
-	public void editarJornalero(Context ctx) throws SQLException {
+	public void editarCliente(Context ctx) throws SQLException {
 
 		// se traen los datos de la clase
 		var modelo = new ModeloCliente();
@@ -83,7 +83,7 @@ public class ControladorCliente {
 	/**
 	 * @param context
 	 */
-	public void eliminarJornalero(Context ctx) throws SQLException {
+	public void eliminarCliente(Context ctx) throws SQLException {
 		// se le pasa al proceso de persistencia el dni del cliente que se quiere eliminar
 		this.interfazClientes.borrar(ctx.pathParamAsClass("txtDni", Integer.class).get());
 

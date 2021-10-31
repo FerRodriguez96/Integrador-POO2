@@ -46,7 +46,7 @@ public class ControladorSabor {
 	/**
 	 * @param ctx
 	 */
-	public void agregarPedido(Context ctx) throws SQLException {
+	public void agregarSabor(Context ctx) throws SQLException {
 
 		// Se obtienen los datos del formulario
 		var nombre = ctx.formParamAsClass("txtNombre", String.class).get();
@@ -64,7 +64,7 @@ public class ControladorSabor {
 	/**
 	 * @param context
 	 */
-	public void editarPedido(Context ctx) throws SQLException {
+	public void editarSabor(Context ctx) throws SQLException {
 
 		// se traen los datos de la clase
 		var modelo = new ModeloSabor();
@@ -79,7 +79,7 @@ public class ControladorSabor {
 	/**
 	 * @param context
 	 */
-	public void eliminarPedido(Context ctx) throws SQLException {
+	public void eliminarSabor(Context ctx) throws SQLException {
 		// se le pasa al proceso de persistencia el id del sabor que se quiere eliminar
 		this.interfazSabores.borrar(ctx.pathParamAsClass("idSabor", Integer.class).get());
 
