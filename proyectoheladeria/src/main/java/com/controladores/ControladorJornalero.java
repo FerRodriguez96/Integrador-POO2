@@ -62,7 +62,7 @@ public class ControladorJornalero {
 		this.interfazJornaleros.crear(jornalero);
 
 		// Se redirige a la pagina que muestra la lista de jornaleros
-		ctx.redirect("/Jornaleros");
+		ctx.redirect("/jornaleros");
 	}
 
 	/**
