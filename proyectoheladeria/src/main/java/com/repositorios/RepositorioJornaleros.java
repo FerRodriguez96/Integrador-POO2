@@ -17,7 +17,7 @@ public class RepositorioJornaleros implements InterfazJornaleros {
 	public List<Jornalero> listar() {
         var em = emf.createEntityManager();
         var cb = em.getCriteriaBuilder();
-        // se crea un objeto de consulta que devolvera objetos de Curso
+        // se crea un objeto de consulta que devolvera objetos de jornalero
         var consulta = cb.createQuery(Jornalero.class);
         // definimos el origen de la consulta (FROM)
         var origen = consulta.from(Jornalero.class);

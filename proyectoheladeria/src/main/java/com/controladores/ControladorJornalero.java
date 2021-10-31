@@ -85,8 +85,7 @@ public class ControladorJornalero {
 	 * @param context
 	 */
 	public void eliminarJornalero(Context ctx) throws SQLException {
-		// se le pasa al proceso de persistencia el dni del jornalero que se queire
-		// eliminar
+		// se le pasa al proceso de persistencia el dni del jornalero que se quiere eliminar
 		this.interfazJornaleros.borrar(ctx.pathParamAsClass("txtDni", Integer.class).get());
 
 	}

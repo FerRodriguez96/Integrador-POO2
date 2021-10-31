@@ -4,7 +4,7 @@ import com.modelo.Pedido;
 import java.util.List;
 import javax.persistence.*;
 
-public class RepositorioPedidos {
+public class RepositorioPedidos implements InterfazPedidos {
 	
 	private final EntityManagerFactory emf;
 
@@ -12,10 +12,11 @@ public class RepositorioPedidos {
 		this.emf = emf;
 	}
 	
+	@Override
 	public List<Pedido> listar() {
         var em = emf.createEntityManager();
         var cb = em.getCriteriaBuilder();
-        // se crea un objeto de consulta que devolvera objetos de Curso
+        // se crea un objeto de consulta que devolvera objetos de pedido
         var consulta = cb.createQuery(Pedido.class);
         // definimos el origen de la consulta (FROM)
         var origen = consulta.from(Pedido.class);
@@ -26,6 +27,7 @@ public class RepositorioPedidos {
         return pedidos;
     }
 	
+	@Override
 	public Pedido obtener(int id) {
         var em = emf.createEntityManager();
         var pedido = em.find(Pedido.class, id);
@@ -33,6 +35,7 @@ public class RepositorioPedidos {
         return pedido;
     }
 	
+	@Override
 	public void crear(Pedido pedido) {
         var em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -41,6 +44,7 @@ public class RepositorioPedidos {
         em.close();
     }
 	
+	@Override
 	public boolean borrar(int id) {
 
         var em = emf.createEntityManager();

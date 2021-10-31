@@ -12,7 +12,7 @@ public class Repartidor extends Empleados {
 	
 	@OneToMany
 	@Column(name="pedidos")
-	private ArrayList<Pedidos> pedidos;
+	private ArrayList<Pedido> pedidos;
 
     public Repartidor() {
 
@@ -37,7 +37,7 @@ public class Repartidor extends Empleados {
      * 
      * @return pedidos del empleado
      */
-	public ArrayList<Pedidos> getPedidos() {
+	public ArrayList<Pedido> getPedidos() {
 		return pedidos;
 	}
 
@@ -46,7 +46,7 @@ public class Repartidor extends Empleados {
      * 
      * @param pedidos del repartidor
      */
-	public void setPedidos(ArrayList<Pedidos> pedidos) {
+	public void setPedidos(ArrayList<Pedido> pedidos) {
 		this.pedidos = pedidos;
 	}
     
