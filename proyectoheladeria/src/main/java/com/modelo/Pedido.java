@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Pedidos")
-public class Pedidos implements Serializable{
+public class Pedido implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
@@ -30,7 +30,7 @@ public class Pedidos implements Serializable{
 	@Column(name="Estado")
 	private String estado;
 
-	public Pedidos() {
+	public Pedido() {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -42,7 +42,7 @@ public class Pedidos implements Serializable{
      * @param producto  	productos del pedido 
      * @param repartidor 	repartidor encargado del pedido
      */
-	public Pedidos(Cliente cliente, String producto, Repartidor repartidor) {
+	public Pedido(Cliente cliente, String producto, Repartidor repartidor) {
 		this.cliente = cliente;
 		this.producto = producto;
 		this.repartidor = repartidor;
