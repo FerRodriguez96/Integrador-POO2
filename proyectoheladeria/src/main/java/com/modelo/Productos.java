@@ -5,9 +5,13 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Productos")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo_producto")
 public abstract class Productos implements Serializable {
-    @Id
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @SequenceGenerator(name = "sec_prod", initialValue = 1, allocationSize = 1)
     @GeneratedValue(generator = "sec_prod", strategy = GenerationType.SEQUENCE)
     @Column(name = "IDPRODUCTO")
@@ -26,8 +30,7 @@ public abstract class Productos implements Serializable {
      * @param idProducto
      * @param precio
      */
-    public Productos(int idProducto, float precio) {
-        this.idProducto = idProducto;
+    public Productos(float precio) {
         this.precio = precio;
     }
 
