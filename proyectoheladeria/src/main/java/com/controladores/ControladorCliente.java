@@ -59,7 +59,7 @@ public class ControladorCliente {
 		var cliente = new Cliente(dni, nombre, apellido, calle, numero);
 
 		// Se inicia el proceso de persistencia
-		this.interfazClientes.crear(cliente);;
+		this.interfazClientes.crear(cliente);
 
 		// Se redirige a la pagina que muestra la lista de clientes
 		ctx.redirect("/clientes");
