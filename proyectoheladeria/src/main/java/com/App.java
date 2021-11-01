@@ -16,6 +16,9 @@ public class App {
         app.get("/tipoEmpleado", App::mostrarTipoEmpleado);
         app.get("/crearJornalero", App::mostrarCrearJornalero);
         app.get("/crearRepartidor", App::mostrarCrearRepartidor);
+        app.get("/tipoProducto", App::mostrarTipoProducto);
+        app.get("/crearBombon", App::mostrarCrearBombon);
+        app.get("/crearPicole", App::mostrarCrearPicole);
     }
 
     private static void mostrarIndex(Context ctx) {
@@ -38,4 +41,15 @@ public class App {
         ctx.render("crearCliente.jte");
     }
 
+    private static void mostrarTipoProducto(Context ctx) {
+        ctx.render("tipoProducto.jte");
+    }
+
+    private static void mostrarCrearBombon(Context ctx) {
+        ctx.render("crearBombon.jte");
+    }
+
+    private static void mostrarCrearPicole(Context ctx) {
+        ctx.render("crearPicole.jte");
+    }
 }
