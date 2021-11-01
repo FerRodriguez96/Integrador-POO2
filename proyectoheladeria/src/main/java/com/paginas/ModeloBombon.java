@@ -4,6 +4,6 @@ import com.modelo.Bombon;
 
 public class ModeloBombon {
 
-	public Bombon bombon;
-	
+    public Bombon bombon;
+
 }

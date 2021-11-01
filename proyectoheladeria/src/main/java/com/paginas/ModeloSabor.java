@@ -4,6 +4,6 @@ import com.modelo.Sabor;
 
 public class ModeloSabor {
 
-	public Sabor sabor;
+    public Sabor sabor;
 
 }

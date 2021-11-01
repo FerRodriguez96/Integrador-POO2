@@ -10,9 +10,6 @@
 	<br>
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
 
 		<div class="row justify-content-md-center">
 		    <div class="col-md-2 col-xs-6">
@@ -20,6 +17,17 @@
 		    </div>
 		    <div class="col-md-2 col-xs-6">
 		      <a href="/tipoEmpleado" class="btn btn-success">Crear Empleado</a>
+		    </div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<div class="row justify-content-md-center">
+			<div class="col-md-2 col-xs-6">
+		      <a href="/tipoEmpleado" class="btn btn-success">Crear Pedido</a>
+		    </div>
+			<div class="col-md-2 col-xs-6">
+		      <a href="/tipoProducto" class="btn btn-success">Crear Producto</a>
 		    </div>
 	  	</div>
 		  

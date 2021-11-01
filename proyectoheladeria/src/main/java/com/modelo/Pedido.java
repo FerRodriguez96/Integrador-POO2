@@ -21,11 +21,14 @@ public class Pedido implements Serializable {
 
     @OneToMany
     @Column(name = "Productos")
-    private Productos producto;
+    private String producto;
 
     @ManyToOne
     @Column(name = "Repartidor")
     private Repartidor repartidor;
+
+    @Column(name = "Estado")
+    private String estado;
 
     public Pedido() {
         // TODO Auto-generated constructor stub
@@ -39,7 +42,7 @@ public class Pedido implements Serializable {
      * @param producto   productos del pedido
      * @param repartidor repartidor encargado del pedido
      */
-    public Pedido(Cliente cliente, Productos producto, Repartidor repartidor) {
+    public Pedido(Cliente cliente, String producto, Repartidor repartidor) {
         this.cliente = cliente;
         this.producto = producto;
         this.repartidor = repartidor;
@@ -86,7 +89,7 @@ public class Pedido implements Serializable {
      * 
      * @return producto del pedido
      */
-    public Productos getProducto() {
+    public String getProducto() {
         return producto;
     }
 
@@ -95,7 +98,7 @@ public class Pedido implements Serializable {
      * 
      * @param producto producto del pedido
      */
-    public void setProducto(Productos producto) {
+    public void setProducto(String producto) {
         this.producto = producto;
     }
 

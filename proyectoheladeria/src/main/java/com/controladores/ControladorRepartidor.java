@@ -1,56 +1,94 @@
 package com.controladores;
 
+import java.sql.SQLException;
+import java.util.Collections;
 import com.modelo.Repartidor;
-import com.persistencia.*;
+import com.paginas.ModeloRepartidor;
+import com.paginas.ModeloRepartidores;
+import com.repositorios.InterfazRepartidores;
+
+import io.javalin.http.Context;
 
 public class ControladorRepartidor {
 
-    Persistencia persistencia;
+    private final InterfazRepartidores interfazRepartidores;
 
-    public ControladorRepartidor(Persistencia p) {
-        this.persistencia = p;
+    public ControladorRepartidor(InterfazRepartidores interfazRepartidores) {
+        this.interfazRepartidores = interfazRepartidores;
     }
 
     /**
-     * @param dni
-     * @param nombre
-     * @param apellido
-     * @param telefono
-     * @param mail
+     * @param ctx
      */
-    public void agregarRepartidor(int dni, String nombre, String apellido, String telefono, String mail) {
-        this.persistencia.iniciarTransaccion();
-        Repartidor rep = new Repartidor(dni, nombre, apellido, telefono, mail);
-        this.persistencia.insertar(rep);
-        this.persistencia.confirmarTransaccion();
+    public void listar(Context ctx) throws SQLException {
+        // Se obtienen los datos de la clase
+        var modelo = new ModeloRepartidores();
+
+        // Se pasan los datos a el metodo listar
+        modelo.repartidores = interfazRepartidores.listar();
+
+        // Se imprime por consola la lista de repartidores
+        System.out.println(modelo.repartidores);
+
+        // Se muestra el template con la lista de repartidores
+        ctx.render("repartidores.jte", Collections.singletonMap("modelo", modelo));
     }
 
     /**
-     * @param rep
-     * @param dni
-     * @param nombre
-     * @param apellido
-     * @param telefono
-     * @param mail
+     * @param ctx
      */
-    public void editarRepartidor(Repartidor rep, int dni, String nombre, String apellido, String telefono,
-            String mail) {
-        this.persistencia.iniciarTransaccion();
-        rep.setDni(dni);
-        rep.setNombre(nombre);
-        rep.setApellido(apellido);
-        rep.setTelefono(telefono);
-        rep.setMail(mail);
-        this.persistencia.modificar(rep);
-        this.persistencia.confirmarTransaccion();
+    public void nuevoRepartidor(Context ctx) throws SQLException {
+        // el programa musetra el formulario para ingresar los datos de un nuevo
+        // repartidor
+        ctx.render("crearRepartidor.jte", Collections.singletonMap("modelo", null));
     }
 
     /**
-     * @param rep
+     * @param ctx
      */
-    public void eliminarRepartidor(Repartidor rep) {
-        this.persistencia.iniciarTransaccion();
-        this.persistencia.eliminar(rep);
-        this.persistencia.confirmarTransaccion();
+    public void agregarRepartidor(Context ctx) throws SQLException {
+
+        // Se obtienen los datos del formulario
+        var dni = ctx.formParamAsClass("txtDni", Integer.class).get();
+        var nombre = ctx.formParamAsClass("txtNombre", String.class).get();
+        var apellido = ctx.formParamAsClass("txtApellido", String.class).get();
+        var telefono = ctx.formParamAsClass("txtTelefono", String.class).get();
+        var mail = ctx.formParamAsClass("txtCorreo", String.class).get();
+
+        // Se crea un nuevo objeto repartidores
+        var repartidor = new Repartidor(dni, nombre, apellido, telefono, mail);
+
+        // Se inicia el proceso de persistencia
+        this.interfazRepartidores.crear(repartidor);
+
+        // Se redirige a la pagina que muestra la lista de repartidores
+        ctx.redirect("/repartidores");
     }
+
+    /**
+     * @param context
+     */
+    public void editarRepartidor(Context ctx) throws SQLException {
+
+        // se traen los datos de la clase
+        var modelo = new ModeloRepartidor();
+
+        // se le pasa al proceso de persistencia el dni del repartidor que se quiere
+        // editar
+        modelo.repartidor = this.interfazRepartidores.obtener(ctx.pathParamAsClass("txtDni", Integer.class).get());
+
+        // el programa muestra el template para editar repartidores
+        ctx.render("editarRepartidor.jte", Collections.singletonMap("modelo", modelo));
+    }
+
+    /**
+     * @param context
+     */
+    public void eliminarRepartidor(Context ctx) throws SQLException {
+        // se le pasa al proceso de persistencia el dni del repartidor que se quiere
+        // eliminar
+        this.interfazRepartidores.borrar(ctx.pathParamAsClass("txtDni", Integer.class).get());
+
+    }
+
 }

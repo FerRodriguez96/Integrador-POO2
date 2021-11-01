@@ -7,6 +7,6 @@ import com.modelo.Picole;
 
 public class ModeloPicoles {
 
-	public List<Picole> picoles = new ArrayList<>();
-	
+    public List<Picole> picoles = new ArrayList<>();
+
 }

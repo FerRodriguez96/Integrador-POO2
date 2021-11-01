@@ -8,14 +8,14 @@ import javax.persistence.TypedQuery;
 
 public class RepositorioClientes implements InterfazClientes {
 
-	private final EntityManagerFactory emf;
+    private final EntityManagerFactory emf;
 
-	public RepositorioClientes(EntityManagerFactory emf) {
-		this.emf = emf;
-	}
-	
-	@Override
-	public List<Cliente> listar() {
+    public RepositorioClientes(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
+
+    @Override
+    public List<Cliente> listar() {
         var em = emf.createEntityManager();
         var cb = em.getCriteriaBuilder();
         // se crea un objeto de consulta que devolvera objetos de cliente
@@ -28,26 +28,26 @@ public class RepositorioClientes implements InterfazClientes {
         em.close();
         return jornaleros;
     }
-	
-	@Override
-	public Cliente obtener(int dni) {
+
+    @Override
+    public Cliente obtener(int dni) {
         var em = emf.createEntityManager();
         var cliente = em.find(Cliente.class, dni);
         em.close();
         return cliente;
     }
-	
-	@Override
-	public void crear(Cliente cliente) {
+
+    @Override
+    public void crear(Cliente cliente) {
         var em = emf.createEntityManager();
         em.getTransaction().begin();
         em.persist(cliente);
         em.getTransaction().commit();
         em.close();
     }
-	
-	@Override
-	public boolean borrar(int dni) {
+
+    @Override
+    public boolean borrar(int dni) {
 
         var em = emf.createEntityManager();
         var cliente = em.find(Cliente.class, dni);
