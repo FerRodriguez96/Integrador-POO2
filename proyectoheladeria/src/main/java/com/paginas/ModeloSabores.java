@@ -7,6 +7,6 @@ import com.modelo.Sabor;
 
 public class ModeloSabores {
 
-	public List<Sabor> sabores = new ArrayList<>();
+    public List<Sabor> sabores = new ArrayList<>();
 
 }

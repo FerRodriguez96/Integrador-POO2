@@ -1,6 +1,4 @@
 @tag.header()
-
-
     <br>
     <div class="card">
         <div class="card-header">
@@ -24,12 +22,12 @@
                     <label for="txtApellido">Apellido:</label>
                     <input id="txtApellido" class="form-control" type="text" name="txtApellido">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="txtTelefono">Telefono:</label>
                     <input id="txtTelefono" class="form-control" type="text" name="txtTelefono">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="txtCorreo">Correo:</label>
                     <input id="txtCorreo" class="form-control" type="text" name="txtCorreo">
@@ -42,6 +40,4 @@
             </p>
         </div>
     </div>
-
-
 @tag.footer()

@@ -1,17 +1,12 @@
 package com.modelo;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
-@Entity
-@DiscriminatorValue("Picole")
 public class Picole extends Productos {
 
-	private static final long serialVersionUID = 1L;
-	
-	@OneToMany
+    @OneToMany
     @Column(name = "SABORES")
     public Sabor sabor;
-	@Column(name = "CANTIDAD")
     public int cantidad;
 
     public Picole() {
@@ -19,12 +14,12 @@ public class Picole extends Productos {
     }
 
     /**
-     * Crea un Picole al que se le pasa los datos precio, sabor y cantidad
-     * de un paquete de picole
+     * Crea un Picole al que se le pasa los datos del precio, sabor y cantidad del
+     * picole
      * 
-     * @param precio     Precio del Picole
-     * @param sabor      Sabor del Picole
-     * @param cantidad   Cantidad de Picoles
+     * @param precio   Precio del Picole
+     * @param sabor    Sabor del Picole
+     * @param cantidad Cantidad de Picoles
      */
     public Picole(float precio, Sabor sabor, int cantidad) {
         super(precio);

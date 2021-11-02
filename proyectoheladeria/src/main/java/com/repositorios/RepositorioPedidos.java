@@ -1,19 +1,22 @@
 package com.repositorios;
 
-import com.modelo.Pedido;
 import java.util.List;
-import javax.persistence.*;
+
+import com.modelo.Pedido;
+
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.TypedQuery;
 
 public class RepositorioPedidos implements InterfazPedidos {
-	
-	private final EntityManagerFactory emf;
 
-	public RepositorioPedidos(EntityManagerFactory emf) {
-		this.emf = emf;
-	}
-	
-	@Override
-	public List<Pedido> listar() {
+    private final EntityManagerFactory emf;
+
+    public RepositorioPedidos(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
+
+    @Override
+    public List<Pedido> listar() {
         var em = emf.createEntityManager();
         var cb = em.getCriteriaBuilder();
         // se crea un objeto de consulta que devolvera objetos de pedido
@@ -26,26 +29,26 @@ public class RepositorioPedidos implements InterfazPedidos {
         em.close();
         return pedidos;
     }
-	
-	@Override
-	public Pedido obtener(int id) {
+
+    @Override
+    public Pedido obtener(int id) {
         var em = emf.createEntityManager();
         var pedido = em.find(Pedido.class, id);
         em.close();
         return pedido;
     }
-	
-	@Override
-	public void crear(Pedido pedido) {
+
+    @Override
+    public void crear(Pedido pedido) {
         var em = emf.createEntityManager();
         em.getTransaction().begin();
         em.persist(pedido);
         em.getTransaction().commit();
         em.close();
     }
-	
-	@Override
-	public boolean borrar(int id) {
+
+    @Override
+    public boolean borrar(int id) {
 
         var em = emf.createEntityManager();
         var pedido = em.find(Pedido.class, id);
@@ -61,5 +64,4 @@ public class RepositorioPedidos implements InterfazPedidos {
         em.close();
         return (pedido != null);
     }
-
 }

@@ -7,5 +7,5 @@ import com.modelo.Pedido;
 
 public class ModeloPedidos {
 
-	public List<Pedido> pedidos = new ArrayList<>();
+    public List<Pedido> pedidos = new ArrayList<>();
 }

@@ -1,17 +1,17 @@
 package com.modelo;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @DiscriminatorValue("Bombon")
 public class Bombon extends Productos {
 
-	private static final long serialVersionUID = 1L;
-	
-	@OneToOne
+    private static final long serialVersionUID = 1L;
+
+    @OneToOne
     @Column(name = "SABORES")
     public Sabor sabor;
-	@Column(name = "CANTIDAD")
+    @Column(name = "CANTIDAD")
     public int cantidad;
 
     public Bombon() {
@@ -19,12 +19,12 @@ public class Bombon extends Productos {
     }
 
     /**
-     * Crea un bombon al que se le pasa los datos del precio, sabor y cantidad de unidades
-     * del paquete de bombon
+     * Crea un bombon al que se le pasa los datos del precio, sabor y cantidad de
+     * unidades del paquete de bombon
      * 
-     * @param precio     Precio del bombon
-     * @param sabor      Sabor del bombon
-     * @param cantidad   Cantidad de bombones
+     * @param precio   Precio del bombon
+     * @param sabor    Sabor del bombon
+     * @param cantidad Cantidad de bombones
      */
     public Bombon(float precio, Sabor sabor, int cantidad) {
         super(precio);
@@ -72,5 +72,4 @@ public class Bombon extends Productos {
     public String toString() {
         return "Bombon [cantidad=" + cantidad + ", sabor=" + sabor + "]";
     }
-
 }

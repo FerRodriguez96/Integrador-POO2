@@ -1,27 +1,24 @@
 package com.modelo;
 
 import java.io.Serializable;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo_producto")
 public abstract class Productos implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
+    @Id
     @SequenceGenerator(name = "sec_prod", initialValue = 1, allocationSize = 1)
     @GeneratedValue(generator = "sec_prod", strategy = GenerationType.SEQUENCE)
     @Column(name = "IDPRODUCTO")
     private int idProducto;
-
     @Column(name = "PRECIO")
     private float precio;
 
     public Productos() {
-
     }
 
     /**
@@ -99,5 +96,4 @@ public abstract class Productos implements Serializable {
             return false;
         return true;
     }
-
 }

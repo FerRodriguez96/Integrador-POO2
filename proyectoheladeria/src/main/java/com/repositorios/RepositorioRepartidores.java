@@ -1,19 +1,22 @@
 package com.repositorios;
 
-import com.modelo.Repartidor;
 import java.util.List;
-import javax.persistence.*;
+
+import com.modelo.Repartidor;
+
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.TypedQuery;
 
 public class RepositorioRepartidores implements InterfazRepartidores {
-	
-	private final EntityManagerFactory emf;
 
-	public RepositorioRepartidores(EntityManagerFactory emf) {
-		this.emf = emf;
-	}
-	
-	@Override
-	public List<Repartidor> listar() {
+    private final EntityManagerFactory emf;
+
+    public RepositorioRepartidores(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
+
+    @Override
+    public List<Repartidor> listar() {
         var em = emf.createEntityManager();
         var cb = em.getCriteriaBuilder();
         // se crea un objeto de consulta que devolvera objetos de repartidor
@@ -26,26 +29,26 @@ public class RepositorioRepartidores implements InterfazRepartidores {
         em.close();
         return repartidor;
     }
-	
-	@Override
-	public Repartidor obtener(int id) {
+
+    @Override
+    public Repartidor obtener(int id) {
         var em = emf.createEntityManager();
         var repartidor = em.find(Repartidor.class, id);
         em.close();
         return repartidor;
     }
-	
-	@Override
-	public void crear(Repartidor repartidor) {
+
+    @Override
+    public void crear(Repartidor repartidor) {
         var em = emf.createEntityManager();
         em.getTransaction().begin();
         em.persist(repartidor);
         em.getTransaction().commit();
         em.close();
     }
-	
-	@Override
-	public boolean borrar(int dni) {
+
+    @Override
+    public boolean borrar(int dni) {
 
         var em = emf.createEntityManager();
         var repartidor = em.find(Repartidor.class, dni);

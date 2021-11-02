@@ -2,13 +2,13 @@ package com.modelo;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 public class Sabor implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
-	@Id
+    private static final long serialVersionUID = 1L;
+
+    @Id
     @SequenceGenerator(name = "sec_sab", initialValue = 1, allocationSize = 1)
     @GeneratedValue(generator = "sec_sab", strategy = GenerationType.SEQUENCE)
     @Column(name = "IDSABOR")

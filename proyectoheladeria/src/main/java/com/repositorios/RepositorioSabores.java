@@ -1,19 +1,22 @@
 package com.repositorios;
 
-import com.modelo.Sabor;
 import java.util.List;
-import javax.persistence.*;
+
+import com.modelo.Sabor;
+
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.TypedQuery;
 
 public class RepositorioSabores implements InterfazSabores {
-	
-	private final EntityManagerFactory emf;
 
-	public RepositorioSabores(EntityManagerFactory emf) {
-		this.emf = emf;
-	}
-	
-	@Override
-	public List<Sabor> listar() {
+    private final EntityManagerFactory emf;
+
+    public RepositorioSabores(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
+
+    @Override
+    public List<Sabor> listar() {
         var em = emf.createEntityManager();
         var cb = em.getCriteriaBuilder();
         // se crea un objeto de consulta que devolvera objetos de sabor
@@ -26,26 +29,26 @@ public class RepositorioSabores implements InterfazSabores {
         em.close();
         return sabores;
     }
-	
-	@Override
-	public Sabor obtener(int id) {
+
+    @Override
+    public Sabor obtener(int id) {
         var em = emf.createEntityManager();
         var sabor = em.find(Sabor.class, id);
         em.close();
         return sabor;
     }
-	
-	@Override
-	public void crear(Sabor sabor) {
+
+    @Override
+    public void crear(Sabor sabor) {
         var em = emf.createEntityManager();
         em.getTransaction().begin();
         em.persist(sabor);
         em.getTransaction().commit();
         em.close();
     }
-	
-	@Override
-	public boolean borrar(int id) {
+
+    @Override
+    public boolean borrar(int id) {
 
         var em = emf.createEntityManager();
         var sabor = em.find(Sabor.class, id);

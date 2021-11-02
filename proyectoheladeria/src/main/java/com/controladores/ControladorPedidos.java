@@ -23,16 +23,16 @@ public class ControladorPedidos {
 	 * @param ctx
 	 */
 	public void listar(Context ctx) throws SQLException {
-		//Se obtienen los datos de la clase
+		// Se obtienen los datos de la clase
 		var modelo = new ModeloPedidos();
-		
-		//Se pasan los datos a el metodo listar
+
+		// Se pasan los datos a el metodo listar
 		modelo.pedidos = interfazPedidos.listar();
-		
-		//Se imprime por consola la lista de pedidos
+
+		// Se imprime por consola la lista de pedidos
 		System.out.println(modelo.pedidos);
-		
-		//Se muestra el template con la lista de pedidos
+
+		// Se muestra el template con la lista de pedidos
 		ctx.render("pedidos.jte", Collections.singletonMap("modelo", modelo));
 	}
 

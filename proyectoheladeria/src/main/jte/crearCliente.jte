@@ -11,28 +11,28 @@
             <p class="card-text">
 
                 <div class="form-group">
-                    <label for="txtNombre">DNI:</label>
-                    <input id="txtNombre" class="form-control" type="text" name="textNombre">
+                    <label for="txtDNI">DNI:</label>
+                    <input id="txtDNI" class="form-control" type="text" name="textDNI">
                 </div>
 
                 <div class="form-group">
-                    <label for="txtFoto">Nombre:</label>
-                    <input id="txtFoto" class="form-control" type="text" name="txtFoto">
+                    <label for="txtNombre">Nombre:</label>
+                    <input id="txtNombre" class="form-control" type="text" name="txtNombre">
                 </div>
 
                 <div class="form-group">
-                    <label for="txtFoto">Apellido:</label>
-                    <input id="txtFoto" class="form-control" type="text" name="txtFoto">
+                    <label for="txtApellido">Apellido:</label>
+                    <input id="txtApellido" class="form-control" type="text" name="txtApellido">
                 </div>
                 
                 <div class="form-group">
-                    <label for="txtFoto">Calle:</label>
-                    <input id="txtFoto" class="form-control" type="text" name="txtFoto">
+                    <label for="txtCalle">Calle:</label>
+                    <input id="txtCalle" class="form-control" type="text" name="txtCalle">
                 </div>
                 
                 <div class="form-group">
-                    <label for="txtFoto">Numero:</label>
-                    <input id="txtFoto" class="form-control" type="text" name="txtFoto">
+                    <label for="txtNumero">Numero:</label>
+                    <input id="txtNumero" class="form-control" type="text" name="txtNumero">
                 </div>
                 <br>
                 <div class="form-group">
