@@ -1,8 +1,11 @@
 package com.repositorios;
 
-import com.modelo.Pedido;
 import java.util.List;
-import javax.persistence.*;
+
+import com.modelo.Pedido;
+
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.TypedQuery;
 
 public class RepositorioPedidos implements InterfazPedidos {
 

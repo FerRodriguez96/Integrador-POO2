@@ -1,8 +1,11 @@
 package com.repositorios;
 
-import com.modelo.Repartidor;
 import java.util.List;
-import javax.persistence.*;
+
+import com.modelo.Repartidor;
+
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.TypedQuery;
 
 public class RepositorioRepartidores implements InterfazRepartidores {
 

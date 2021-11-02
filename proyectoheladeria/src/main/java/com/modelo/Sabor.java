@@ -2,7 +2,7 @@ package com.modelo;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 public class Sabor implements Serializable {
 

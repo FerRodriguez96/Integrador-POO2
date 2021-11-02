@@ -1,10 +1,12 @@
 package com.repositorios;
 
+import java.util.List;
+
 import com.modelo.Bombon;
 import com.modelo.Sabor;
 
-import java.util.List;
-import javax.persistence.*;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.TypedQuery;
 
 public class RepositorioBombones implements InterfazBombones {
 

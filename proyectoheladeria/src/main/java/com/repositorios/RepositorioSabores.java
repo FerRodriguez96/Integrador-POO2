@@ -1,8 +1,11 @@
 package com.repositorios;
 
-import com.modelo.Sabor;
 import java.util.List;
-import javax.persistence.*;
+
+import com.modelo.Sabor;
+
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.TypedQuery;
 
 public class RepositorioSabores implements InterfazSabores {
 

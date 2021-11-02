@@ -1,6 +1,6 @@
 package com.modelo;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * Representa un jornalero
