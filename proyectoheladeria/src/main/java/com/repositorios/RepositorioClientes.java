@@ -25,9 +25,9 @@ public class RepositorioClientes implements InterfazClientes {
         var origen = consulta.from(Cliente.class);
         consulta.select(origen);
         TypedQuery<Cliente> query = em.createQuery(consulta);
-        var jornaleros = query.getResultList();
+        var clientes = query.getResultList();
         em.close();
-        return jornaleros;
+        return clientes;
     }
 
     @Override

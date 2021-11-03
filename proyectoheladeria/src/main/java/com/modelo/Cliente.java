@@ -135,13 +135,4 @@ public class Cliente implements Serializable {
         this.numero = numero;
     }
 
-    /**
-     * @return String
-     */
-    @Override
-    public String toString() {
-        return "Cliente [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", calle=" + calle
-                + ",  numero=" + numero + "]";
-    }
-
 }

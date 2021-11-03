@@ -13,7 +13,7 @@
 
 		<div class="row justify-content-md-center">
 		    <div class="col-md-2 col-xs-6">
-		      <a href="/crearCliente" class="btn btn-success">Crear Cliente</a>
+		      <a href="/clientes/nuevo" class="btn btn-success">Crear Cliente</a>
 		    </div>
 		    <div class="col-md-2 col-xs-6">
 		      <a href="/tipoEmpleado" class="btn btn-success">Crear Empleado</a>

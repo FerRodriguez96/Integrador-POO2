@@ -1,18 +1,15 @@
 package com;
 
-import java.util.List;
-
-import com.controladores.ControladorCliente;
-import com.repositorios.RepositorioClientes;
-import com.modelo.*;
+import com.controladores.*;
+import com.repositorios.*;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
-import jakarta.persistence.Persistence;
+import jakarta.persistence.*;
 
 public class App {
     public static void main(String[] args) {
         var emf = Persistence.createEntityManagerFactory("persistencia");
-        // var em = emf.createEntityManager();
+ 
         // repositorios y controladores
         var repositorioClientes = new RepositorioClientes(emf);
         var controladorCliente = new ControladorCliente(repositorioClientes);
@@ -21,8 +18,11 @@ public class App {
         Javalin app = Javalin.create().start(7000);
 
         app.get("/", App::mostrarIndex); // muestra el index
-        app.get("/crearCliente", App::mostrarCrearCliente);
-        app.post("/clientes", controladorCliente::listar);
+        app.get("/clientes/nuevo", controladorCliente::nuevoCliente); //muestra la pantalla de creacion de clientes
+        app.get("/clientes", controladorCliente::listar); //muestra la lista de clientes guardados
+        app.post("/clientes", controladorCliente::agregarCliente); //agrega como nuevo cliente los datos ingresados en el formulario
+        app.get("/clientes/{txtDni}", controladorCliente::editarCliente); // muestra un formulario para editar clientes
+        app.delete("/clientes/{txtDni}", controladorCliente::eliminarCliente); //elimina un cliente
 
         app.get("/tipoEmpleado", App::mostrarTipoEmpleado);
         app.get("/crearJornalero", App::mostrarCrearJornalero);
@@ -47,10 +47,6 @@ public class App {
 
     private static void mostrarCrearRepartidor(Context ctx) {
         ctx.render("crearRepartidor.jte");
-    }
-
-    private static void mostrarCrearCliente(Context ctx) {
-        ctx.render("crearCliente.jte");
     }
 
     private static void mostrarTipoProducto(Context ctx) {

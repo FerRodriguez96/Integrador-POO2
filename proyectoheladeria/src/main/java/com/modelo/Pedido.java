@@ -1,6 +1,9 @@
 package com.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -15,31 +18,27 @@ public class Pedido implements Serializable {
     @GeneratedValue(generator = "sec_ped", strategy = GenerationType.SEQUENCE)
     private int idPedido;
 
-    @ManyToOne
-    @Column(name = "Cliente")
-    private Cliente cliente;
-
     @OneToMany
     @Column(name = "Productos")
-    private String producto;
+    private List<Productos>productos = new ArrayList<>();
 
+    @Column(name = "preciofinal")
+    private double preciofinal;
 
     public Pedido() {
-        // TODO Auto-generated constructor stub
+
     }
 
     /**
      * Crea un pedido al que se le pasa el cliente que hizo el pedido, los
      * productos, y el repartidor que se va a encargar de el pedido.
      * 
-     * @param cliente    datos del cliente
      * @param producto   productos del pedido
-     * @param repartidor repartidor encargado del pedido
      */
-    public Pedido(Cliente cliente, String producto, Repartidor repartidor) {
-        this.cliente = cliente;
-        this.producto = producto;
+    public Pedido(List<Productos> productos) {
+        this.productos = productos;
     }
+
 
     /**
      * Obtiene el id del pedido
@@ -60,40 +59,45 @@ public class Pedido implements Serializable {
     }
 
     /**
-     * Obtiene el cliente del pedido
+     * Obtiene la lista de productos del pedido
      * 
-     * @return cliente del pedido
+     * @return productos del pedido
      */
-    public Cliente getCliente() {
-        return cliente;
+    public List<Productos> getProductos() {
+        return productos;
     }
 
     /**
-     * Establece el cliente del pedido
+     * Establece la lista de productos del pedido
      * 
-     * @param cliente cliente del pedido
+     * @param productos productos del pedido
      */
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setProductos(List<Productos> productos) {
+        this.productos = productos;
     }
 
     /**
-     * Obtiene el producto del pedido
+     * Obtiene el precio final del pedido
      * 
-     * @return producto del pedido
+     * @return preciofinal del pedido
      */
-    public String getProducto() {
-        return producto;
+    public double getPreciofinal() {
+        return preciofinal;
     }
 
     /**
-     * Establece los productos del pedido
+     * Establece el preciofinal del pedido
      * 
-     * @param producto producto del pedido
+     * @param preciofinal preciofinal del pedido
      */
-    public void setProducto(String producto) {
-        this.producto = producto;
+    public void setPreciofinal(double preciofinal) {
+        this.preciofinal = preciofinal;
     }
+
+    
+
+
+  
 
 
 }

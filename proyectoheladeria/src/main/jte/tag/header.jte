@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 
 <html lang="en">
 
@@ -21,7 +20,7 @@
                     <a class="nav-link" href="/">Inicio<span class="sr-only"></span></a>
                 </li>
                 <li>
-                    <a class="nav-link" href="{{url_for('index')}}">Clientes<span class="sr-only"></span></a>
+                    <a class="nav-link" href="/clientes">Clientes<span class="sr-only"></span></a>
                 </li>
                 <li>
                     <a class="nav-link" href="{{url_for('index')}}">Empleados<span class="sr-only"></span></a>

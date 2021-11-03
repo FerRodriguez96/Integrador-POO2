@@ -86,7 +86,7 @@ public class ControladorCliente {
     public void eliminarCliente(Context ctx) throws SQLException {
         // se le pasa al proceso de persistencia el dni del cliente que se quiere
         // eliminar
-        this.interfazClientes.borrar(ctx.pathParamAsClass("txtDni", Integer.class).get());
+        this.interfazClientes.borrar((ctx.pathParamAsClass("txtDni", Integer.class).get()));
 
     }
 

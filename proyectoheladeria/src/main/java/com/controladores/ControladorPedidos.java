@@ -1,11 +1,12 @@
 package com.controladores;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-import com.modelo.Cliente;
 import com.modelo.Pedido;
-import com.modelo.Repartidor;
+import com.modelo.Productos;
 import com.paginas.ModeloPedido;
 import com.paginas.ModeloPedidos;
 import com.repositorios.InterfazPedidos;
@@ -14,6 +15,10 @@ import io.javalin.http.Context;
 public class ControladorPedidos {
 
 	private final InterfazPedidos interfazPedidos;
+
+	public ControladorPedidos(){
+		this.interfazPedidos = null;
+	}
 
 	public ControladorPedidos(InterfazPedidos interfazPedidos) {
 		this.interfazPedidos = interfazPedidos;
@@ -35,7 +40,7 @@ public class ControladorPedidos {
 		// Se muestra el template con la lista de pedidos
 		ctx.render("pedidos.jte", Collections.singletonMap("modelo", modelo));
 	}
-
+	
 	/**
 	 * @param ctx
 	 */
@@ -50,18 +55,17 @@ public class ControladorPedidos {
 	public void agregarPedido(Context ctx) throws SQLException {
 
 		// Se obtienen los datos del formulario
-		var cliente = ctx.formParamAsClass("listaCliente", Cliente.class).get();
-		var producto = ctx.formParamAsClass("txtProducto", String.class).get();
-		var repartidor = ctx.formParamAsClass("listaRepartidor", Repartidor.class).get();
+		//List<Productos> producto = ctx.formParamAsClass("listaProducto", List.class).get();
 
+		//List<Productos> listaproductos = new ArrayList<>().addAll(ctx.formParamAsClass("listaProducto", List.class).get());
 		// Se crea un nuevo objeto pedido
-		var pedido = new Pedido(cliente, producto, repartidor);
+		//var pedido = new Pedido(listaproducto);
 
 		// Se inicia el proceso de persistencia
-		this.interfazPedidos.crear(pedido);
+		//this.interfazPedidos.crear(pedido);
 
 		// Se redirige a la pagina que muestra la lista de pedidos
-		ctx.redirect("/Pedidos");
+		//ctx.redirect("/Pedidos");
 	}
 
 	/**
