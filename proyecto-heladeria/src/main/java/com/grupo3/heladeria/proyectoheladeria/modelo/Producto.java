@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "PRODUCTO")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "tipo_producto" , discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "tipo_producto", discriminatorType = DiscriminatorType.STRING)
 public abstract class Producto implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -16,12 +16,12 @@ public abstract class Producto implements Serializable {
     @GeneratedValue(generator = "sec_prod", strategy = GenerationType.SEQUENCE)
     @Column(name = "IDPRODUCTO")
     protected int idProducto;
-    
+
     @Column(name = "PRECIO")
     protected float precio;
 
     protected Producto() {
-    	
+
     }
 
     /**

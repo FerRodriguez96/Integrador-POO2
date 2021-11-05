@@ -3,8 +3,6 @@ package com.grupo3.heladeria.proyectoheladeria.repositorios;
 import java.util.List;
 
 import com.grupo3.heladeria.proyectoheladeria.modelo.Bombon;
-//import com.grupo3.heladeria.proyectoheladeria.modelo.Sabor;
-import com.grupo3.heladeria.proyectoheladeria.modelo.Sabores;
 
 public interface InterfazBombones {
 
@@ -12,9 +10,9 @@ public interface InterfazBombones {
 
     void crear(Bombon bombon);
 
-    boolean borrar(Sabores sabor);
+    boolean borrar(Integer integer);
 
-    Bombon obtener(Sabores sabor);
+    Bombon obtener(Integer integer);
 
     Bombon modificar(Bombon bombon);
 

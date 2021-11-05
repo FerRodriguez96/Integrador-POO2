@@ -17,19 +17,16 @@
             <tbody>
                 @for (var picole : modelo.picoles)
                     <tr>
-                        
                         <td>${picole.getSabor()}</td>
-                        
-                        <td>${picole.super.getPrecio()}</td>
+                        <td>${picole.getPrecio()}</td>
                         <td>${picole.getCantidad()}</td>
                         
-                        <td class="col-1"> <a type="button" class="btn btn-info" href="/picoles/update/${picole.getSabor()}"> Editar </a></td>                            
-                        <td class="col-1"> <button type="button" class="btn btn-danger no-gutters" onClick="borrar(${picole.getSabor()})"> Eliminar </button></td>
-                        
+                        <td class="col-1"> <a type="button" class="btn btn-info" href="/picoles/update/${picole.getId()}"> Editar </a></td>                            
+                        <td class="col-1"> <button type="button" class="btn btn-danger no-gutters" onClick="borrar(${picole.getId()})"> Eliminar </button></td>
                     </tr>
                 @endfor
             </tbody>
         </table>
     </div>
-    <script src="js/picoles.js"></script>
+    <script src="js/picoles.js"> </script>
 @tag.footer()

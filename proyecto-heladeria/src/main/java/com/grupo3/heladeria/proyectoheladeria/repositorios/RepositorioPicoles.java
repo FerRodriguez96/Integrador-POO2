@@ -3,8 +3,6 @@ package com.grupo3.heladeria.proyectoheladeria.repositorios;
 import java.util.List;
 
 import com.grupo3.heladeria.proyectoheladeria.modelo.Picole;
-//import com.grupo3.heladeria.proyectoheladeria.modelo.Sabor;
-//import com.grupo3.heladeria.proyectoheladeria.modelo.Sabores;
 
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.TypedQuery;
@@ -33,9 +31,9 @@ public class RepositorioPicoles implements InterfazPicoles {
     }
 
     @Override
-    public Picole obtener(Integer sabor) {
+    public Picole obtener(Integer id) {
         var em = emf.createEntityManager();
-        var Picole = em.find(Picole.class, sabor);
+        var Picole = em.find(Picole.class, id);
         em.close();
         return Picole;
     }
@@ -50,10 +48,10 @@ public class RepositorioPicoles implements InterfazPicoles {
     }
 
     @Override
-    public boolean borrar(Integer sabor) {
+    public boolean borrar(Integer idProducto) {
 
         var em = emf.createEntityManager();
-        var Picole = em.find(Integer.class, sabor);
+        var Picole = em.find(Picole.class, idProducto);
         try {
             if (Picole != null) {
                 em.getTransaction().begin();

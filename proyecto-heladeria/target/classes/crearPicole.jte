@@ -12,7 +12,7 @@
                 <form action = "/picoles" method="post">
                     <div class="form-group">
                         <label for="txtSabor">Sabor:</label>
-                        <input id="txtSabor" class="form-control" type="text" name="txtSabor">
+                        <input id="txtSabor" class="form-control" type="sabores" name="txtSabor">
                     </div>
 
                     <div class="form-group">

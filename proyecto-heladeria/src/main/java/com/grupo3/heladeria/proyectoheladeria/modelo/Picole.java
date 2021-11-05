@@ -9,7 +9,7 @@ public class Picole extends Producto {
     private static final long serialVersionUID = 1L;
 
     @Column(name = "SABORES")
-    public Integer sabor;
+    public Sabores sabor;
     @Column(name = "CANTIDAD")
     public int cantidad;
 
@@ -25,10 +25,28 @@ public class Picole extends Producto {
      * @param sabor    Sabor del Picole
      * @param cantidad Cantidad de Picoles
      */
-    public Picole(float precio, Integer sabor, int cantidad) {
+    public Picole(float precio, Sabores sabor, int cantidad) {
         super(precio);
         this.sabor = sabor;
         this.cantidad = cantidad;
+    }
+
+    /**
+     * Obtiene el id del Picole
+     * 
+     * @return Integer id del picole
+     */
+    public Integer getId() {
+        return super.getIdProducto();
+    }
+
+    /**
+     * Establece el id del Picole
+     * 
+     * @param id
+     */
+    public void setId(Integer id) {
+        super.setIdProducto(id);
     }
 
     /**
@@ -36,7 +54,7 @@ public class Picole extends Producto {
      * 
      * @return String
      */
-    public Integer getSabor() {
+    public Sabores getSabor() {
         return sabor;
     }
 
@@ -45,7 +63,7 @@ public class Picole extends Producto {
      * 
      * @param sabor
      */
-    public void setSabor(Integer sabor) {
+    public void setSabor(Sabores sabor) {
         this.sabor = sabor;
     }
 

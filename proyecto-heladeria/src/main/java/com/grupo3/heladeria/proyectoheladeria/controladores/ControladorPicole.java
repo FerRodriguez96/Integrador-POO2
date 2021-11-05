@@ -4,8 +4,7 @@ import java.sql.SQLException;
 import java.util.Collections;
 
 import com.grupo3.heladeria.proyectoheladeria.modelo.Picole;
-//import com.grupo3.heladeria.proyectoheladeria.modelo.Sabores;
-//import com.grupo3.heladeria.proyectoheladeria.modelo.Sabor;
+import com.grupo3.heladeria.proyectoheladeria.modelo.Sabores;
 import com.grupo3.heladeria.proyectoheladeria.paginas.ModeloPicole;
 import com.grupo3.heladeria.proyectoheladeria.paginas.ModeloPicoles;
 import com.grupo3.heladeria.proyectoheladeria.repositorios.InterfazPicoles;
@@ -55,7 +54,12 @@ public class ControladorPicole {
         var precio = ctx.formParamAsClass("txtPrecio", Float.class).get();
         var cantidad = ctx.formParamAsClass("txtCantidad", Integer.class).get();
         var Picole = new Picole();
-        Picole = new Picole(precio, sabor, cantidad);
+        if (sabor == 1) {
+            Picole = new Picole(precio, Sabores.Surtido, cantidad);
+        } else {
+            Picole = new Picole(precio, Sabores.Surtido, cantidad);
+        }
+
         /*
          * if (sabor == 1) { Picole = new Picole(precio, Sabores.Frutilla, cantidad); }
          * else { Picole = new Picole(precio, Sabores.Vainilla, cantidad); }
@@ -80,7 +84,7 @@ public class ControladorPicole {
 
         // se le pasa al proceso de persistencia el id del paquete de Picole que se
         // quiere editar
-        modelo.picole = this.interfazPicoles.obtener(ctx.pathParamAsClass("txtSabor", Integer.class).get());
+        modelo.picole = this.interfazPicoles.obtener(ctx.pathParamAsClass("txtId", Integer.class).get());
 
         // el programa muestra el template para editar un paquete de Picole
         ctx.render("editarPicole.jte", Collections.singletonMap("modelo", modelo));
@@ -91,12 +95,19 @@ public class ControladorPicole {
         var modelo = new ModeloPicole();
         // se le pasa al proceso de persistencia el sabor del picole que se quiere
         // editar
-        modelo.picole = this.interfazPicoles.obtener((ctx.pathParamAsClass("txtSabor", Integer.class).get()));
-        Integer sabor = ctx.formParamAsClass("txtSabor", Integer.class).get();
+        modelo.picole = this.interfazPicoles.obtener((ctx.pathParamAsClass("txtId", Integer.class).get()));
+        var id = ctx.formParamAsClass("txtId", Integer.class).get();
+        var sabor = ctx.formParamAsClass("txtSabor", Integer.class).get();
         var precio = ctx.formParamAsClass("txtPrecio", float.class).get();
         var cantidad = ctx.formParamAsClass("txtCantidad", Integer.class).get();
-
-        var picoleModificado = new Picole(precio, sabor, cantidad);
+        var picoleModificado = new Picole();
+        if (sabor == 1) {
+            picoleModificado = new Picole(precio, Sabores.Surtido, cantidad);
+        } else {
+            picoleModificado = new Picole(precio, Sabores.Surtido, cantidad);
+        }
+        picoleModificado.setId(id);
+        // var picoleModificado = new Picole(precio, Sabores.Surtido, cantidad);
         this.interfazPicoles.modificar(picoleModificado);
         ctx.redirect("/picoles");
     }
@@ -107,7 +118,7 @@ public class ControladorPicole {
     public void eliminarPicole(Context ctx) throws SQLException {
         // se le pasa al proceso de persistencia el sabor del Picole que se quiere
         // eliminar
-        this.interfazPicoles.borrar(ctx.pathParamAsClass("txtSabor", Integer.class).get());
+        this.interfazPicoles.borrar(ctx.pathParamAsClass("txtId", Integer.class).get());
 
     }
 

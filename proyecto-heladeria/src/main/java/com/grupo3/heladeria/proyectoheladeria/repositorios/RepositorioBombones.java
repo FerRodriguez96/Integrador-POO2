@@ -3,9 +3,6 @@ package com.grupo3.heladeria.proyectoheladeria.repositorios;
 import java.util.List;
 
 import com.grupo3.heladeria.proyectoheladeria.modelo.Bombon;
-//import com.grupo3.heladeria.proyectoheladeria.modelo.Sabor;
-import com.grupo3.heladeria.proyectoheladeria.modelo.Sabores;
-
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.TypedQuery;
 
@@ -33,9 +30,9 @@ public class RepositorioBombones implements InterfazBombones {
     }
 
     @Override
-    public Bombon obtener(Sabores sabor) {
+    public Bombon obtener(Integer idProducto) {
         var em = emf.createEntityManager();
-        var bombon = em.find(Bombon.class, sabor);
+        var bombon = em.find(Bombon.class, idProducto);
         em.close();
         return bombon;
     }
@@ -50,10 +47,10 @@ public class RepositorioBombones implements InterfazBombones {
     }
 
     @Override
-    public boolean borrar(Sabores sabor) {
+    public boolean borrar(Integer idProducto) {
 
         var em = emf.createEntityManager();
-        var bombon = em.find(Bombon.class, sabor);
+        var bombon = em.find(Bombon.class, idProducto);
         try {
             if (bombon != null) {
                 em.getTransaction().begin();

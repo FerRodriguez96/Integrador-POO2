@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Bombon extends Producto {
 
     private static final long serialVersionUID = 1L;
-
+    
     @Column(name = "SABORES")
     @Enumerated(value = EnumType.ORDINAL)
     private Sabores sabor;
@@ -30,6 +30,24 @@ public class Bombon extends Producto {
         super(precio);
         this.sabor = sabor;
         this.cantidad = cantidad;
+    }
+
+    /**
+     * Obtiene el id del bombon
+     * 
+     * @return Integer id del bombon
+     */
+    public Integer getId() {
+        return super.getIdProducto();
+    }
+
+    /**
+     * Establece el id del bombon
+     * 
+     * @return Integer id del bombon
+     */
+    public void setId(Integer id) {
+        super.setIdProducto(id);
     }
 
     /**

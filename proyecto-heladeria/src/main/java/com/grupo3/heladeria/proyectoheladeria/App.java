@@ -117,12 +117,12 @@ public class App {
         app.post("/picoles", controladorPicole::agregarPicole);
 
         // muestra un formulario para editar picoles
-        app.get("/picoles/update/{txdSabor}", controladorPicole::editarPicole);
+        app.get("/picoles/update/{txdId}", controladorPicole::editarPicole);
 
-        app.post("/picole/update/{txtSabor}", controladorPicole::modificarPicole);
+        app.post("/picole/update/{txtId}", controladorPicole::modificarPicole);
 
         // elimina un picole
-        app.delete("/picoles/delete/{txtSabor}", controladorPicole::eliminarPicole);
+        app.delete("/picoles/delete/{txtId}", controladorPicole::eliminarPicole);
 
         // ==========================================================================
         // Bombones
@@ -134,15 +134,15 @@ public class App {
         app.get("/bombones", controladorBombon::listar);
 
         // agrega como nuevo bombon los datos ingresados en el formulario
-        app.post("/bombon", controladorBombon::agregarBombon);
+        app.post("/bombones", controladorBombon::agregarBombon);
 
         // muestra un formulario para editar bombones
-        app.get("/bombon/update/{txdSabor}", controladorBombon::editarBombon);
+        app.get("/bombones/update/{txdId}", controladorBombon::editarBombon);
 
-        app.post("/bombon/update/{txtSabor}", controladorBombon::modificarBombon);
+        app.post("/bombones/update/{txtId}", controladorBombon::modificarBombon);
 
         // elimina un picole
-        app.delete("/bombon/delete/{txtSabor}", controladorBombon::eliminarBombon);
+        app.delete("/bombones/delete/{txtId}", controladorBombon::eliminarBombon);
     }
 
     // Otras funciones

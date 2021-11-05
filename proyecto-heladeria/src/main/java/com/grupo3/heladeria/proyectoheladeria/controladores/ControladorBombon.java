@@ -55,10 +55,24 @@ public class ControladorBombon {
         var precio = ctx.formParamAsClass("txtPrecio", Float.class).get();
         var cantidad = ctx.formParamAsClass("txtCantidad", Integer.class).get();
         var bombon = new Bombon();
-        if (sabor == 1) {
-            bombon = new Bombon(precio, Sabores.Vainilla, cantidad);
-        } else {
+
+        // Por algún motivo no funciona swicht aquí
+        switch (sabor) {
+        case 1:
             bombon = new Bombon(precio, Sabores.Frutilla, cantidad);
+            break;
+        case 2:
+            bombon = new Bombon(precio, Sabores.Vainilla, cantidad);
+            break;
+        case 3:
+            bombon = new Bombon(precio, Sabores.Dulce_de_leche, cantidad);
+            break;
+        case 4:
+            bombon = new Bombon(precio, Sabores.Chantilly, cantidad);
+            break;
+        default:
+            bombon = new Bombon(precio, Sabores.Surtido, cantidad);
+            break;
         }
 
         // Se crea un nuevo objeto bombon
@@ -69,6 +83,7 @@ public class ControladorBombon {
 
         // Se redirige a la pagina que muestra la lista de productos
         ctx.redirect("/productos");
+
     }
 
     /**
@@ -76,38 +91,38 @@ public class ControladorBombon {
      */
     public void editarBombon(Context ctx) throws SQLException {
 
-        // se traen los datos de la clase
         var modelo = new ModeloBombon();
-
-        // se le pasa al proceso de persistencia el id del paquete de bombon que se
-        // quiere editar
-        modelo.bombon = this.interfazBombones.obtener(ctx.pathParamAsClass("txtSabor", Sabores.class).get());
-
-        // el programa muestra el template para editar un paquete de bombon
+        modelo.bombon = this.interfazBombones.obtener(ctx.pathParamAsClass("txtId", Integer.class).get());
         ctx.render("editarBombon.jte", Collections.singletonMap("modelo", modelo));
     }
 
+    /**
+     * @param context
+     */
     public void modificarBombon(Context ctx) throws SQLException {
         // se traen los datos de la clase
         var modelo = new ModeloBombon();
         // se le pasa al proceso de persistencia el sabor del bombon que se quiere
         // editar
-        modelo.bombon = this.interfazBombones.obtener((ctx.pathParamAsClass("txtSabor", Sabores.class).get()));
+        modelo.bombon = this.interfazBombones.obtener((ctx.pathParamAsClass("txtId", Integer.class).get()));
+        var id = ctx.formParamAsClass("txtId", Integer.class).get();
         var sabor = ctx.formParamAsClass("txtSabor", Sabores.class).get();
         var precio = ctx.formParamAsClass("txtPrecio", float.class).get();
         var cantidad = ctx.formParamAsClass("txtCantidad", Integer.class).get();
 
         var bombonModificado = new Bombon(precio, sabor, cantidad);
+        bombonModificado.setIdProducto(id);
         this.interfazBombones.modificar(bombonModificado);
-        ctx.redirect("/picoles");
+        ctx.redirect("/bombones");
     }
+
     /**
      * @param context
      */
     public void eliminarBombon(Context ctx) throws SQLException {
         // se le pasa al proceso de persistencia el sabor del bombon que se quiere
         // eliminar
-        this.interfazBombones.borrar(ctx.pathParamAsClass("txtSabor", Sabores.class).get());
+        this.interfazBombones.borrar(ctx.pathParamAsClass("txtId", Integer.class).get());
 
     }
 

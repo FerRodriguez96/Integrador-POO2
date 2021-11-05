@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-
+instance" version="2.2" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="persistencia" transaction-type="RESOURCE_LOCAL">      
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.grupo3.heladeria.proyectoheladeria.modelo.Cliente</class>
+        <class>com.grupo3.heladeria.proyectoheladeria.modelo.Empleado</class>
+        <class>com.grupo3.heladeria.proyectoheladeria.modelo.Repartidor</class>
+        <class>com.grupo3.heladeria.proyectoheladeria.modelo.Jornalero</class>
+        <class>com.grupo3.heladeria.proyectoheladeria.modelo.Producto</class>
+        <class>com.grupo3.heladeria.proyectoheladeria.modelo.Picole</class>
+        <class>com.grupo3.heladeria.proyectoheladeria.modelo.Bombon</class>
+        
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/Heladeria" />
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="jakarta.persistence.jdbc.user" value="postgres" />
+            <property name="jakarta.persistence.jdbc.password" value="1234" />
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+            <!-- <property name="eclipselink.logging.level" value="FINEST" /> -->
+        </properties>
+    </persistence-unit>
+</persistence>
