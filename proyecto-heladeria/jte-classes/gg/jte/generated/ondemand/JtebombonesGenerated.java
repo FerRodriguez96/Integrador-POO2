@@ -1,7 +1,7 @@
 package gg.jte.generated.ondemand;
 public final class JtebombonesGenerated {
 	public static final String JTE_NAME = "bombones.jte";
-	public static final int[] JTE_LINE_INFO = {0,0,0,0,2,2,2,18,18,20,20,20,21,21,21,22,22,22,23,23,23,24,24,24,26,26,31,31};
+	public static final int[] JTE_LINE_INFO = {0,0,0,0,2,2,2,18,18,20,20,20,21,21,21,22,22,22,23,28,28,28,30,30,35,35};
 	public static void render(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, com.grupo3.heladeria.proyectoheladeria.paginas.ModeloBombones modelo) {
 		jteOutput.writeContent("\r\n");
 		gg.jte.generated.ondemand.tag.JteheaderGenerated.render(jteOutput, jteHtmlInterceptor);
@@ -16,10 +16,8 @@ public final class JtebombonesGenerated {
 			jteOutput.writeContent("</td>\r\n                        <td>");
 			jteOutput.setContext("td", null);
 			jteOutput.writeUserContent(bombon.getCantidad());
-			jteOutput.writeContent("</td>\r\n                        <td class=\"col-1\"> <a type=\"button\" class=\"btn btn-info\" href=\"/bombones/update/");
-			jteOutput.setContext("a", "href");
-			jteOutput.writeUserContent(bombon.getId());
-			jteOutput.writeContent("\"> Editar </a></td>                            \r\n                        <td class=\"col-1\"> <button type=\"button\" class=\"btn btn-danger no-gutters\" onClick=\"borrar(");
+			jteOutput.writeContent("</td>\r\n                        ");
+			jteOutput.writeContent("\r\n                        <td class=\"col-1\"> <a type=\"button\" class=\"btn btn-info\"> Editar </a></td>\r\n\r\n                        <td class=\"col-1\"> <button type=\"button\" class=\"btn btn-danger no-gutters\" onClick=\"borrar(");
 			jteOutput.setContext("button", "onClick");
 			jteOutput.writeUserContent(bombon.getId());
 			jteOutput.writeContent(")\"> Eliminar </button></td>\r\n                    </tr>\r\n                ");
