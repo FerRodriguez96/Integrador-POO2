@@ -1,4 +1,4 @@
-# Diseño y planificación - Iteración 2
+# Diseño y planificación - Iteración 3
 
 # Trabajo en equipo
 
