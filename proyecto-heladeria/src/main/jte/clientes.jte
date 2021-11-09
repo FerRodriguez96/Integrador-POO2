@@ -13,6 +13,7 @@
                     <th scope="col">Apellido</th>
                     <th scope="col">Callle</th>
                     <th scope="col">Numero</th>
+                    <th scope="col">Telefono</th>
                 </tr>
             </thead>
 
@@ -24,6 +25,7 @@
                         <td>${cliente.getApellido()}</td>
                         <td>${cliente.getCalle()}</td>
                         <td>${cliente.getNumero()}</td>
+                        <td>${cliente.getTelefono()}</td>
                         <td class="col-1"> <a type="button" class="btn btn-warning" href="/clientes/update/${cliente.getDni()}"> Editar </a></td>
                         <td class="col-1"> <button type="button" class="btn btn-danger no-gutters" onClick="borrar(${cliente.getDni()})"> Eliminar </button></td>
                     </tr>
