@@ -54,9 +54,10 @@ public class ControladorCliente {
         var apellido = ctx.formParamAsClass("txtApellido", String.class).get();
         var calle = ctx.formParamAsClass("txtCalle", String.class).get();
         var numero = ctx.formParamAsClass("txtNumero", Integer.class).get();
+        var telefono = ctx.formParamAsClass("txtTelefono", String.class).get();
 
         // Se crea un nuevo objeto cliente
-        var cliente = new Cliente(dni, nombre, apellido, calle, numero);
+        var cliente = new Cliente(dni, nombre, apellido, calle, numero,telefono);
 
         // Se inicia el proceso de persistencia
         this.interfazClientes.crear(cliente);
@@ -85,8 +86,9 @@ public class ControladorCliente {
         var apellido = ctx.formParamAsClass("txtApellido", String.class).get();
         var calle = ctx.formParamAsClass("txtCalle", String.class).get();
         var numero = ctx.formParamAsClass("txtNumero", Integer.class).get();
+        var telefono = ctx.formParamAsClass("txtTelefono", String.class).get();
 
-        var clientemodificado = new Cliente(dni, nombre, apellido, calle, numero);
+        var clientemodificado = new Cliente(dni, nombre, apellido, calle, numero, telefono);
         this.interfazClientes.modificar(clientemodificado);
         ctx.redirect("/clientes");
     }

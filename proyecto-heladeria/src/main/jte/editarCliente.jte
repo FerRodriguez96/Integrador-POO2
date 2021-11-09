@@ -30,6 +30,10 @@
                         <label for="txtNumero">Numero:</label>
                         <input id="txtNumero" value= "${modelo.cliente.getNumero()}" class="form-control" type="text" name="txtNumero">
                     </div>
+                    <div class="form-group">
+                        <label for="txtTelefono">Telefono:</label>
+                        <input id="txtTelefono" value= "${modelo.cliente.getTelefono()}" class="form-control" type="text" name="txtTelefono">
+                    </div>
                     <br>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Modificar">
