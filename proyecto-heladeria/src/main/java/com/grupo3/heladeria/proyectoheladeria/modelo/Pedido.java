@@ -1,8 +1,7 @@
 package com.grupo3.heladeria.proyectoheladeria.modelo;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,19 +19,11 @@ public class Pedido implements Serializable {
     @GeneratedValue(generator = "sec_ped", strategy = GenerationType.SEQUENCE)
     private int idPedido;
 
-    @ManyToOne
-    @JoinColumn(name="repartidor")
-    private Repartidor repartidor;
-
     @Column(name="fecha")
     private LocalDate fecha;
 
     @Column(name="horario-de-inicio")
-    private LocalDateTime horainicio;
-
-    @OneToMany
-    @JoinColumn(name = "Productos")
-    private List<Producto>productos = new ArrayList<>();
+    private LocalTime horainicio;
 
     @Column(name = "preciofinal")
     private double preciofinal;
@@ -43,9 +34,17 @@ public class Pedido implements Serializable {
     @Column(name= "horario-de-entrega")
     private LocalDateTime horaentrega;
 
+    @OneToMany
+    @JoinColumn(name = "Productos")
+    private List<Producto>productos = new ArrayList<>();
+
     @ManyToOne
     @JoinColumn(name="cliente")
     private Cliente cliente;
+
+    @ManyToOne
+    @JoinColumn(name="repartidor")
+    private Repartidor repartidor;
 
     @OneToOne
     private Pago pago;
@@ -53,6 +52,13 @@ public class Pedido implements Serializable {
 
     public Pedido() {
 
+    }
+
+    public Pedido(LocalDate fecha, LocalTime horainicio, double preciofinal, List<Producto> productos) {
+        this.fecha = LocalDate.now();
+        this.horainicio = LocalTime.now();
+        this.preciofinal = preciofinal;
+        this.productos = productos;
     }
 
     public int getIdPedido() {
@@ -79,11 +85,11 @@ public class Pedido implements Serializable {
         this.fecha = fecha;
     }
 
-    public LocalDateTime getHorainicio() {
+    public LocalTime getHorainicio() {
         return horainicio;
     }
 
-    public void setHorainicio(LocalDateTime horainicio) {
+    public void setHorainicio(LocalTime horainicio) {
         this.horainicio = horainicio;
     }
 
