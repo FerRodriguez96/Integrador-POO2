@@ -34,6 +34,10 @@
                         <label for="txtNumero">Numero:</label>
                         <input id="txtNumero" class="form-control" type="text" name="txtNumero">
                     </div>
+                    <div class="form-group">
+                        <label for="txtTelefono">Telefono:</label>
+                        <input id="txtTelefono" class="form-control" type="text" name="txtTelefono">
+                    </div>
                     <br>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Agregar">

@@ -20,8 +20,12 @@
                         <td>${picole.getSabor()}</td>
                         <td>${picole.getPrecio()}</td>
                         <td>${picole.getCantidad()}</td>
-                        
+                        <!--
                         <td class="col-1"> <a type="button" class="btn btn-info" href="/picoles/update/${picole.getId()}"> Editar </a></td>                            
+                        -->
+                        <td class="col-1"> <a type="button" class="btn btn-info"> Editar </a></td>                            
+                        
+                        
                         <td class="col-1"> <button type="button" class="btn btn-danger no-gutters" onClick="borrar(${picole.getId()})"> Eliminar </button></td>
                     </tr>
                 @endfor

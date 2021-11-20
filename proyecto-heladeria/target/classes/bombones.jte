@@ -21,7 +21,11 @@
                         <td>${bombon.getSabor()}</td>
                         <td>${bombon.getPrecio()}</td>
                         <td>${bombon.getCantidad()}</td>
-                        <td class="col-1"> <a type="button" class="btn btn-info" href="/bombones/update/${bombon.getId()}"> Editar </a></td>                            
+                        <!--
+                        <td class="col-1"> <a type="button" class="btn btn-info" href="/bombones/update/${bombon.getId()}"> Editar </a></td>
+                        -->
+                        <td class="col-1"> <a type="button" class="btn btn-info"> Editar </a></td>
+
                         <td class="col-1"> <button type="button" class="btn btn-danger no-gutters" onClick="borrar(${bombon.getId()})"> Eliminar </button></td>
                     </tr>
                 @endfor

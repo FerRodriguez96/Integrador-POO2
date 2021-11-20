@@ -1,4 +1,5 @@
 package com.grupo3.heladeria.proyectoheladeria.modelo;
+
 import java.io.Serializable;
 import jakarta.persistence.*;
 
@@ -10,9 +11,9 @@ import jakarta.persistence.*;
 
 public class Cliente implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
-	@Id
+    private static final long serialVersionUID = 1L;
+
+    @Id
     @Column(name = "DNI")
     private int dni;
     @Column(name = "NOMBRE")
@@ -22,7 +23,9 @@ public class Cliente implements Serializable {
     @Column(name = "CALLE")
     private String calle;
     @Column(name = "NUMERO")
-    private int numero;
+    private Integer numero;
+    @Column(name = "TELEFONO")
+    private String telefono;
 
     public Cliente() {
 
@@ -37,13 +40,15 @@ public class Cliente implements Serializable {
      * @param apellido apellido del cliente
      * @param calle    nombre de la calle del cliente
      * @param numero   numero de la calle del cliente
+     * @param telefono telefono del cliente
      */
-    public Cliente(int dni, String nombre, String apellido, String calle, int numero) {
+    public Cliente(int dni, String nombre, String apellido, String calle, Integer numero, String telefono) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.calle = calle;
         this.numero = numero;
+        this.telefono = telefono;
     }
 
     /**
@@ -123,7 +128,7 @@ public class Cliente implements Serializable {
      * 
      * @return numero de la calle del cliente
      */
-    public int getNumero() {
+    public Integer getNumero() {
         return numero;
     }
 
@@ -132,16 +137,32 @@ public class Cliente implements Serializable {
      * 
      * @param numero numero de la calle del cliente
      */
-    public void setNumero(int numero) {
+    public void setNumero(Integer numero) {
         this.numero = numero;
+    }
+
+    /**
+     * Obtiene el telefono del cliente
+     * 
+     * @return telefono telefono del cliente
+     */
+    public String getTelefono() {
+        return telefono;
+    }
+
+    /**
+     * Establece el telefono del cliente
+     * 
+     * @param telefono telefono del cliente
+     */
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     @Override
     public String toString() {
         return "Cliente [apellido=" + apellido + ", calle=" + calle + ", dni=" + dni + ", nombre=" + nombre
-                + ", numero=" + numero + "]";
+                + ", numero=" + numero + ", telefono=" + telefono + "]";
     }
-
-    
 
 }
