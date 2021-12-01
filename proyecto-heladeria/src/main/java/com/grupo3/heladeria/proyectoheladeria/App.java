@@ -27,9 +27,7 @@ public class App {
         var repositorioBombones = new RepositorioBombones(emf);
         var controladorBombon = new ControladorBombon(repositorioBombones);
 
-        // creacion de servidor
-        // Javalin app = Javalin.create().start(7000);
-
+        //Creacion del servidor
         Javalin app = Javalin.create(config -> {
             config.addStaticFiles("/public", Location.CLASSPATH);
         }).exception(Exception.class, (e, ctx) -> {

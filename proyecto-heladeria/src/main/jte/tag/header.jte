@@ -29,7 +29,13 @@
                     <a class="nav-link" href="/productos">Productos<span class="sr-only"></span></a>
                 </li>
                 <li>
-                    <a class="nav-link" href="/">Pedidos<span class="sr-only"></span></a>
+                    <a class="nav-link" href="/pedidos">Pedidos<span class="sr-only"></span></a>
+                </li>
+                <li>
+                    <a class="nav-link" href="/proveedores">Proveedores<span class="sr-only"></span></a>
+                </li>
+                <li>
+                    <a class="nav-link" href="/insumos">Insumos<span class="sr-only"></span></a>
                 </li>
             </ul>
         </div>
