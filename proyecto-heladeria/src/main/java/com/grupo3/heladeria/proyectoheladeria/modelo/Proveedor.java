@@ -1,16 +1,20 @@
 package com.grupo3.heladeria.proyectoheladeria.modelo;
 
+import java.io.Serializable;
+
 import jakarta.persistence.*;
 
 @Entity
 @Table (name="PROVEEDOR")
-public class Proveedor {
+public class Proveedor implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @SequenceGenerator(name = "sec_prov", initialValue = 1, allocationSize = 1)
     @GeneratedValue(generator = "sec_prov", strategy = GenerationType.SEQUENCE)
-    @Column(name="idproveedor")
     private int idProveedor;
+
     @Column
     private String nombre;
     @Column

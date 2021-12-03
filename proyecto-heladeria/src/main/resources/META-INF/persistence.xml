@@ -10,8 +10,9 @@ instance" version="2.2" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persiste
         <class>com.grupo3.heladeria.proyectoheladeria.modelo.Producto</class>
         <class>com.grupo3.heladeria.proyectoheladeria.modelo.Picole</class>
         <class>com.grupo3.heladeria.proyectoheladeria.modelo.Bombon</class>
+        <class>com.grupo3.heladeria.proyectoheladeria.modelo.Insumo</class>
+        <class>com.grupo3.heladeria.proyectoheladeria.modelo.Proveedor</class>
         
-        <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/Heladeria" />
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />

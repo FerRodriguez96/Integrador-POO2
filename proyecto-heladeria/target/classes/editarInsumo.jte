@@ -9,10 +9,10 @@
         <div class="card-body">
             <h5 class="card-title">Datos del insumo</h5>
             <p class="card-text">
-                <form action = "/insumos/update/${modelo.insumo.getId()}" method="post">
+                <form action = "/insumos/update/${modelo.insumo.getIdInsumo()}" method="post">
                     <div class="form-group">
                         <label for="txtNombre">Nombre:</label>
-                        <input type="hidden" class="form-control" value = "${modelo.insumo.getId()}" type="integer" name="txtId">
+                        <input type="hidden" class="form-control" value = "${modelo.insumo.getIdInsumo()}" type="integer" name="txtIdInsumo">
                         <input id="txtNombre" value= "${modelo.insumo.getNombre()}" class="form-control" type="text" name="txtNombre">
                     </div>
 

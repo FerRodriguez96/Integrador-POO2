@@ -1,14 +1,20 @@
 package com.grupo3.heladeria.proyectoheladeria.modelo;
 
+import java.io.Serializable;
+
 import jakarta.persistence.*;
 
-public class Insumo {
+@Entity
+@Table(name="INSUMO")
+public class Insumo implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
-    @SequenceGenerator(name = "sec_prov", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(generator = "sec_prov", strategy = GenerationType.SEQUENCE)
-    @Column
+    @SequenceGenerator(name = "sec_insu", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "sec_insu", strategy = GenerationType.SEQUENCE)
     private int idInsumo;
+    
     @Column
     private String nombre;
     @Column

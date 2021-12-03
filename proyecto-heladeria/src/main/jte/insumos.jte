@@ -18,7 +18,7 @@
             <tbody>
                 @for (var insumo : modelo.insumos)
                     <tr>
-                        <td scope="row">${insumos.getIdInsumo}</td>
+                        <td scope="row">${insumo.getIdInsumo()}</td>
                         <td>${insumo.getNombre()}</td>
                         <td>${insumo.getDescripcion()}</td>
                         <td>${insumo.getCantidad()}</td>
