@@ -27,6 +27,12 @@ public class App {
         var repositorioBombones = new RepositorioBombones(emf);
         var controladorBombon = new ControladorBombon(repositorioBombones);
 
+        var repositorioProveedores = new RepositorioProveedores(emf);
+        var controladorProveedor = new ControladorProveedor(repositorioProveedores);
+
+        var repositorioInsumos = new RepositorioInsumos(emf);
+        var controladorInsumo = new ControladorInsumo(repositorioInsumos);
+
         //Creacion del servidor
         Javalin app = Javalin.create(config -> {
             config.addStaticFiles("/public", Location.CLASSPATH);
@@ -128,7 +134,7 @@ public class App {
         // muestra la pantalla de creacion de bombones
         app.get("/bombon/nuevo", controladorBombon::nuevoBombon);
 
-        // muestra la lista de picoles guardados
+        // muestra la lista de bombones guardados
         app.get("/bombones", controladorBombon::listar);
 
         // agrega como nuevo bombon los datos ingresados en el formulario
@@ -139,9 +145,52 @@ public class App {
 
         app.post("/bombones/update/{txtId}", controladorBombon::modificarBombon);
 
-        // elimina un picole
+        // elimina un bombon
         app.delete("/bombones/delete/{txtId}", controladorBombon::eliminarBombon);
+
+        // ==========================================================================
+        // Proveedores
+
+        // muestra la pantalla de creacion de proveedores
+        app.get("/proveedor/nuevo", controladorProveedor::nuevoProveedor);
+
+        // muestra la lista de proveedores guardados
+        app.get("/proveedores", controladorProveedor::listar);
+
+        // agrega como nuevo proveedor los datos ingresados en el formulario
+        app.post("/proveedores", controladorProveedor::agregarProveedor);
+
+        // muestra un formulario para editar proveedores
+        app.get("/proveedores/update/{txdId}", controladorProveedor::editarProveedor);
+
+        app.post("/proveedores/update/{txtId}", controladorProveedor::modificarProveedor);
+
+        // elimina un proveedor
+        app.delete("/proveedores/delete/{txtId}", controladorProveedor::eliminarProveedor);
+
+        // ==========================================================================
+        // Insumos
+
+        // muestra la pantalla de creacion de insumos
+        app.get("/insumo/nuevo", controladorInsumo::nuevoInsumo);
+
+        // muestra la lista de insumos guardados
+        app.get("/insumos", controladorInsumo::listar);
+
+        // agrega como nuevo insumo los datos ingresados en el formulario
+        app.post("/insumos", controladorInsumo::agregarInsumo);
+
+        // muestra un formulario para editar un insumo
+        app.get("/insumos/update/{txdId}", controladorInsumo::editarInsumo);
+
+        app.post("/insumos/update/{txtId}", controladorInsumo::modificarInsumo);
+
+        // elimina un insumo
+        app.delete("/insumos/delete/{txtId}", controladorInsumo::eliminarInsumo);
+
     }
+
+
 
     // Otras funciones
     private static void mostrarIndex(Context ctx) {
