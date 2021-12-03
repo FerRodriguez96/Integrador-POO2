@@ -70,7 +70,7 @@ public class ControladorProveedor {
     public void editarProveedor(Context ctx) throws SQLException {
         // el programa muestra el template para editar proveedores
         var modelo = new ModeloProveedor();
-        modelo.proveedor = this.interfazProveedores.obtener(ctx.pathParamAsClass("txtId", Integer.class).get());
+        modelo.proveedor = this.interfazProveedores.obtener(ctx.pathParamAsClass("txtProveedor", Integer.class).get());
         ctx.render("editarProveedor.jte", Collections.singletonMap("modelo", modelo));
     }
 

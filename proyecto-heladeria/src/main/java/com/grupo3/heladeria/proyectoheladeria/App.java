@@ -121,7 +121,7 @@ public class App {
         app.post("/picoles", controladorPicole::agregarPicole);
 
         // muestra un formulario para editar picoles
-        app.get("/picoles/update/{txdId}", controladorPicole::editarPicole);
+        app.get("/picoles/update/{txtId}", controladorPicole::editarPicole);
 
         app.post("/picole/update/{txtId}", controladorPicole::modificarPicole);
 
@@ -141,7 +141,7 @@ public class App {
         app.post("/bombones", controladorBombon::agregarBombon);
 
         // muestra un formulario para editar bombones
-        app.get("/bombones/update/{txdId}", controladorBombon::editarBombon);
+        app.get("/bombones/update/{txtId}", controladorBombon::editarBombon);
 
         app.post("/bombones/update/{txtId}", controladorBombon::modificarBombon);
 
@@ -161,7 +161,7 @@ public class App {
         app.post("/proveedores", controladorProveedor::agregarProveedor);
 
         // muestra un formulario para editar proveedores
-        app.get("/proveedores/update/{txdId}", controladorProveedor::editarProveedor);
+        app.get("/proveedores/update/{txtId}", controladorProveedor::editarProveedor);
 
         app.post("/proveedores/update/{txtId}", controladorProveedor::modificarProveedor);
 
@@ -181,7 +181,7 @@ public class App {
         app.post("/insumos", controladorInsumo::agregarInsumo);
 
         // muestra un formulario para editar un insumo
-        app.get("/insumos/update/{txdId}", controladorInsumo::editarInsumo);
+        app.get("/insumos/update/{txtId}", controladorInsumo::editarInsumo);
 
         app.post("/insumos/update/{txtId}", controladorInsumo::modificarInsumo);
 

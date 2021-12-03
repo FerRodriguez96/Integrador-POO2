@@ -12,7 +12,7 @@
                 <form action = "/insumos/update/${modelo.insumo.getIdInsumo()}" method="post">
                     <div class="form-group">
                         <label for="txtNombre">Nombre:</label>
-                        <input type="hidden" class="form-control" value = "${modelo.insumo.getIdInsumo()}" type="integer" name="txtIdInsumo">
+                        <input type="hidden" class="form-control" value = "${modelo.insumo.getIdInsumo()}" type="integer" name="txtId">
                         <input id="txtNombre" value= "${modelo.insumo.getNombre()}" class="form-control" type="text" name="txtNombre">
                     </div>
 

@@ -12,7 +12,7 @@
                 <form action = "/proveedores/update/${modelo.proveedor.getIdProveedor()}" method="post">
                     <div class="form-group">
                         <label for="txtNombre">Nombre:</label>
-                        <input type="hidden" class="form-control" value = "${modelo.proveedor.getIdProveedor()}" type="integer" name="txtIdProveedor">
+                        <input type="hidden" class="form-control" value = "${modelo.proveedor.getIdProveedor()}" type="integer" name="txtId">
                         <input id="txtNombre" value= "${modelo.proveedor.getNombre()}" class="form-control" type="text" name="txtNombre">
                     </div>
 
