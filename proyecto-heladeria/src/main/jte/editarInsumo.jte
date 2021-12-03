@@ -18,7 +18,7 @@
 
                     <div class="form-group">
                         <label for="txtDescripcion">Descripcion:</label>
-                        <input id="txtDescripcion" value= "${modelo.insumo.getDescripcion()}" class="form-control" type="float" name="txtDescripcion">
+                        <input id="txtDescripcion" value= "${modelo.insumo.getDescripcion()}" class="form-control" type="text" name="txtDescripcion">
                     </div>
                     
                     <div class="form-group">
