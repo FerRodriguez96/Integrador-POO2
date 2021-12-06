@@ -1,0 +1,4 @@
+# Retrospectiva de la Iteracion 5
+
+En cuanto al contenido de la iteracion, se pretende implementar login en el sistema. Ademas de los objetos documentados en la iteracion, se pretende resolver varios errores conocidos en el apartado de pedidos y pagos. Se pretende presentar el sistema con la menor cantidad de errores posibles y cada parte de este tendra clases de testeo.
+El objetivo es unir todas las iteraciones anteriores para que funcionen de forma cohesiva y coherente. Ademas hacer la mayor cantidad de depuracion tanto de codigo como de metodos de procesamiento, documentar las clases y lograr que el sistema cumpla con necesidades basicas del cliente. 
