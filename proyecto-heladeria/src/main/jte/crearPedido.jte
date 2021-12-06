@@ -25,16 +25,7 @@
             <label for="txtTelefono">Telefono: ${modelo.cliente.getTelefono()}</label>
         </div>
 
-        <!--
-        <div class="card-body">
-            <h6 class="card-title">Datos del producto</h6>
-            <label for="txtId">ID producto: ${modelo.producto.getId()}</label>
-            <br>
-            <label for="txtPrecio">Precio: ${modelo.producto.getPrecio()}</label>
-        </div>
-        -->
-        
-
+        <!--        
         <div class="card-body">
             <h5 class="card-title">Productos</h5>
             <select name="txtIdProducto">
@@ -43,5 +34,5 @@
                 @endfor
             </select>
         </div>
-
+        -->
 @tag.footer()

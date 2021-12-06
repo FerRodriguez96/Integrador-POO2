@@ -12,7 +12,17 @@
                 <form action = "/bombones" method="post">
                     <div class="form-group">
                         <label for="txtSabor">Sabor:</label>
+                        <!--
                         <input id="txtSabor" class="form-control" type="text" name="txtSabor">
+                        -->
+
+                        <select name="txtSabor">
+                            <option value="1">Frutilla</option> 
+                            <option value="2">Vainilla</option> 
+                            <option value="3">Dulce_de_leche</option>
+                            <option value="4">Chantilly</option> 
+                            <option value="5">Surtido</option> 
+                        </select>
                     </div>
 
                     <div class="form-group">
