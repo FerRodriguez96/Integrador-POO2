@@ -25,7 +25,11 @@
             <label for="txtTelefono">Telefono: ${modelo.cliente.getTelefono()}</label>
         </div>
 
-        <!--        
+        <div class="card-header">
+            Seleccionar producto
+        </div>
+
+        <!--
         <div class="card-body">
             <h5 class="card-title">Productos</h5>
             <select name="txtIdProducto">
@@ -35,4 +39,8 @@
             </select>
         </div>
         -->
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Crear Pedido">
+            <a href="/" class="btn btn-primary">Regresar</a>
+        </div>
 @tag.footer()
