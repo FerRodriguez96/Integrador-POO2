@@ -27,6 +27,12 @@ public class App {
         var repositorioBombones = new RepositorioBombones(emf);
         var controladorBombon = new ControladorBombon(repositorioBombones);
 
+        var repositorioProductos = new RepositorioProductos(emf);
+        var controladorProducto = new ControladorProducto(repositorioProductos);
+
+        var repositorioPedidos = new RepositorioPedidos(emf);
+        var controladorPedido = new ControladorPedidos(repositorioPedidos, repositorioClientes, repositorioProductos);
+
         // creacion de servidor
         // Javalin app = Javalin.create().start(7000);
 
@@ -117,7 +123,7 @@ public class App {
         app.post("/picoles", controladorPicole::agregarPicole);
 
         // muestra un formulario para editar picoles
-        app.get("/picoles/update/{txdId}", controladorPicole::editarPicole);
+        app.get("/picoles/update/{txtId}", controladorPicole::editarPicole);
 
         app.post("/picole/update/{txtId}", controladorPicole::modificarPicole);
 
@@ -137,12 +143,21 @@ public class App {
         app.post("/bombones", controladorBombon::agregarBombon);
 
         // muestra un formulario para editar bombones
-        app.get("/bombones/update/{txdId}", controladorBombon::editarBombon);
+        app.get("/bombones/update/{txtId}", controladorBombon::editarBombon);
 
         app.post("/bombones/update/{txtId}", controladorBombon::modificarBombon);
 
-        // elimina un picole
+        // elimina un bombon
         app.delete("/bombones/delete/{txtId}", controladorBombon::eliminarBombon);
+
+        // ==========================================================================
+        // Pedidos
+        app.get("/pedidos", controladorPedido::listar);
+        app.get("/pedido/nuevo", controladorCliente::seleccionar);
+        app.get("/productostest",controladorProducto::listar);
+        app.get("/pedido/nuevo/{txtDni}", controladorPedido::nuevoPedido);
+        app.get("/pedido/nuevo/{txtDni}/producto", controladorProducto::listar);
+        //app.get("/pedido/nuevo/{txtDni}/producto/{txtIdProducto}", controladorProducto::listar);
     }
 
     // Otras funciones
