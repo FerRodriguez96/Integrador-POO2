@@ -1,7 +1,8 @@
 package com.grupo3.heladeria.proyectoheladeria.modelo;
 
 import java.io.Serializable;
-import java.time.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,46 +20,38 @@ public class Pedido implements Serializable {
     @GeneratedValue(generator = "sec_ped", strategy = GenerationType.SEQUENCE)
     private int idPedido;
 
-    @Column(name="fecha")
+    @ManyToOne
+    @JoinColumn(name = "repartidor")
+    private Repartidor repartidor;
+
+    @Column(name = "fecha")
     private LocalDate fecha;
 
-    @Column(name="horario-de-inicio")
-    private LocalTime horainicio;
+    @Column(name = "horario-de-inicio")
+    private LocalDateTime horainicio;
+
+    @OneToMany
+    @JoinColumn(name = "Productos")
+    private List<Producto> productos = new ArrayList<>();
 
     @Column(name = "preciofinal")
     private double preciofinal;
 
-    @Column(name= "estado")
+    @Column(name = "estado")
     private String estado;
 
-    @Column(name= "horario-de-entrega")
+    @Column(name = "horario-de-entrega")
     private LocalDateTime horaentrega;
 
-    @OneToMany
-    @JoinColumn(name = "Productos")
-    private List<Producto>productos = new ArrayList<>();
-
     @ManyToOne
-    @JoinColumn(name="cliente")
+    @JoinColumn(name = "cliente")
     private Cliente cliente;
-
-    @ManyToOne
-    @JoinColumn(name="repartidor")
-    private Repartidor repartidor;
 
     @OneToOne
     private Pago pago;
 
-
     public Pedido() {
 
-    }
-
-    public Pedido(LocalDate fecha, LocalTime horainicio, double preciofinal, List<Producto> productos) {
-        this.fecha = LocalDate.now();
-        this.horainicio = LocalTime.now();
-        this.preciofinal = preciofinal;
-        this.productos = productos;
     }
 
     public int getIdPedido() {
@@ -85,11 +78,11 @@ public class Pedido implements Serializable {
         this.fecha = fecha;
     }
 
-    public LocalTime getHorainicio() {
+    public LocalDateTime getHorainicio() {
         return horainicio;
     }
 
-    public void setHorainicio(LocalTime horainicio) {
+    public void setHorainicio(LocalDateTime horainicio) {
         this.horainicio = horainicio;
     }
 
@@ -148,7 +141,4 @@ public class Pedido implements Serializable {
                 + ", productos=" + productos + ", repartidor=" + repartidor + "]";
     }
 
-    
-
- 
 }

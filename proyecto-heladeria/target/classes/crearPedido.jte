@@ -25,16 +25,11 @@
             <label for="txtTelefono">Telefono: ${modelo.cliente.getTelefono()}</label>
         </div>
 
-        <!--
-        <div class="card-body">
-            <h6 class="card-title">Datos del producto</h6>
-            <label for="txtId">ID producto: ${modelo.producto.getId()}</label>
-            <br>
-            <label for="txtPrecio">Precio: ${modelo.producto.getPrecio()}</label>
+        <div class="card-header">
+            Seleccionar producto
         </div>
-        -->
-        
 
+        <!--
         <div class="card-body">
             <h5 class="card-title">Productos</h5>
             <select name="txtIdProducto">
@@ -43,5 +38,9 @@
                 @endfor
             </select>
         </div>
-
+        -->
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Crear Pedido">
+            <a href="/" class="btn btn-primary">Regresar</a>
+        </div>
 @tag.footer()

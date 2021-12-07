@@ -55,8 +55,8 @@ public class ControladorBombon {
         var precio = ctx.formParamAsClass("txtPrecio", Float.class).get();
         var cantidad = ctx.formParamAsClass("txtCantidad", Integer.class).get();
         var bombon = new Bombon();
-
-        // Por algún motivo no funciona swicht aquí
+        
+        
         switch (sabor) {
         case 1:
             bombon = new Bombon(precio, Sabores.Frutilla, cantidad);
@@ -106,11 +106,29 @@ public class ControladorBombon {
         // editar
         modelo.bombon = this.interfazBombones.obtener((ctx.pathParamAsClass("txtId", Integer.class).get()));
         var id = ctx.formParamAsClass("txtId", Integer.class).get();
-        var sabor = ctx.formParamAsClass("txtSabor", Sabores.class).get();
+        var varsabor = ctx.formParamAsClass("txtSabor", Integer.class).get();
         var precio = ctx.formParamAsClass("txtPrecio", float.class).get();
         var cantidad = ctx.formParamAsClass("txtCantidad", Integer.class).get();
-
-        var bombonModificado = new Bombon(precio, sabor, cantidad);
+        switch (varsabor) {
+            case 1:
+                modelo.bombon.setSabor(Sabores.Frutilla);
+                break;
+            case 2:
+                modelo.bombon.setSabor(Sabores.Vainilla);
+                
+                break;
+            case 3:
+                modelo.bombon.setSabor(Sabores.Dulce_de_leche);
+                
+                break;
+            case 4:
+                modelo.bombon.setSabor(Sabores.Chantilly);
+                break;
+            default:
+                modelo.bombon.setSabor(Sabores.Surtido);
+                break;
+        }
+        var bombonModificado = new Bombon(precio, modelo.bombon.getSabor(), cantidad);
         bombonModificado.setIdProducto(id);
         this.interfazBombones.modificar(bombonModificado);
         ctx.redirect("/bombones");

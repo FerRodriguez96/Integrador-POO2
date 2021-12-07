@@ -75,4 +75,9 @@ public abstract class Producto implements Serializable {
         return "Productos [idProducto=" + idProducto + ", precio=" + precio + "]";
     }
 
+    // Devuelve el tipo de producto
+    @Transient
+    public String getTipoProducto() {
+        return this.getClass().getAnnotation(DiscriminatorValue.class).value();
+    }
 }

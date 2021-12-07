@@ -3,7 +3,7 @@ package com.grupo3.heladeria.proyectoheladeria.controladores;
 import java.sql.SQLException;
 import java.util.Collections;
 
-import com.grupo3.heladeria.proyectoheladeria.modelo.Producto;
+
 import com.grupo3.heladeria.proyectoheladeria.repositorios.InterfazProductos;
 import com.grupo3.heladeria.proyectoheladeria.paginas.ModeloProductos;
 import com.grupo3.heladeria.proyectoheladeria.paginas.ModeloProducto;
@@ -118,7 +118,7 @@ public class ControladorProducto {
         modelo.producto = this.interfazProductos.obtener((ctx.pathParamAsClass("txtId", Integer.class).get()));
         var id = ctx.formParamAsClass("txtId", Integer.class).get();
         var precio = ctx.formParamAsClass("txtPrecio", float.class).get();
-        
+
         //var productoModificado = new Producto();
         //productoModificado.setIdProducto(id);
         //this.interfazProductos.modificar(productoModificado);

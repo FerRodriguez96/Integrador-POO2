@@ -1,4 +1,4 @@
-@param com.grupo3.heladeria.proyectoheladeria.paginas.ModeloPicoles modelo
+@param com.grupo3.heladeria.proyectoheladeria.paginas.ModeloPicole modelo
 
 @tag.header()
 
@@ -11,11 +11,16 @@
             <p class="card-text">
                 <form action = "/picoles/update/${modelo.picole.getId()}" method="post">
                     <div class="form-group">
+                        
                         <label for="txtSabor">Sabor:</label>
-                        <input type="hidden" class="form-control" value = "${modelo.picole.getId()}" type="integer" name= "txtId">
-                        <input id="txtSabor" value= "${modelo.picole.getSabor()}" class="form-control" type="text" name="txtSabor">
+                        
+                        <input type="hidden" class="form-control" value = "${modelo.picole.getId()}" type="integer" name="txtId">
+                        <select name="txtSabor">
+                            <option value="1">Surtido</option> 
+                        </select>
+                        
                     </div>
-
+                    
                     <div class="form-group">
                         <label for="txtPrecio">Precio:</label>
                         <input id="txtPrecio" value= "${modelo.picole.getPrecio()}" class="form-control" type="float" name="txtPrecio">

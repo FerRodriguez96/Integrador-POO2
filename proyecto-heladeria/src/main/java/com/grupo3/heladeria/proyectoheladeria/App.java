@@ -129,7 +129,7 @@ public class App {
         // muestra un formulario para editar picoles
         app.get("/picoles/update/{txtId}", controladorPicole::editarPicole);
 
-        app.post("/picole/update/{txtId}", controladorPicole::modificarPicole);
+        app.post("/picoles/update/{txtId}", controladorPicole::modificarPicole);
 
         // elimina un picole
         app.delete("/picoles/delete/{txtId}", controladorPicole::eliminarPicole);
@@ -200,6 +200,7 @@ public class App {
         app.get("/pedido/nuevo", controladorCliente::seleccionar);
         app.get("/productostest",controladorProducto::listar);
         app.get("/pedido/nuevo/{txtDni}", controladorPedido::nuevoPedido);
+        app.post("/pedido/nuevo/{txtDni}", controladorPedido::agregarPedido);
         //app.get("/pedido/nuevo/{txtDni}/producto", controladorProducto::listar);
         //app.get("/pedido/nuevo/{txtDni}/producto/{txtIdProducto}", controladorProducto::listar);
     }

@@ -107,7 +107,7 @@ public class ControladorPicole {
             picoleModificado = new Picole(precio, Sabores.Surtido, cantidad);
         }
         picoleModificado.setId(id);
-        // var picoleModificado = new Picole(precio, Sabores.Surtido, cantidad);
+        //picoleModificado = new Picole(precio, Sabores.Surtido, cantidad);
         this.interfazPicoles.modificar(picoleModificado);
         ctx.redirect("/picoles");
     }

@@ -15,9 +15,6 @@
                         <label for="txtSabor">Sabor:</label>
                         
                         <input type="hidden" class="form-control" value = "${modelo.bombon.getId()}" type="integer" name="txtId">
-                        <!--
-                        <input id="txtSabor" value= "${modelo.bombon.getSabor()}" class="form-control" type="text" name="txtSabor">
-                        -->
                         <select name="txtSabor">
                             <option value="1">Frutilla</option> 
                             <option value="2">Vainilla</option> 

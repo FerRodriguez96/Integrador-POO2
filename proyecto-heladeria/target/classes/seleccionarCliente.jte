@@ -26,7 +26,7 @@
                         <td>${cliente.getCalle()}</td>
                         <td>${cliente.getNumero()}</td>
                         <td>${cliente.getTelefono()}</td>
-                        <td class="col-1"> <a type="button" class="btn btn-warning" href="/pedido/nuevo/${cliente.getDni()}/producto"> Seleccionar </a></td>
+                        <td class="col-1"> <a type="button" class="btn btn-warning" href="/pedido/nuevo/${cliente.getDni()}"> Seleccionar </a></td>
                     </tr>
                 @endfor
             </tbody>

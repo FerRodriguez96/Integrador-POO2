@@ -12,7 +12,7 @@ public class Pago {
     protected int idPago;
     private Pedido pedido;
     private double total;
-    private Estado_Pago estado;
+    private EstadoPago estado;
 
     public Pago() {
     }
@@ -25,7 +25,7 @@ public class Pago {
 
     public Pago(Pedido pedido) {
         this.pedido = pedido;
-        this.estado = Estado_Pago.Pendiente;
+        this.estado = EstadoPago.PENDIENTE;
         this.total = pedido.getPreciofinal();
     }
 
@@ -88,7 +88,7 @@ public class Pago {
      * 
      * @return Estado_Pago
      */
-    public Estado_Pago getEstado() {
+    public EstadoPago getEstado() {
         return estado;
     }
 
@@ -97,7 +97,7 @@ public class Pago {
      * 
      * @param estado
      */
-    public void setEstado(Estado_Pago estado) {
+    public void setEstado(EstadoPago estado) {
         this.estado = estado;
     }
 
