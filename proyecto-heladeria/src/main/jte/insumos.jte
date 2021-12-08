@@ -3,7 +3,7 @@
 @tag.header()
 
     <h2> Insumos </h2>
-    <a href="/" type="button" class="btn btn-secondary"> Volver </a>
+    <a href="/index" type="button" class="btn btn-secondary"> Volver </a>
     <div class="table-responsive">
         <table class="table table-light">
             <thead class="thead-light">

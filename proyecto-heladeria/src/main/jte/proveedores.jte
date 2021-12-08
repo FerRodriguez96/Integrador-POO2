@@ -2,7 +2,7 @@
 
 @tag.header()
 
-    <a href="/" type="button" class="btn btn-secondary"> Volver </a>
+    <a href="/index" type="button" class="btn btn-secondary"> Volver </a>
     <h2> Proveedores </h2>
     <div class="table-responsive">
         <table class="table table-light">
