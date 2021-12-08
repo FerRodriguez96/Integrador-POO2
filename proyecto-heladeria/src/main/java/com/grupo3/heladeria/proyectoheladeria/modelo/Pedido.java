@@ -9,45 +9,46 @@ import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Pedidos")
+@Table(name = "PEDIDOS")
 public class Pedido implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "IdPedido")
+    @Column(name = "IDPEDIDO")
     @SequenceGenerator(name = "sec_ped", initialValue = 1, allocationSize = 1)
     @GeneratedValue(generator = "sec_ped", strategy = GenerationType.SEQUENCE)
     private int idPedido;
 
     @ManyToOne
-    @JoinColumn(name = "repartidor")
+    @JoinColumn(name = "REPARTIDOR")
     private Repartidor repartidor;
 
-    @Column(name = "fecha")
+    @Column(name = "FECHA")
     private LocalDate fecha;
 
-    @Column(name = "horario-de-inicio")
+    @Column(name = "HORAINICIO")
     private LocalDateTime horainicio;
 
     @OneToMany
-    @JoinColumn(name = "Productos")
+    @JoinColumn(name = "PRODUCTOS")
     private List<Producto> productos = new ArrayList<>();
 
-    @Column(name = "preciofinal")
+    @Column(name = "PRECIOFINAL")
     private double preciofinal;
 
-    @Column(name = "estado")
+    @Column(name = "ESTADO")
     private String estado;
 
-    @Column(name = "horario-de-entrega")
+    @Column(name = "HORAENTREGA")
     private LocalDateTime horaentrega;
 
     @ManyToOne
-    @JoinColumn(name = "cliente")
+    @JoinColumn(name = "CLIENTE")
     private Cliente cliente;
 
     @OneToOne
+    @JoinColumn(name = "PAGO")
     private Pago pago;
 
     public Pedido() {
@@ -89,7 +90,10 @@ public class Pedido implements Serializable {
     public List<Producto> getProductos() {
         return productos;
     }
-
+    public void addProducto(Producto producto){
+        productos.add(producto);
+    }
+    
     public void setProductos(List<Producto> productos) {
         this.productos = productos;
     }

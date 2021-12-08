@@ -1,6 +1,9 @@
 package com.grupo3.heladeria.proyectoheladeria;
 
 import com.grupo3.heladeria.proyectoheladeria.controladores.*;
+import com.grupo3.heladeria.proyectoheladeria.modelo.Cliente;
+import com.grupo3.heladeria.proyectoheladeria.modelo.Picole;
+import com.grupo3.heladeria.proyectoheladeria.modelo.Sabores;
 import com.grupo3.heladeria.proyectoheladeria.repositorios.*;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
@@ -51,6 +54,17 @@ public class App {
         app.get("/empleados", App::mostrarEmpleados);
         app.get("/tipoProducto", App::mostrarTipoProducto);
         app.get("/productos", App::mostrarProductos);
+
+        // ==========================================================================
+        // Pedidos
+        app.get("/pedidos", controladorPedido::listar);
+        app.get("/pedido/nuevo", controladorCliente::seleccionar);
+        app.get("/productostest",controladorProducto::listar);
+        app.get("/pedido/nuevo/{txtDni}", controladorPedido::nuevoPedido);
+        app.get("/pedido/nuevo/{txtDni}/producto", controladorPedido::listarProductos);
+        app.post("/pedido/nuevo/{txtDni}/producto", controladorPedido::agregarPedido);
+        app.post("/pedido/nuevo/{txtDni}", controladorPedido::agregarPedido);
+        //app.get("/pedido/nuevo/{txtDni}/producto/{txtIdProducto}", controladorProducto::listar);
 
         // ==========================================================================
         // clientes
@@ -193,16 +207,15 @@ public class App {
 
         // elimina un insumo
         app.delete("/insumos/delete/{txtId}", controladorInsumo::eliminarInsumo);
-        
-        // ==========================================================================
-        // Pedidos
-        app.get("/pedidos", controladorPedido::listar);
-        app.get("/pedido/nuevo", controladorCliente::seleccionar);
-        app.get("/productostest",controladorProducto::listar);
-        app.get("/pedido/nuevo/{txtDni}", controladorPedido::nuevoPedido);
-        app.post("/pedido/nuevo/{txtDni}", controladorPedido::agregarPedido);
-        //app.get("/pedido/nuevo/{txtDni}/producto", controladorProducto::listar);
-        //app.get("/pedido/nuevo/{txtDni}/producto/{txtIdProducto}", controladorProducto::listar);
+
+        //Prueba
+        var picole = new Picole();
+        picole.setCantidad(10);
+        picole.setSabor(Sabores.Surtido);
+        picole.setPrecio((float) 20.0);
+        repositorioPicoles.crear(picole);
+        var cliente = new Cliente(41303618, "Ruben", "Viera", "Escalada", 670, "3756508697");
+        repositorioClientes.crear(cliente);
     }
 
     // Otras funciones

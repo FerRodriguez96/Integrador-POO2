@@ -11,8 +11,8 @@
             <p class="card-text">
                 <form action = "/picoles" method="post">
                     <div class="form-group">
-                        <label for="txtSabor">Sabor:</label>
-                        <input id="txtSabor" class="form-control" type="sabores" name="txtSabor">
+                        <label for="txtSabor" type="hidden">Sabor: Surtido</label>
+                        <input id="txtSabor" class="form-control" name="txtSabor" type="hidden" value="1">
                     </div>
 
                     <div class="form-group">

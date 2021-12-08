@@ -10,8 +10,12 @@ public class Pago {
     @GeneratedValue(generator = "sec_pago", strategy = GenerationType.SEQUENCE)
     @Column(name = "IDPAGO")
     protected int idPago;
+    @OneToOne
+    @JoinColumn(name = "pedido")
     private Pedido pedido;
+    @Column(name = "total")
     private double total;
+    @Column(name = "estadopago")
     private EstadoPago estado;
 
     public Pago() {

@@ -64,7 +64,7 @@ public class ControladorProducto {
     public void agregarProducto(Context ctx) throws SQLException {
 
         // Se obtienen los datos del formulario
-        var precio = ctx.formParamAsClass("txtPrecio", Float.class).get();
+        //var precio = ctx.formParamAsClass("txtPrecio", Float.class).get();
         //var producto = new Producto();
         /*
         // Por algún motivo no funciona swicht aquí
@@ -116,10 +116,10 @@ public class ControladorProducto {
         // se le pasa al proceso de persistencia el sabor del producto que se quiere
         // editar
         modelo.producto = this.interfazProductos.obtener((ctx.pathParamAsClass("txtId", Integer.class).get()));
-        var id = ctx.formParamAsClass("txtId", Integer.class).get();
-        var precio = ctx.formParamAsClass("txtPrecio", float.class).get();
+        //var id = ctx.formParamAsClass("txtId", Integer.class).get();
+        //var precio = ctx.formParamAsClass("txtPrecio", float.class).get();
 
-        //var productoModificado = new Producto();
+        //var productoModificado = new Producto(precio);
         //productoModificado.setIdProducto(id);
         //this.interfazProductos.modificar(productoModificado);
         ctx.redirect("/productos");
