@@ -49,7 +49,8 @@ public class App {
             ctx.status(404);
         }).start(7000);
 
-        app.get("/", App::mostrarIndex); // muestra el index
+        app.get("/", App::mostrarLogin); // muestra la pantalla de login
+        app.get("/index", App::mostrarIndex); // muestra el index
         app.get("/tipoEmpleado", App::mostrarTipoEmpleado);
         app.get("/empleados", App::mostrarEmpleados);
         app.get("/tipoProducto", App::mostrarTipoProducto);
@@ -221,6 +222,10 @@ public class App {
     // Otras funciones
     private static void mostrarIndex(Context ctx) {
         ctx.render("index.jte");
+    }
+
+    private static void mostrarLogin(Context ctx) {
+        ctx.render("login.jte");
     }
 
     private static void mostrarTipoEmpleado(Context ctx) {
