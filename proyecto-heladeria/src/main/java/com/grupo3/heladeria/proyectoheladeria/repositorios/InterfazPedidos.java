@@ -13,4 +13,5 @@ public interface InterfazPedidos {
 
     Pedido obtener(int id);
 
+    Pedido modificar (Pedido pedido);
 }

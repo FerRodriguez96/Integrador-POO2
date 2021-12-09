@@ -18,12 +18,12 @@ public class Picole extends Producto {
     }
 
     /**
-     * Crea un Picole al que se le pasa los datos del precio, sabor y cantidad del
-     * picole
+     * Crea un Picole al que se le pasa los datos del precio, sabor y cantidad de
+     * unidades del paquete picole
      * 
      * @param precio   Precio del Picole
      * @param sabor    Sabor del Picole
-     * @param cantidad Cantidad de Picoles
+     * @param cantidad Cantidad de Picoles que vienen en un paquete
      */
     public Picole(float precio, Sabores sabor, int cantidad) {
         super(precio);

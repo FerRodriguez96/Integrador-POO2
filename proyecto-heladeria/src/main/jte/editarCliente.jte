@@ -37,7 +37,7 @@
                     <br>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Modificar">
-                        <a href="/index" class="btn btn-primary">Regresar</a>
+                        <a href="/clientes" class="btn btn-primary">Regresar</a>
                     </div>
                 </form>
             </p>

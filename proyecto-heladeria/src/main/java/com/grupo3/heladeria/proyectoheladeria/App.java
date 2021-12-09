@@ -1,9 +1,11 @@
 package com.grupo3.heladeria.proyectoheladeria;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.grupo3.heladeria.proyectoheladeria.controladores.*;
-import com.grupo3.heladeria.proyectoheladeria.modelo.Cliente;
-import com.grupo3.heladeria.proyectoheladeria.modelo.Picole;
-import com.grupo3.heladeria.proyectoheladeria.modelo.Sabores;
+import com.grupo3.heladeria.proyectoheladeria.modelo.*;
 import com.grupo3.heladeria.proyectoheladeria.repositorios.*;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
@@ -14,6 +16,7 @@ public class App {
     public static void main(String[] args) {
         var emf = Persistence.createEntityManagerFactory("persistencia");
 
+        // ==========================================================================
         // repositorios y controladores
         var repositorioClientes = new RepositorioClientes(emf);
         var controladorCliente = new ControladorCliente(repositorioClientes);
@@ -34,7 +37,7 @@ public class App {
         var controladorProducto = new ControladorProducto(repositorioProductos);
 
         var repositorioPedidos = new RepositorioPedidos(emf);
-        var controladorPedido = new ControladorPedidos(repositorioPedidos, repositorioClientes, repositorioProductos);
+        var controladorPedido = new ControladorPedidos(repositorioPedidos, repositorioClientes, repositorioProductos, repositorioRepartidores);
 
         var repositorioProveedores = new RepositorioProveedores(emf);
         var controladorProveedor = new ControladorProveedor(repositorioProveedores);
@@ -42,7 +45,9 @@ public class App {
         var repositorioInsumos = new RepositorioInsumos(emf);
         var controladorInsumo = new ControladorInsumo(repositorioInsumos);
 
+        // ==========================================================================
         // creacion de servidor
+
         Javalin app = Javalin.create(config -> {
             config.addStaticFiles("/public", Location.CLASSPATH);
         }).exception(Exception.class, (e, ctx) -> {
@@ -55,17 +60,6 @@ public class App {
         app.get("/empleados", App::mostrarEmpleados);
         app.get("/tipoProducto", App::mostrarTipoProducto);
         app.get("/productos", App::mostrarProductos);
-
-        // ==========================================================================
-        // Pedidos
-        app.get("/pedidos", controladorPedido::listar);
-        app.get("/pedido/nuevo", controladorCliente::seleccionar);
-        app.get("/productostest",controladorProducto::listar);
-        app.get("/pedido/nuevo/{txtDni}", controladorPedido::nuevoPedido);
-        app.get("/pedido/nuevo/{txtDni}/producto", controladorPedido::listarProductos);
-        app.post("/pedido/nuevo/{txtDni}/producto", controladorPedido::agregarPedido);
-        app.post("/pedido/nuevo/{txtDni}", controladorPedido::agregarPedido);
-        //app.get("/pedido/nuevo/{txtDni}/producto/{txtIdProducto}", controladorProducto::listar);
 
         // ==========================================================================
         // clientes
@@ -123,6 +117,7 @@ public class App {
 
         // muestra un formulario para editar repartidores
         app.get("/repartidores/update/{txtDni}", controladorRepartidores::editarRepartidor);
+
         // modifica el repartidor
         app.post("/repartidores/update/{txtDni}", controladorRepartidores::modificarRepartidor);
 
@@ -144,6 +139,7 @@ public class App {
         // muestra un formulario para editar picoles
         app.get("/picoles/update/{txtId}", controladorPicole::editarPicole);
 
+        // modifica el picole
         app.post("/picoles/update/{txtId}", controladorPicole::modificarPicole);
 
         // elimina un picole
@@ -164,6 +160,7 @@ public class App {
         // muestra un formulario para editar bombones
         app.get("/bombones/update/{txtId}", controladorBombon::editarBombon);
 
+        // modifica el bombon
         app.post("/bombones/update/{txtId}", controladorBombon::modificarBombon);
 
         // elimina un bombon
@@ -184,6 +181,7 @@ public class App {
         // muestra un formulario para editar proveedores
         app.get("/proveedores/update/{txtId}", controladorProveedor::editarProveedor);
 
+        // modifica el proveedor
         app.post("/proveedores/update/{txtId}", controladorProveedor::modificarProveedor);
 
         // elimina un proveedor
@@ -204,10 +202,24 @@ public class App {
         // muestra un formulario para editar un insumo
         app.get("/insumos/update/{txtId}", controladorInsumo::editarInsumo);
 
+        // modifica el insumo
         app.post("/insumos/update/{txtId}", controladorInsumo::modificarInsumo);
 
         // elimina un insumo
         app.delete("/insumos/delete/{txtId}", controladorInsumo::eliminarInsumo);
+
+        // ==========================================================================
+        // Pedidos
+        // muestra la lista de pedidos
+        app.get("/pedidos", controladorPedido::listar);
+        app.get("/pedido/nuevo", controladorCliente::seleccionar);
+        app.get("/pedido/nuevo/{txtDni}", controladorPedido::nuevoPedido);
+        app.get("/pedido/nuevo/{txtDni}/producto", controladorPedido::listarProductos);
+        app.post("/pedido/nuevo/{txtDni}/producto", controladorPedido::agregarPedido);
+        app.post("/pedido/nuevo/{txtDni}", controladorPedido::agregarPedido);
+        app.get("/pedido/{txtId}/repartidor", controladorPedido::listarRepartidor);
+        app.post("/pedido/{txtId}/repartidor", controladorPedido::asignarRepartidor);
+        app.get("/pedido/{txtId}/repartidor/{txtIdRepartidor}", controladorPedido::asignarRepartidor);
 
         //Prueba
         var picole = new Picole();
@@ -215,8 +227,36 @@ public class App {
         picole.setSabor(Sabores.Surtido);
         picole.setPrecio((float) 20.0);
         repositorioPicoles.crear(picole);
-        var cliente = new Cliente(41303618, "Ruben", "Viera", "Escalada", 670, "3756508697");
+        var bombon = new Bombon();
+        bombon.setCantidad(10);
+        bombon.setSabor(Sabores.Dulce_de_leche);
+        bombon.setPrecio((float) 50.0);
+        repositorioBombones.crear(bombon);
+
+        var cliente = new Cliente(450489785, "Juanito", "Rodriguez", "San Martin", 670, "3754897865");
         repositorioClientes.crear(cliente);
+        var repartidor = new Repartidor(123456789, "Pepito", "Salazar", "3764152436", "correo@correo");
+        repositorioRepartidores.crear(repartidor);
+
+        var pedido = new Pedido();
+        pedido.setCliente(cliente);
+        List <Producto> productos = new ArrayList<>();
+        productos.add(picole);
+        pedido.setProductos(productos);
+        pedido.setFecha(LocalDate.now());
+        pedido.setEstado("PENDIENTE");
+        //pedido.setRepartidor(repartidor);
+        
+        double preciofinal = 0;
+        preciofinal = preciofinal + pedido.getProductos().get(0).getPrecio();
+        pedido.setPreciofinal(preciofinal);
+        repositorioPedidos.crear(pedido);
+        repositorioPedidos.obtener(1).toString();
+        pedido.toString();
+        if(pedido.getRepartidor() == null){
+            System.out.println("No tiene repartidor");
+        }
+
     }
 
     // Otras funciones

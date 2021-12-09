@@ -140,9 +140,9 @@ public class Pedido implements Serializable {
 
     @Override
     public String toString() {
-        return "Pedido [cliente=" + cliente + ", estado=" + estado + ", fecha=" + fecha + ", horaentrega=" + horaentrega
+        return "Pedido [cliente=" + cliente + " ,\n estado=" + estado + ", fecha=" + fecha + ", horaentrega=" + horaentrega
                 + ", horainicio=" + horainicio + ", idPedido=" + idPedido + ", preciofinal=" + preciofinal
-                + ", productos=" + productos + ", repartidor=" + repartidor + "]";
+                + ",\n productos=" + productos + ",\n repartidor=" + repartidor + "]";
     }
 
 }

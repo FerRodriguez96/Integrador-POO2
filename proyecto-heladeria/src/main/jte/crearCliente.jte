@@ -1,6 +1,4 @@
 @tag.header()
-
-
     <br>
     <div class="card">
         <div class="card-header">
@@ -45,8 +43,6 @@
                     </div>
                 </form>
             </p>
-
         </div>
     </div>
-
 @tag.footer()

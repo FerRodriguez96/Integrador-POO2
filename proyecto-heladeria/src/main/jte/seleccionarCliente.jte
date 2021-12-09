@@ -16,7 +16,6 @@
                     <th scope="col">Telefono</th>
                 </tr>
             </thead>
-
             <tbody>
                 @for (var cliente : modelo.clientes)
                     <tr>
@@ -28,7 +27,7 @@
                         <td>${cliente.getTelefono()}</td>
                         <td class="col-1"> <a type="button" class="btn btn-warning" href="/pedido/nuevo/${cliente.getDni()}"> Seleccionar </a></td>
                     </tr>
-                @endfor
+                @endfor 
             </tbody>
         </table>
     </div>

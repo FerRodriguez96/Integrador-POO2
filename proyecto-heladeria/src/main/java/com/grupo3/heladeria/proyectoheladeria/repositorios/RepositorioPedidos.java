@@ -64,4 +64,20 @@ public class RepositorioPedidos implements InterfazPedidos {
         em.close();
         return (pedido != null);
     }
+
+    @Override
+    public Pedido modificar(Pedido pedido) {
+        var em = emf.createEntityManager();
+        try {
+            if (pedido != null) {
+                em.getTransaction().begin();
+                em.merge(pedido);
+                em.getTransaction().commit();
+            }
+        } catch (Exception e) {
+            System.out.println("No se puede modificar el pedido");
+        }
+        em.close();
+        return pedido;
+    }
 }
