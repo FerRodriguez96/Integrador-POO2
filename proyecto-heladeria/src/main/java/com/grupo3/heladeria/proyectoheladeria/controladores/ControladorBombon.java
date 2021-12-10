@@ -3,7 +3,6 @@ package com.grupo3.heladeria.proyectoheladeria.controladores;
 import java.sql.SQLException;
 import java.util.Collections;
 
-//import com.grupo3.heladeria.proyectoheladeria.modelo.Sabor;
 import com.grupo3.heladeria.proyectoheladeria.modelo.Sabores;
 import com.grupo3.heladeria.proyectoheladeria.modelo.Bombon;
 import com.grupo3.heladeria.proyectoheladeria.repositorios.InterfazBombones;
@@ -27,7 +26,7 @@ public class ControladorBombon {
         // Se obtienen los datos de la clase
         var modelo = new ModeloBombones();
 
-        // Se pasan los datos a el metodo listar
+        // Se pasan los datos al metodo listar
         modelo.bombones = interfazBombones.listar();
 
         // Se imprime por consola la lista de bombones
@@ -56,7 +55,6 @@ public class ControladorBombon {
         var cantidad = ctx.formParamAsClass("txtCantidad", Integer.class).get();
         var bombon = new Bombon();
 
-        // Por algún motivo no funciona swicht aquí
         switch (sabor) {
         case 1:
             bombon = new Bombon(precio, Sabores.Frutilla, cantidad);
@@ -75,9 +73,6 @@ public class ControladorBombon {
             break;
         }
 
-        // Se crea un nuevo objeto bombon
-        // var bombon = new Bombon(precio, sabor, cantidad);
-
         // Se inicia el proceso de persistencia
         this.interfazBombones.crear(bombon);
 
@@ -93,6 +88,7 @@ public class ControladorBombon {
 
         var modelo = new ModeloBombon();
         modelo.bombon = this.interfazBombones.obtener(ctx.pathParamAsClass("txtId", Integer.class).get());
+        // el programa muestra el template para editar el bombon
         ctx.render("editarBombon.jte", Collections.singletonMap("modelo", modelo));
     }
 
@@ -106,11 +102,29 @@ public class ControladorBombon {
         // editar
         modelo.bombon = this.interfazBombones.obtener((ctx.pathParamAsClass("txtId", Integer.class).get()));
         var id = ctx.formParamAsClass("txtId", Integer.class).get();
-        var sabor = ctx.formParamAsClass("txtSabor", Sabores.class).get();
+        var varsabor = ctx.formParamAsClass("txtSabor", Integer.class).get();
         var precio = ctx.formParamAsClass("txtPrecio", float.class).get();
         var cantidad = ctx.formParamAsClass("txtCantidad", Integer.class).get();
-
-        var bombonModificado = new Bombon(precio, sabor, cantidad);
+        switch (varsabor) {
+            case 1:
+                modelo.bombon.setSabor(Sabores.Frutilla);
+                break;
+            case 2:
+                modelo.bombon.setSabor(Sabores.Vainilla);
+                
+                break;
+            case 3:
+                modelo.bombon.setSabor(Sabores.Dulce_de_leche);
+                
+                break;
+            case 4:
+                modelo.bombon.setSabor(Sabores.Chantilly);
+                break;
+            default:
+                modelo.bombon.setSabor(Sabores.Surtido);
+                break;
+        }
+        var bombonModificado = new Bombon(precio, modelo.bombon.getSabor(), cantidad);
         bombonModificado.setIdProducto(id);
         this.interfazBombones.modificar(bombonModificado);
         ctx.redirect("/bombones");
@@ -123,7 +137,6 @@ public class ControladorBombon {
         // se le pasa al proceso de persistencia el sabor del bombon que se quiere
         // eliminar
         this.interfazBombones.borrar(ctx.pathParamAsClass("txtId", Integer.class).get());
-
     }
 
 }

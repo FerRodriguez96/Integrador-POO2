@@ -1,7 +1,9 @@
 package com.grupo3.heladeria.proyectoheladeria.modelo;
 
 import jakarta.persistence.*;
-
+    /**
+     * Representa un pago
+     */
 @Entity
 @Table(name = "PAGOS")
 public class Pago {
@@ -10,9 +12,13 @@ public class Pago {
     @GeneratedValue(generator = "sec_pago", strategy = GenerationType.SEQUENCE)
     @Column(name = "IDPAGO")
     protected int idPago;
+    @OneToOne
+    @JoinColumn(name = "pedido")
     private Pedido pedido;
+    @Column(name = "total")
     private double total;
-    private Estado_Pago estado;
+    @Column(name = "estadopago")
+    private EstadoPago estado;
 
     public Pago() {
     }
@@ -25,7 +31,7 @@ public class Pago {
 
     public Pago(Pedido pedido) {
         this.pedido = pedido;
-        this.estado = Estado_Pago.Pendiente;
+        this.estado = EstadoPago.PENDIENTE;
         this.total = pedido.getPreciofinal();
     }
 
@@ -88,7 +94,7 @@ public class Pago {
      * 
      * @return Estado_Pago
      */
-    public Estado_Pago getEstado() {
+    public EstadoPago getEstado() {
         return estado;
     }
 
@@ -97,7 +103,7 @@ public class Pago {
      * 
      * @param estado
      */
-    public void setEstado(Estado_Pago estado) {
+    public void setEstado(EstadoPago estado) {
         this.estado = estado;
     }
 

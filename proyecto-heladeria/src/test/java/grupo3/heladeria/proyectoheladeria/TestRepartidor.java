@@ -1,7 +1,6 @@
 package grupo3.heladeria.proyectoheladeria;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 import com.grupo3.heladeria.proyectoheladeria.modelo.Repartidor;
 
@@ -11,43 +10,40 @@ import org.junit.*;
 public class TestRepartidor {
 
     @Test
-    public void testCrearJornalero() {
+    public void testCrearRepartidor() {
         var emf = Persistence.createEntityManagerFactory("persistencia");
         var em = emf.createEntityManager();
 
         em.getTransaction().begin();
-        var repartidor = new Repartidor(36408456, "Rodriguez", "Fernando", "3764626262" , "correo@correo");
+        var repartidor = new Repartidor(36408555, "Fernando", "Fernandez", "3764626262" , "correo@correo");
         em.persist(repartidor);
         em.getTransaction().commit();
         em.close();
 
-        assertEquals(36408456, repartidor.getDni());
+        assertEquals(36408555, repartidor.getDni());
     }
 
     @Test
-    @AfterClass
-    public void testModificarCliente(){
+    public void testModificarRepartidor(){
         var emf = Persistence.createEntityManagerFactory("persistencia");
         var em = emf.createEntityManager();
 
-        var repartidor = new Repartidor(36408456, "Rodriguez", "Facundo", "3764626262" , "correo@correo");
+        var repartidor = new Repartidor(36408555, "Facundo", "Fernandez", "3764626262" , "correo@correo");
 
         em.getTransaction().begin();
         em.merge(repartidor);
         em.getTransaction().commit();
 
         assertEquals("Facundo", repartidor.getNombre());
-
     }
 
     @Test
-    @AfterClass
-    public void testEliminarCliente(){
+    public void testEliminarRepartidor(){
         var emf = Persistence.createEntityManagerFactory("persistencia");
         var em = emf.createEntityManager();
 
-        var repartidor = new Repartidor(36408456, "Rodriguez", "Fernando", "3764626262" , "correo@correo");
-
+        var repartidor = em.find(Repartidor.class, 364084555);
+        
         try {
             if (repartidor != null) {
                 em.getTransaction().begin();
@@ -55,11 +51,9 @@ public class TestRepartidor {
                 em.getTransaction().commit();
             }
         } catch (Exception e) {
-            System.out.println("No se puede borrar el cliente");
+            System.out.println("No se puede borrar el repartidor");
         }
         em.close();
-
-        assertNull(repartidor);
     }
     
 }

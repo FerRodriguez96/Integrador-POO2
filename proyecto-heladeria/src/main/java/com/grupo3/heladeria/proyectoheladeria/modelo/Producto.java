@@ -2,7 +2,9 @@ package com.grupo3.heladeria.proyectoheladeria.modelo;
 
 import java.io.Serializable;
 import jakarta.persistence.*;
-
+/**
+ * Representa un producto
+ */
 @Entity
 @Table(name = "PRODUCTO")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -70,9 +72,22 @@ public abstract class Producto implements Serializable {
         this.precio = precio;
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return "Productos [idProducto=" + idProducto + ", precio=" + precio + "]";
     }
 
+    
+    /** 
+     * @return String
+     */
+    // Devuelve el tipo de producto
+    @Transient
+    public String getTipoProducto() {
+        return this.getClass().getAnnotation(DiscriminatorValue.class).value();
+    }
 }

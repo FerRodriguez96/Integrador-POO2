@@ -13,10 +13,18 @@
                     <div class="form-group">
                         
                         <label for="txtSabor">Sabor:</label>
+                        
                         <input type="hidden" class="form-control" value = "${modelo.bombon.getId()}" type="integer" name="txtId">
-                        <input id="txtSabor" value= "${modelo.bombon.getSabor()}" class="form-control" type="text" name="txtSabor">
+                        <select name="txtSabor">
+                            <option value="1">Frutilla</option> 
+                            <option value="2">Vainilla</option> 
+                            <option value="3">Dulce_de_leche</option>
+                            <option value="4">Chantilly</option> 
+                            <option value="5">Surtido</option> 
+                        </select>
+                        
                     </div>
-
+                    
                     <div class="form-group">
                         <label for="txtPrecio">Precio:</label>
                         <input id="txtPrecio" value= "${modelo.bombon.getPrecio()}" class="form-control" type="float" name="txtPrecio">
@@ -29,11 +37,10 @@
                     <br>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Modificar">
-                        <a href="/" class="btn btn-primary">Regresar</a>
+                        <a href="/bombones" class="btn btn-primary">Regresar</a>
                     </div>
                 </form>
             </p>
-
         </div>
     </div>
 

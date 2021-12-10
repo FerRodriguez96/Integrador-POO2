@@ -15,6 +15,10 @@ public class RepositorioPicoles implements InterfazPicoles {
         this.emf = emf;
     }
 
+    
+    /** 
+     * @return List<Picole>
+     */
     @Override
     public List<Picole> listar() {
         var em = emf.createEntityManager();
@@ -30,6 +34,11 @@ public class RepositorioPicoles implements InterfazPicoles {
         return picoles;
     }
 
+    
+    /** 
+     * @param id
+     * @return Picole
+     */
     @Override
     public Picole obtener(Integer id) {
         var em = emf.createEntityManager();
@@ -38,6 +47,10 @@ public class RepositorioPicoles implements InterfazPicoles {
         return Picole;
     }
 
+    
+    /** 
+     * @param Picole
+     */
     @Override
     public void crear(Picole Picole) {
         var em = emf.createEntityManager();
@@ -47,6 +60,11 @@ public class RepositorioPicoles implements InterfazPicoles {
         em.close();
     }
 
+    
+    /** 
+     * @param idProducto
+     * @return boolean
+     */
     @Override
     public boolean borrar(Integer idProducto) {
 
@@ -65,6 +83,11 @@ public class RepositorioPicoles implements InterfazPicoles {
         return (Picole != null);
     }
 
+    
+    /** 
+     * @param picole
+     * @return Picole
+     */
     @Override
     public Picole modificar(Picole picole) {
         var em = emf.createEntityManager();

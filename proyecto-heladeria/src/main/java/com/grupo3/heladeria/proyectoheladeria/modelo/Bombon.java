@@ -1,13 +1,15 @@
 package com.grupo3.heladeria.proyectoheladeria.modelo;
 
 import jakarta.persistence.*;
-
+/**
+ * Representa un bombon
+ */
 @Entity
 @DiscriminatorValue("Bombon")
 public class Bombon extends Producto {
 
     private static final long serialVersionUID = 1L;
-    
+
     @Column(name = "SABORES")
     @Enumerated(value = EnumType.ORDINAL)
     private Sabores sabor;
@@ -24,7 +26,7 @@ public class Bombon extends Producto {
      * 
      * @param precio   Precio del bombon
      * @param sabor    Sabor del bombon
-     * @param cantidad Cantidad de bombones
+     * @param cantidad Cantidad de bombones que viene en un paquete
      */
     public Bombon(float precio, Sabores sabor, int cantidad) {
         super(precio);
@@ -86,6 +88,10 @@ public class Bombon extends Producto {
         this.cantidad = cantidad;
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return "Bombon [cantidad=" + cantidad + ", sabor=" + sabor + "]";

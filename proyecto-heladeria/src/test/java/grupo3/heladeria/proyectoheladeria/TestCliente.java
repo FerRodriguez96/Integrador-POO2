@@ -24,7 +24,6 @@ public class TestCliente {
     }
 
     @Test
-    @AfterClass
     public void testModificarCliente(){
         var emf = Persistence.createEntityManagerFactory("persistencia");
         var em = emf.createEntityManager();
@@ -40,13 +39,12 @@ public class TestCliente {
     }
 
     @Test
-    @AfterClass
     public void testEliminarCliente(){
         var emf = Persistence.createEntityManagerFactory("persistencia");
         var em = emf.createEntityManager();
 
-        var cliente = new Cliente(36408456, "Facundo", "Rodriguez", "Roque Gonzalez", 16, "3764626262");
-
+        var cliente = em.find(Cliente.class, 36408456);
+        
         try {
             if (cliente != null) {
                 em.getTransaction().begin();
@@ -56,9 +54,8 @@ public class TestCliente {
         } catch (Exception e) {
             System.out.println("No se puede borrar el cliente");
         }
+        assertNull(em.find(Cliente.class, 36408456));
         em.close();
-
-        assertNull(cliente);
     }
     
 }

@@ -3,7 +3,7 @@ package com.grupo3.heladeria.proyectoheladeria.modelo;
 import jakarta.persistence.*;
 
 /**
- * Representa un Empleado
+ * Representa un empleado
  */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -37,7 +37,7 @@ public abstract class Empleado {
      * @param nombre   nombre del empleado
      * @param apellido apellido del empleado
      * @param telefono telefono del empleado
-     * @param correo     mail del empleado
+     * @param correo   mail del empleado
      */
     protected Empleado(int dni, String nombre, String apellido, String telefono, String correo) {
         this.dni = dni;

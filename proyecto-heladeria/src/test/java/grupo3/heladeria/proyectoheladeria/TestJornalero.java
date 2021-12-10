@@ -16,7 +16,7 @@ public class TestJornalero {
         var em = emf.createEntityManager();
 
         em.getTransaction().begin();
-        var jornalero = new Jornalero(36408456, "Rodriguez", "Fernando", "3764626262" , "correo@correo");
+        var jornalero = new Jornalero(36408456, "Fernando", "Rodriguez", "3764626262" , "correo@correo");
         em.persist(jornalero);
         em.getTransaction().commit();
         em.close();
@@ -25,12 +25,11 @@ public class TestJornalero {
     }
 
     @Test
-    @AfterClass
     public void testModificarCliente(){
         var emf = Persistence.createEntityManagerFactory("persistencia");
         var em = emf.createEntityManager();
 
-        var jornalero = new Jornalero(36408456, "Rodriguez", "Facundo", "3764626262" , "correo@correo");
+        var jornalero = new Jornalero(36408456, "Facundo", "Rodriguez", "3764626262" , "correo@correo");
 
         em.getTransaction().begin();
         em.merge(jornalero);
@@ -41,13 +40,12 @@ public class TestJornalero {
     }
 
     @Test
-    @AfterClass
     public void testEliminarCliente(){
         var emf = Persistence.createEntityManagerFactory("persistencia");
         var em = emf.createEntityManager();
 
-        var jornalero = new Jornalero(36408456, "Rodriguez", "Fernando", "3764626262" , "correo@correo");
-
+        var jornalero = em.find(Jornalero.class, 36408456);
+        
         try {
             if (jornalero != null) {
                 em.getTransaction().begin();
@@ -55,11 +53,10 @@ public class TestJornalero {
                 em.getTransaction().commit();
             }
         } catch (Exception e) {
-            System.out.println("No se puede borrar el cliente");
+            System.out.println("No se puede borrar el jornalero");
         }
+        assertNull(em.find(Jornalero.class, 36408456));
         em.close();
-
-        assertNull(jornalero);
     }
     
 }

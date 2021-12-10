@@ -38,6 +38,23 @@ public class ControladorCliente {
     /**
      * @param ctx
      */
+    public void seleccionar(Context ctx) throws SQLException {
+        // Se obtienen los datos de la clase
+        var modelo = new ModeloClientes();
+
+        // Se pasan los datos a el metodo listar
+        modelo.clientes = interfazClientes.listar();
+
+        // Se imprime por consola la lista de clientes
+        System.out.println(modelo.clientes);
+
+        // Se muestra el template con la lista de clientes
+        ctx.render("seleccionarCliente.jte", Collections.singletonMap("modelo", modelo));
+    }
+    
+    /**
+     * @param ctx
+     */
     public void nuevoCliente(Context ctx) throws SQLException {
         // el programa musetra el formulario para ingresar los datos de un nuevo cliente
         ctx.render("crearCliente.jte", Collections.singletonMap("modelo", null));
@@ -76,6 +93,11 @@ public class ControladorCliente {
         ctx.render("editarCliente.jte", Collections.singletonMap("modelo", modelo));
     }
 
+    
+    /** 
+     * @param ctx
+     * @throws SQLException
+     */
     public void modificarCliente(Context ctx) throws SQLException {
         // se traen los datos de la clase
         var modelo = new ModeloCliente();

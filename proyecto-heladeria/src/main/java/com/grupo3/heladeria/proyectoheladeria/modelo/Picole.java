@@ -1,7 +1,9 @@
 package com.grupo3.heladeria.proyectoheladeria.modelo;
 
 import jakarta.persistence.*;
-
+/**
+ * Representa un picole
+ */
 @Entity
 @DiscriminatorValue("Picole")
 public class Picole extends Producto {
@@ -18,12 +20,12 @@ public class Picole extends Producto {
     }
 
     /**
-     * Crea un Picole al que se le pasa los datos del precio, sabor y cantidad del
-     * picole
+     * Crea un Picole al que se le pasa los datos del precio, sabor y cantidad de
+     * unidades del paquete picole
      * 
      * @param precio   Precio del Picole
      * @param sabor    Sabor del Picole
-     * @param cantidad Cantidad de Picoles
+     * @param cantidad Cantidad de Picoles que vienen en un paquete
      */
     public Picole(float precio, Sabores sabor, int cantidad) {
         super(precio);
@@ -85,6 +87,10 @@ public class Picole extends Producto {
         this.cantidad = cantidad;
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return "Picole [cantidad=" + cantidad + ", sabor=" + sabor + "]";

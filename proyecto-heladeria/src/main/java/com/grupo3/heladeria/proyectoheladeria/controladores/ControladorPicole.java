@@ -26,7 +26,7 @@ public class ControladorPicole {
         // Se obtienen los datos de la clase
         var modelo = new ModeloPicoles();
 
-        // Se pasan los datos a el metodo listar
+        // Se pasan los datos al metodo listar
         modelo.picoles = interfazPicoles.listar();
 
         // Se imprime por consola la lista de Picoles
@@ -59,14 +59,6 @@ public class ControladorPicole {
         } else {
             Picole = new Picole(precio, Sabores.Surtido, cantidad);
         }
-
-        /*
-         * if (sabor == 1) { Picole = new Picole(precio, Sabores.Frutilla, cantidad); }
-         * else { Picole = new Picole(precio, Sabores.Vainilla, cantidad); }
-         */
-
-        // Se crea un nuevo objeto Picole
-
         // Se inicia el proceso de persistencia
         this.interfazPicoles.crear(Picole);
 
@@ -90,6 +82,11 @@ public class ControladorPicole {
         ctx.render("editarPicole.jte", Collections.singletonMap("modelo", modelo));
     }
 
+    
+    /** 
+     * @param ctx
+     * @throws SQLException
+     */
     public void modificarPicole(Context ctx) throws SQLException {
         // se traen los datos de la clase
         var modelo = new ModeloPicole();
@@ -107,7 +104,7 @@ public class ControladorPicole {
             picoleModificado = new Picole(precio, Sabores.Surtido, cantidad);
         }
         picoleModificado.setId(id);
-        // var picoleModificado = new Picole(precio, Sabores.Surtido, cantidad);
+        //picoleModificado = new Picole(precio, Sabores.Surtido, cantidad);
         this.interfazPicoles.modificar(picoleModificado);
         ctx.redirect("/picoles");
     }
@@ -119,7 +116,6 @@ public class ControladorPicole {
         // se le pasa al proceso de persistencia el sabor del Picole que se quiere
         // eliminar
         this.interfazPicoles.borrar(ctx.pathParamAsClass("txtId", Integer.class).get());
-
     }
 
 }
