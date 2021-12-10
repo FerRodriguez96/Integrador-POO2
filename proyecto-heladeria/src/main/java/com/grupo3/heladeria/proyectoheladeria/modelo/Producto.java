@@ -2,7 +2,9 @@ package com.grupo3.heladeria.proyectoheladeria.modelo;
 
 import java.io.Serializable;
 import jakarta.persistence.*;
-
+/**
+ * Representa un producto
+ */
 @Entity
 @Table(name = "PRODUCTO")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)

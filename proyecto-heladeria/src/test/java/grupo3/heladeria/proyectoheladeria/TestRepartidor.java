@@ -1,7 +1,6 @@
 package grupo3.heladeria.proyectoheladeria;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 import com.grupo3.heladeria.proyectoheladeria.modelo.Repartidor;
 

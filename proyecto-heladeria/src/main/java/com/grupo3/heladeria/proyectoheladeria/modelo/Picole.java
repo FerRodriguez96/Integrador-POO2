@@ -1,7 +1,9 @@
 package com.grupo3.heladeria.proyectoheladeria.modelo;
 
 import jakarta.persistence.*;
-
+/**
+ * Representa un picole
+ */
 @Entity
 @DiscriminatorValue("Picole")
 public class Picole extends Producto {

@@ -82,8 +82,7 @@ public class ControladorRepartidor {
         ctx.render("editarRepartidor.jte", Collections.singletonMap("modelo", modelo));
     }
 
-    
-    /** 
+    /**
      * @param ctx
      * @throws SQLException
      */

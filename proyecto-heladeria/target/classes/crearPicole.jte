@@ -11,8 +11,8 @@
             <p class="card-text">
                 <form action = "/picoles" method="post">
                     <div class="form-group">
-                        <label for="txtSabor">Sabor:</label>
-                        <input id="txtSabor" class="form-control" type="sabores" name="txtSabor">
+                        <label for="txtSabor" type="hidden">Sabor: Surtido</label>
+                        <input id="txtSabor" class="form-control" name="txtSabor" type="hidden" value="1">
                     </div>
 
                     <div class="form-group">
@@ -27,7 +27,7 @@
                     <br>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Agregar">
-                        <a href="/" class="btn btn-primary">Regresar</a>
+                        <a href="/index" class="btn btn-primary">Regresar</a>
                     </div>
                 </form>
             </p>

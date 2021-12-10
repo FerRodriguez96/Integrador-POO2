@@ -37,11 +37,10 @@
                     <br>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Modificar">
-                        <a href="/" class="btn btn-primary">Regresar</a>
+                        <a href="/bombones" class="btn btn-primary">Regresar</a>
                     </div>
                 </form>
             </p>
-
         </div>
     </div>
 

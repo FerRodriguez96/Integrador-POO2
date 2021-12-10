@@ -1,7 +1,5 @@
 @param com.grupo3.heladeria.proyectoheladeria.paginas.ModeloInsumo modelo
-
 @tag.header()
-
     <div class="card">
         <div class="card-header">
             Modificar insumo
@@ -28,7 +26,7 @@
                     <br>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Modificar">
-                        <a href="/" class="btn btn-primary">Regresar</a>
+                        <a href="/insumos" class="btn btn-primary">Regresar</a>
                     </div>
                 </form>
             </p>

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.grupo3.heladeria.proyectoheladeria"},{"l":"com.grupo3.heladeria.proyectoheladeria.controladores"},{"l":"com.grupo3.heladeria.proyectoheladeria.modelo"},{"l":"com.grupo3.heladeria.proyectoheladeria.paginas"},{"l":"com.grupo3.heladeria.proyectoheladeria.repositorios"}];updateSearchResults();

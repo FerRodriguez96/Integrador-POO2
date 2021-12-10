@@ -1,9 +1,7 @@
 @param com.grupo3.heladeria.proyectoheladeria.paginas.ModeloClientes modelo
-
 @tag.header()
-
     <h2> Seleccionar Cliente </h2>
-    <a href="/" type="button" class="btn btn-secondary"> Volver </a>
+    <a href="/index" type="button" class="btn btn-primary"> Regresar </a>
     <div class="table-responsive">
         <table class="table table-light">
             <thead class="thead-light">
@@ -16,7 +14,6 @@
                     <th scope="col">Telefono</th>
                 </tr>
             </thead>
-
             <tbody>
                 @for (var cliente : modelo.clientes)
                     <tr>
@@ -28,7 +25,7 @@
                         <td>${cliente.getTelefono()}</td>
                         <td class="col-1"> <a type="button" class="btn btn-warning" href="/pedido/nuevo/${cliente.getDni()}"> Seleccionar </a></td>
                     </tr>
-                @endfor
+                @endfor 
             </tbody>
         </table>
     </div>

@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
-
+/**
+ * Representa un pedido
+ */
 @Entity
 @Table(name = "PEDIDOS")
 public class Pedido implements Serializable {

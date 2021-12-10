@@ -3,7 +3,9 @@ package com.grupo3.heladeria.proyectoheladeria.modelo;
 import java.io.Serializable;
 
 import jakarta.persistence.*;
-
+/**
+ * Representa un proveedor
+ */
 @Entity
 @Table (name="PROVEEDOR")
 public class Proveedor implements Serializable {

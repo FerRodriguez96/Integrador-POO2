@@ -1,7 +1,9 @@
 package com.grupo3.heladeria.proyectoheladeria.modelo;
 
 import jakarta.persistence.*;
-
+    /**
+     * Representa un pago
+     */
 @Entity
 @Table(name = "PAGOS")
 public class Pago {

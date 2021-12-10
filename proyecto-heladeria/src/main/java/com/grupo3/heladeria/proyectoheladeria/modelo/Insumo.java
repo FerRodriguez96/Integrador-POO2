@@ -3,35 +3,40 @@ package com.grupo3.heladeria.proyectoheladeria.modelo;
 import java.io.Serializable;
 
 import jakarta.persistence.*;
-
+/**
+ * Representa un insumo
+ */
 @Entity
-@Table(name="INSUMO")
+@Table(name = "INSUMO")
 public class Insumo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Representa un insumo
+     */
     @Id
     @SequenceGenerator(name = "sec_insu", initialValue = 1, allocationSize = 1)
     @GeneratedValue(generator = "sec_insu", strategy = GenerationType.SEQUENCE)
     private int idInsumo;
-    
+
     @Column
     private String nombre;
     @Column
     private String descripcion;
     @Column
     private int cantidad;
-    
-    public Insumo(){
+
+    public Insumo() {
 
     }
 
     /**
      * Crea un insumo al que se le pasan datos de nombre, descripcion, cantidad
      * 
-     * @param nombre        nombre del insumo
-     * @param descripcion   descripcion del insumo
-     * @param cantidad      cantidad del insumo
+     * @param nombre      nombre del insumo
+     * @param descripcion descripcion del insumo
+     * @param cantidad    cantidad del insumo
      */
     public Insumo(String nombre, String descripcion, int cantidad) {
         this.nombre = nombre;
@@ -111,8 +116,7 @@ public class Insumo implements Serializable {
         this.cantidad = cantidad;
     }
 
-    
-    /** 
+    /**
      * @return String
      */
     @Override
@@ -121,5 +125,4 @@ public class Insumo implements Serializable {
                 + nombre + "]";
     }
 
-    
 }

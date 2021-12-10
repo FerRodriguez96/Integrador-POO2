@@ -1,7 +1,9 @@
 package com.grupo3.heladeria.proyectoheladeria.modelo;
 
 import jakarta.persistence.*;
-
+/**
+ * Representa un bombon
+ */
 @Entity
 @DiscriminatorValue("Bombon")
 public class Bombon extends Producto {

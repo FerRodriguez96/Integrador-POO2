@@ -3,7 +3,7 @@
 @tag.header()
 
 <h2> Jornaleros </h2>
-    <a href="/" type="button" class="btn btn-secondary"> Volver </a>
+    <a href="/empleados" type="button" class="btn btn-primary"> Regresar </a>
     <div class="table-responsive">
         <table class="table table-hover table-striped">
             <thead>
@@ -24,7 +24,7 @@
                         <td>${jornalero.getApellido()}</td>
                         <td>${jornalero.getTelefono()}</td>
                         <td>${jornalero.getCorreo()}</td>
-                        <td class="col-1"> <a type="button" class="btn btn-info" href="/jornaleros/update/${jornalero.getDni()}"> Editar </a></td>                            
+                        <td class="col-1"> <a type="button" class="btn btn-warning" href="/jornaleros/update/${jornalero.getDni()}"> Editar </a></td>                            
                         <td class="col-1"> <button type="button" class="btn btn-danger no-gutters" onClick="borrar(${jornalero.getDni()})"> Eliminar </button></td>
                     </tr>
                 @endfor
