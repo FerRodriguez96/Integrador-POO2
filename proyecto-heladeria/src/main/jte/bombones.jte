@@ -3,7 +3,7 @@
 @tag.header()
 
 <h2> Bombon </h2>
-    <a href="/index" type="button" class="btn btn-secondary"> Volver </a>
+    <a href="/index" type="button" class="btn btn-primary"> Regresar </a>
     <div class="table-responsive">
         <table class="table table-hover table-striped">
             <thead>

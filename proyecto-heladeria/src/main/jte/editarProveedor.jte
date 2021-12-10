@@ -1,7 +1,5 @@
 @param com.grupo3.heladeria.proyectoheladeria.paginas.ModeloProveedor modelo
-
 @tag.header()
-
     <div class="card">
         <div class="card-header">
             Modificar proveedor
@@ -33,7 +31,7 @@
                     <br>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="Modificar">
-                        <a href="/index" class="btn btn-primary">Regresar</a>
+                        <a href="/proveedores" class="btn btn-primary">Regresar</a>
                     </div>
                 </form>
             </p>

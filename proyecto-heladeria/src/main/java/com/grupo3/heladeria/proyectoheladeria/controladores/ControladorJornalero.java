@@ -25,7 +25,7 @@ public class ControladorJornalero {
         // Se obtienen los datos de la clase
         var modelo = new ModeloJornaleros();
 
-        // Se pasan los datos a el metodo listar
+        // Se pasan los datos al metodo listar
         modelo.jornaleros = interfazJornaleros.listar();
 
         // Se imprime por consola la lista de jornaleros

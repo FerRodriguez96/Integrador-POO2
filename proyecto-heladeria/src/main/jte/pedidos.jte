@@ -3,7 +3,7 @@
 @tag.header()
 
     <h2> Pedidos </h2>
-    <a href="/index" type="button" class="btn btn-secondary"> Volver </a>
+    <a href="/index" type="button" class="btn btn-primary"> Regresar </a>
     
     <div class="table-responsive">
         <table class="table table-light">
@@ -45,9 +45,7 @@
                         </td>
                         -->
                         <td class="col-1"> <a type="button" class="btn btn-warning" href="/pedidos/update/${pedido.getIdPedido()}"> Editar </a></td>
-                        
-                            <td class="col-1"> <a type="button" class="btn btn-warning" href="/pedido/${pedido.getIdPedido()}/repartidor"> Asignar repartidor </a></td>
-
+                        <td class="col-1"> <a type="button" class="btn btn-warning" href="/pedido/${pedido.getIdPedido()}/repartidor"> Asignar repartidor </a></td>
                     </tr>
                 @endfor
             </tbody>

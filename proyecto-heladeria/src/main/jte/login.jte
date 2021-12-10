@@ -30,14 +30,12 @@
                                 placeholder="Nombre de usuario">
                         </div>
                         <br>
-                        <div class="form-group">
-                            <a href="/index" class="btn btn-success">Ingresar</a>
-                        </div>
+                            <div class="form-group">
+                                <a href="/index" class="btn btn-success">Ingresar</a>
+                            </div>
                         <br>
                     </form>
                 </div>
             </div>
         </main>
-
 @tag.footer()
-

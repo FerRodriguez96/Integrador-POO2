@@ -1,5 +1,4 @@
 @tag.header()
-	
 	<br>
 	<br>
 	<br>
@@ -21,6 +20,4 @@
 			<a href="/bombones" class="btn btn-success">Bombon</a>
 		</div>
 	</div>
-
-
 @tag.footer()

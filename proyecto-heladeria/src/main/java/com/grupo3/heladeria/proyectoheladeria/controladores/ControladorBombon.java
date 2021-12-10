@@ -3,7 +3,6 @@ package com.grupo3.heladeria.proyectoheladeria.controladores;
 import java.sql.SQLException;
 import java.util.Collections;
 
-//import com.grupo3.heladeria.proyectoheladeria.modelo.Sabor;
 import com.grupo3.heladeria.proyectoheladeria.modelo.Sabores;
 import com.grupo3.heladeria.proyectoheladeria.modelo.Bombon;
 import com.grupo3.heladeria.proyectoheladeria.repositorios.InterfazBombones;
@@ -27,7 +26,7 @@ public class ControladorBombon {
         // Se obtienen los datos de la clase
         var modelo = new ModeloBombones();
 
-        // Se pasan los datos a el metodo listar
+        // Se pasan los datos al metodo listar
         modelo.bombones = interfazBombones.listar();
 
         // Se imprime por consola la lista de bombones
@@ -55,8 +54,7 @@ public class ControladorBombon {
         var precio = ctx.formParamAsClass("txtPrecio", Float.class).get();
         var cantidad = ctx.formParamAsClass("txtCantidad", Integer.class).get();
         var bombon = new Bombon();
-        
-        
+
         switch (sabor) {
         case 1:
             bombon = new Bombon(precio, Sabores.Frutilla, cantidad);
@@ -75,9 +73,6 @@ public class ControladorBombon {
             break;
         }
 
-        // Se crea un nuevo objeto bombon
-        // var bombon = new Bombon(precio, sabor, cantidad);
-
         // Se inicia el proceso de persistencia
         this.interfazBombones.crear(bombon);
 
@@ -93,6 +88,7 @@ public class ControladorBombon {
 
         var modelo = new ModeloBombon();
         modelo.bombon = this.interfazBombones.obtener(ctx.pathParamAsClass("txtId", Integer.class).get());
+        // el programa muestra el template para editar el bombon
         ctx.render("editarBombon.jte", Collections.singletonMap("modelo", modelo));
     }
 
@@ -141,7 +137,6 @@ public class ControladorBombon {
         // se le pasa al proceso de persistencia el sabor del bombon que se quiere
         // eliminar
         this.interfazBombones.borrar(ctx.pathParamAsClass("txtId", Integer.class).get());
-
     }
 
 }

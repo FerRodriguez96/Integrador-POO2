@@ -1,9 +1,7 @@
 @param com.grupo3.heladeria.proyectoheladeria.paginas.ModeloRepartidores modelo
-
 @tag.header()
-
 <h2> Repartidores </h2>
-    <a href="/index" type="button" class="btn btn-secondary"> Volver </a>
+    <a href="/index" type="button" class="btn btn-primary"> Regresar </a>
     <div class="table-responsive">
         <table class="table table-hover table-striped">
             <thead>
@@ -15,7 +13,6 @@
                     <th scope="col">Correo</th>
                 </tr>
             </thead>
-
             <tbody>
                 @for (var repartidor : modelo.repartidores)
                     <tr>
@@ -24,7 +21,7 @@
                         <td>${repartidor.getApellido()}</td>
                         <td>${repartidor.getTelefono()}</td>
                         <td>${repartidor.getCorreo()}</td>
-                        <td class="col-1"> <a type="button" class="btn btn-info" href="/repartidores/update/${repartidor.getDni()}"> Editar </a></td>                            
+                        <td class="col-1"> <a type="button" class="btn btn-warning" href="/repartidores/update/${repartidor.getDni()}"> Editar </a></td>                            
                         <td class="col-1"> <button type="button" class="btn btn-danger no-gutters" onClick="borrar(${repartidor.getDni()})"> Eliminar </button></td>
                     </tr>
                 @endfor

@@ -1,7 +1,5 @@
 @param com.grupo3.heladeria.proyectoheladeria.paginas.ModeloPedido modelo
-
 @tag.header()
-
     <h2> Seleccionar Repartidor </h2>
     <a href="/pedidos" type="button" class="btn btn-secondary"> Volver </a>
     <div class="table-responsive">
@@ -21,12 +19,7 @@
                         <td>${repartidor.getNombre()}</td>
                         <td>${repartidor.getApellido()}</td>
                         <td>${repartidor.getTelefono()}</td>
-
-                        
-                        <td class="col-1"> <a type="button" class="btn btn-warning" href="/pedido/${modelo.pedido.getIdPedido()}/repartidor/${repartidor.getDni()}"> Seleccionar </a></td>
-                        <!--
-                        <td class="col-1"> <a type="button" class="btn btn-warning" href="/pedido/${modelo.pedido.getIdPedido()}/repartidor"> Seleccionar </a></td>
-                        -->
+                        <td class="col-1"> <a type="button" class="btn btn-success" href="/pedido/${modelo.pedido.getIdPedido()}/repartidor/${repartidor.getDni()}"> Seleccionar </a></td>
                     </tr>
                 @endfor 
             </tbody>

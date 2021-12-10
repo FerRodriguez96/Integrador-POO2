@@ -158,7 +158,6 @@ public class ControladorPedidos {
 
 		// el programa muestra el template para editar jornaleros
 		ctx.render("editarPedido.jte", Collections.singletonMap("modelo", modelo));
-
 	}
 
 	/**
@@ -167,7 +166,6 @@ public class ControladorPedidos {
 	public void eliminarPedido(Context ctx) throws SQLException {
 		// se le pasa al proceso de persistencia el id del pedido que se quiere eliminar
 		this.interfazPedidos.borrar(ctx.pathParamAsClass("idPedido", Integer.class).get());
-
 	}
 
 }

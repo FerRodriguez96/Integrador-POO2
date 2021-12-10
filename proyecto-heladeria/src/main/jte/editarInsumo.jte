@@ -1,7 +1,5 @@
 @param com.grupo3.heladeria.proyectoheladeria.paginas.ModeloInsumo modelo
-
 @tag.header()
-
     <div class="card">
         <div class="card-header">
             Modificar insumo

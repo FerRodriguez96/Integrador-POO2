@@ -3,7 +3,7 @@
 @tag.header()
 
 <h2> Seleccionar Repartidor</h2>
-    <a href="/pedido/${modelo.pedido.getIdPedido()}/repartidor" type="button" class="btn btn-secondary"> Volver </a>
+    <a href="/pedido/${modelo.pedido.getIdPedido()}/repartidor" type="button" class="btn btn-primary"> Regresar </a>
     <div class="card-body">
         <form action = "/pedido/${modelo.pedido.getIdPedido()}/repartidor/${modelo.repartidor.getDni()}" method="post" name="listaProducto">
             <select name="listaProducto">

@@ -30,10 +30,11 @@
                 
                 <select name="listaProducto">
                     @for (var producto : modelo.productos)
-                        <option value="${producto.getIdProducto()}">Tipo: ${producto.getTipoProducto()} Precio: ${producto.getPrecio()}</option>
+                        if(producto.productos != null){
+                            <option value="${producto.getIdProducto()}">Tipo: ${producto.getTipoProducto()} Precio: ${producto.getPrecio()}</option>
+                        }
                     @endfor
                 </select>
-                
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-success" value="Agregar">
