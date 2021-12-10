@@ -21,6 +21,14 @@ Las herramientas que se utilizaran para su construcción son:
 - Postman v8.12.5
 - Bootstrap v5.1
 
+## Instrucciones de ejecucion
+
+- Abrir una nueva consola
+- Navegar hasta la carpeta del proyecto
+- Ejecutar `mvn clean install package`
+- Luego, buscar el jar generado en /target
+- ejecutar el jar generado mediante `java -jar proyecto-heladeria-0.0.1-SNAPSHOT.jar`
+
 ## Autores
 
 Los autores de este proyecto han sido los integrantes del grupo 3 de la materia Programación Orientada a Objetos II de la Universidad Nacional de Misiones.
