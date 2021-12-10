@@ -74,6 +74,11 @@ public class ControladorProveedor {
         ctx.render("editarProveedor.jte", Collections.singletonMap("modelo", modelo));
     }
 
+    
+    /** 
+     * @param ctx
+     * @throws SQLException
+     */
     public void modificarProveedor(Context ctx) throws SQLException {
         // se traen los datos de la clase
         var modelo = new ModeloProveedor();

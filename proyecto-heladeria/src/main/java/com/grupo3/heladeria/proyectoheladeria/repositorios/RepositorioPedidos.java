@@ -15,6 +15,10 @@ public class RepositorioPedidos implements InterfazPedidos {
         this.emf = emf;
     }
 
+    
+    /** 
+     * @return List<Pedido>
+     */
     @Override
     public List<Pedido> listar() {
         var em = emf.createEntityManager();
@@ -30,6 +34,11 @@ public class RepositorioPedidos implements InterfazPedidos {
         return pedidos;
     }
 
+    
+    /** 
+     * @param id
+     * @return Pedido
+     */
     @Override
     public Pedido obtener(int id) {
         var em = emf.createEntityManager();
@@ -38,6 +47,10 @@ public class RepositorioPedidos implements InterfazPedidos {
         return pedido;
     }
 
+    
+    /** 
+     * @param pedido
+     */
     @Override
     public void crear(Pedido pedido) {
         var em = emf.createEntityManager();
@@ -47,6 +60,11 @@ public class RepositorioPedidos implements InterfazPedidos {
         em.close();
     }
 
+    
+    /** 
+     * @param id
+     * @return boolean
+     */
     @Override
     public boolean borrar(int id) {
 
@@ -65,6 +83,11 @@ public class RepositorioPedidos implements InterfazPedidos {
         return (pedido != null);
     }
 
+    
+    /** 
+     * @param pedido
+     * @return Pedido
+     */
     @Override
     public Pedido modificar(Pedido pedido) {
         var em = emf.createEntityManager();

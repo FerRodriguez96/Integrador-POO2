@@ -244,6 +244,10 @@ public class Pedido implements Serializable {
         this.pago = pago;
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return "Pedido [cliente=" + cliente + " ,\n estado=" + estado + ", fecha=" + fecha + ", horaentrega=" + horaentrega

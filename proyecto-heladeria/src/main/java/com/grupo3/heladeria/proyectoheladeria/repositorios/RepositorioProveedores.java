@@ -15,6 +15,10 @@ public class RepositorioProveedores implements InterfazProveedores {
         this.emf = emf;
     }
 
+    
+    /** 
+     * @return List<Proveedor>
+     */
     @Override
     public List<Proveedor> listar() {
         var em = emf.createEntityManager();
@@ -30,6 +34,11 @@ public class RepositorioProveedores implements InterfazProveedores {
         return proveedores;
     }
 
+    
+    /** 
+     * @param id
+     * @return Proveedor
+     */
     @Override
     public Proveedor obtener(int id) {
         var em = emf.createEntityManager();
@@ -38,6 +47,10 @@ public class RepositorioProveedores implements InterfazProveedores {
         return proveedor;
     }
 
+    
+    /** 
+     * @param proveedor
+     */
     @Override
     public void crear(Proveedor proveedor) {
         var em = emf.createEntityManager();
@@ -47,6 +60,11 @@ public class RepositorioProveedores implements InterfazProveedores {
         em.close();
     }
 
+    
+    /** 
+     * @param id
+     * @return boolean
+     */
     @Override
     public boolean borrar(int id) {
         var em = emf.createEntityManager();
@@ -64,6 +82,11 @@ public class RepositorioProveedores implements InterfazProveedores {
         return (proveedor != null);
     }
 
+    
+    /** 
+     * @param proveedor
+     * @return Proveedor
+     */
     @Override
     public Proveedor modificar(Proveedor proveedor) {
         var em = emf.createEntityManager();

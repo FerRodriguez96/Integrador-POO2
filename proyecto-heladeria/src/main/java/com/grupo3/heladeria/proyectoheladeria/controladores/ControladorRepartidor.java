@@ -82,6 +82,11 @@ public class ControladorRepartidor {
         ctx.render("editarRepartidor.jte", Collections.singletonMap("modelo", modelo));
     }
 
+    
+    /** 
+     * @param ctx
+     * @throws SQLException
+     */
     public void modificarRepartidor(Context ctx) throws SQLException {
         // se traen los datos de la clase
         var modelo = new ModeloRepartidor();

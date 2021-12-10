@@ -15,6 +15,10 @@ public class RepositorioClientes implements InterfazClientes {
         this.emf = emf;
     }
 
+    
+    /** 
+     * @return List<Cliente>
+     */
     @Override
     public List<Cliente> listar() {
         var em = emf.createEntityManager();
@@ -30,6 +34,11 @@ public class RepositorioClientes implements InterfazClientes {
         return clientes;
     }
 
+    
+    /** 
+     * @param dni
+     * @return Cliente
+     */
     @Override
     public Cliente obtener(int dni) {
         var em = emf.createEntityManager();
@@ -38,6 +47,10 @@ public class RepositorioClientes implements InterfazClientes {
         return cliente;
     }
 
+    
+    /** 
+     * @param cliente
+     */
     @Override
     public void crear(Cliente cliente) {
         var em = emf.createEntityManager();
@@ -47,6 +60,11 @@ public class RepositorioClientes implements InterfazClientes {
         em.close();
     }
 
+    
+    /** 
+     * @param dni
+     * @return boolean
+     */
     @Override
     public boolean borrar(int dni) {
 
@@ -65,6 +83,11 @@ public class RepositorioClientes implements InterfazClientes {
         return (cliente != null);
     }
 
+    
+    /** 
+     * @param cliente
+     * @return Cliente
+     */
     @Override
     public Cliente modificar(Cliente cliente) {
         var em = emf.createEntityManager();

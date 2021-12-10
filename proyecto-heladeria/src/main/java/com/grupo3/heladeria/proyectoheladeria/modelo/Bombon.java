@@ -86,6 +86,10 @@ public class Bombon extends Producto {
         this.cantidad = cantidad;
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return "Bombon [cantidad=" + cantidad + ", sabor=" + sabor + "]";

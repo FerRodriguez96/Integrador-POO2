@@ -133,6 +133,10 @@ public class Proveedor implements Serializable {
         this.telefono = telefono;
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return "Proveedor [apellido=" + apellido + ", empresa=" + empresa + ", idProveedor=" + idProveedor + ", nombre="

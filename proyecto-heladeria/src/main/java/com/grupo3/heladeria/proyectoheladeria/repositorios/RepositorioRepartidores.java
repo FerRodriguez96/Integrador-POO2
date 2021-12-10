@@ -15,6 +15,10 @@ public class RepositorioRepartidores implements InterfazRepartidores {
         this.emf = emf;
     }
 
+    
+    /** 
+     * @return List<Repartidor>
+     */
     @Override
     public List<Repartidor> listar() {
         var em = emf.createEntityManager();
@@ -30,6 +34,11 @@ public class RepositorioRepartidores implements InterfazRepartidores {
         return repartidor;
     }
 
+    
+    /** 
+     * @param id
+     * @return Repartidor
+     */
     @Override
     public Repartidor obtener(int id) {
         var em = emf.createEntityManager();
@@ -38,6 +47,10 @@ public class RepositorioRepartidores implements InterfazRepartidores {
         return repartidor;
     }
 
+    
+    /** 
+     * @param repartidor
+     */
     @Override
     public void crear(Repartidor repartidor) {
         var em = emf.createEntityManager();
@@ -47,6 +60,11 @@ public class RepositorioRepartidores implements InterfazRepartidores {
         em.close();
     }
 
+    
+    /** 
+     * @param dni
+     * @return boolean
+     */
     @Override
     public boolean borrar(int dni) {
 
@@ -65,6 +83,11 @@ public class RepositorioRepartidores implements InterfazRepartidores {
         return (repartidor != null);
     }
 
+    
+    /** 
+     * @param repartidor
+     * @return Repartidor
+     */
     @Override
     public Repartidor modificar(Repartidor repartidor) {
         var em = emf.createEntityManager();

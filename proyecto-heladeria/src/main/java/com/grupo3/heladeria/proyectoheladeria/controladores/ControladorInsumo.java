@@ -73,6 +73,11 @@ public class ControladorInsumo {
         ctx.render("editarInsumo.jte", Collections.singletonMap("modelo", modelo));
     }
 
+    
+    /** 
+     * @param ctx
+     * @throws SQLException
+     */
     public void modificarInsumo(Context ctx) throws SQLException {
         // se traen los datos de la clase
         var modelo = new ModeloInsumo();

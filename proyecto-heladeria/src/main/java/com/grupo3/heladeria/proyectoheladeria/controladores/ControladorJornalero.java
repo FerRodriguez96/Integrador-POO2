@@ -82,6 +82,11 @@ public class ControladorJornalero {
         ctx.render("editarJornalero.jte", Collections.singletonMap("modelo", modelo));
     }
 
+    
+    /** 
+     * @param ctx
+     * @throws SQLException
+     */
     public void modificarJornalero(Context ctx) throws SQLException {
         // se traen los datos de la clase
         var modelo = new ModeloJornalero();

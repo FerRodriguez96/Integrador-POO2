@@ -72,6 +72,11 @@ public class ControladorPedidos {
 		ctx.render("seleccionarProducto.jte", Collections.singletonMap("modelo", modelo));
 	}
 
+	
+	/** 
+	 * @param ctx
+	 * @throws SQLException
+	 */
 	public void listarRepartidor(Context ctx) throws SQLException {
         // Se obtienen los datos de la clase
         var modelo = new ModeloPedido();
@@ -88,6 +93,11 @@ public class ControladorPedidos {
         ctx.render("seleccionarRepartidor.jte", Collections.singletonMap("modelo", modelo));
     }
 
+	
+	/** 
+	 * @param ctx
+	 * @throws SQLException
+	 */
 	public void asignarRepartidor(Context ctx) throws SQLException{
 		//Obtengo el id del pedido
 		var txtId = ctx.pathParamAsClass("txtId", Integer.class).get();

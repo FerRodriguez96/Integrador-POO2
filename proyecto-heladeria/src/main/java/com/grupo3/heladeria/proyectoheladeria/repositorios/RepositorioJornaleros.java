@@ -15,6 +15,10 @@ public class RepositorioJornaleros implements InterfazJornaleros {
         this.emf = emf;
     }
 
+    
+    /** 
+     * @return List<Jornalero>
+     */
     @Override
     public List<Jornalero> listar() {
         var em = emf.createEntityManager();
@@ -30,6 +34,11 @@ public class RepositorioJornaleros implements InterfazJornaleros {
         return jornaleros;
     }
 
+    
+    /** 
+     * @param dni
+     * @return Jornalero
+     */
     @Override
     public Jornalero obtener(int dni) {
         var em = emf.createEntityManager();
@@ -38,6 +47,10 @@ public class RepositorioJornaleros implements InterfazJornaleros {
         return jornalero;
     }
 
+    
+    /** 
+     * @param jornalero
+     */
     @Override
     public void crear(Jornalero jornalero) {
         var em = emf.createEntityManager();
@@ -47,6 +60,11 @@ public class RepositorioJornaleros implements InterfazJornaleros {
         em.close();
     }
 
+    
+    /** 
+     * @param dni
+     * @return boolean
+     */
     @Override
     public boolean borrar(int dni) {
 
@@ -65,6 +83,11 @@ public class RepositorioJornaleros implements InterfazJornaleros {
         return (jornalero != null);
     }
 
+    
+    /** 
+     * @param jornalero
+     * @return Jornalero
+     */
     @Override
     public Jornalero modificar(Jornalero jornalero) {
         var em = emf.createEntityManager();

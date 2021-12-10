@@ -15,6 +15,10 @@ public class RepositorioInsumos implements InterfazInsumos {
         this.emf = emf;
     }
 
+    
+    /** 
+     * @return List<Insumo>
+     */
     @Override
     public List<Insumo> listar() {
         var em = emf.createEntityManager();
@@ -30,6 +34,11 @@ public class RepositorioInsumos implements InterfazInsumos {
         return insumos;
     }
 
+    
+    /** 
+     * @param id
+     * @return Insumo
+     */
     @Override
     public Insumo obtener(int id) {
         var em = emf.createEntityManager();
@@ -38,6 +47,10 @@ public class RepositorioInsumos implements InterfazInsumos {
         return insumo;
     }
 
+    
+    /** 
+     * @param insumo
+     */
     @Override
     public void crear(Insumo insumo) {
         var em = emf.createEntityManager();
@@ -47,6 +60,11 @@ public class RepositorioInsumos implements InterfazInsumos {
         em.close();
     }
 
+    
+    /** 
+     * @param id
+     * @return boolean
+     */
     @Override
     public boolean borrar(int id) {
         var em = emf.createEntityManager();
@@ -64,6 +82,11 @@ public class RepositorioInsumos implements InterfazInsumos {
         return (insumo != null);
     }
 
+    
+    /** 
+     * @param insumo
+     * @return Insumo
+     */
     @Override
     public Insumo modificar(Insumo insumo) {
         var em = emf.createEntityManager();

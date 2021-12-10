@@ -13,6 +13,10 @@ import io.javalin.http.staticfiles.Location;
 import jakarta.persistence.*;
 
 public class App {
+    
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
         var emf = Persistence.createEntityManagerFactory("persistencia");
 
@@ -259,27 +263,51 @@ public class App {
 
     }
 
+    
+    /** 
+     * @param ctx
+     */
     // Otras funciones
     private static void mostrarIndex(Context ctx) {
         ctx.render("index.jte");
     }
 
+    
+    /** 
+     * @param ctx
+     */
     private static void mostrarLogin(Context ctx) {
         ctx.render("login.jte");
     }
 
+    
+    /** 
+     * @param ctx
+     */
     private static void mostrarTipoEmpleado(Context ctx) {
         ctx.render("tipoEmpleado.jte");
     }
 
+    
+    /** 
+     * @param ctx
+     */
     private static void mostrarEmpleados(Context ctx) {
         ctx.render("empleados.jte");
     }
 
+    
+    /** 
+     * @param ctx
+     */
     private static void mostrarTipoProducto(Context ctx) {
         ctx.render("tipoProducto.jte");
     }
 
+    
+    /** 
+     * @param ctx
+     */
     private static void mostrarProductos(Context ctx) {
         ctx.render("productos.jte");
     }

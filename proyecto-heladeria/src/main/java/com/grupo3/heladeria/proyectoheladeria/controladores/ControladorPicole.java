@@ -82,6 +82,11 @@ public class ControladorPicole {
         ctx.render("editarPicole.jte", Collections.singletonMap("modelo", modelo));
     }
 
+    
+    /** 
+     * @param ctx
+     * @throws SQLException
+     */
     public void modificarPicole(Context ctx) throws SQLException {
         // se traen los datos de la clase
         var modelo = new ModeloPicole();

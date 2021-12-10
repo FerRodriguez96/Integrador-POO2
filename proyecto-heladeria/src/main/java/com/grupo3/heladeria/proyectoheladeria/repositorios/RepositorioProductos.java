@@ -14,6 +14,10 @@ public class RepositorioProductos implements InterfazProductos {
         this.emf = emf;
     }
 
+    
+    /** 
+     * @return List<Producto>
+     */
     @Override
     public List<Producto> listar() {
         var em = emf.createEntityManager();
@@ -29,6 +33,11 @@ public class RepositorioProductos implements InterfazProductos {
         return productos;
     }
 
+    
+    /** 
+     * @param idProducto
+     * @return Producto
+     */
     @Override
     public Producto obtener(Integer idProducto) {
         var em = emf.createEntityManager();
@@ -37,6 +46,10 @@ public class RepositorioProductos implements InterfazProductos {
         return producto;
     }
 
+    
+    /** 
+     * @param producto
+     */
     @Override
     public void crear(Producto producto) {
         var em = emf.createEntityManager();
@@ -46,6 +59,11 @@ public class RepositorioProductos implements InterfazProductos {
         em.close();
     }
 
+    
+    /** 
+     * @param idProducto
+     * @return boolean
+     */
     @Override
     public boolean borrar(Integer idProducto) {
 
@@ -64,6 +82,11 @@ public class RepositorioProductos implements InterfazProductos {
         return (producto != null);
     }
 
+    
+    /** 
+     * @param producto
+     * @return Producto
+     */
     @Override
     public Producto modificar(Producto producto) {
         var em = emf.createEntityManager();

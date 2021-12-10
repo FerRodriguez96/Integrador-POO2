@@ -85,6 +85,10 @@ public class Picole extends Producto {
         this.cantidad = cantidad;
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return "Picole [cantidad=" + cantidad + ", sabor=" + sabor + "]";

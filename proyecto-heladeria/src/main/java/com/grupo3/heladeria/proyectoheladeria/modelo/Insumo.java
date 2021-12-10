@@ -111,6 +111,10 @@ public class Insumo implements Serializable {
         this.cantidad = cantidad;
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return "Insumo [cantidad=" + cantidad + ", descripcion=" + descripcion + ", idInsumo=" + idInsumo + ", nombre="

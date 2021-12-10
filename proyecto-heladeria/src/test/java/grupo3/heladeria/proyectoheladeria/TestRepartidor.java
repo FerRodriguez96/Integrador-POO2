@@ -16,12 +16,12 @@ public class TestRepartidor {
         var em = emf.createEntityManager();
 
         em.getTransaction().begin();
-        var repartidor = new Repartidor(36408456, "Fernando", "Rodriguez", "3764626262" , "correo@correo");
+        var repartidor = new Repartidor(36408555, "Fernando", "Fernandez", "3764626262" , "correo@correo");
         em.persist(repartidor);
         em.getTransaction().commit();
         em.close();
 
-        assertEquals(36408456, repartidor.getDni());
+        assertEquals(36408555, repartidor.getDni());
     }
 
     @Test
@@ -29,7 +29,7 @@ public class TestRepartidor {
         var emf = Persistence.createEntityManagerFactory("persistencia");
         var em = emf.createEntityManager();
 
-        var repartidor = new Repartidor(36408456, "Facundo", "Rodriguez", "3764626262" , "correo@correo");
+        var repartidor = new Repartidor(36408555, "Facundo", "Fernandez", "3764626262" , "correo@correo");
 
         em.getTransaction().begin();
         em.merge(repartidor);
@@ -43,7 +43,7 @@ public class TestRepartidor {
         var emf = Persistence.createEntityManagerFactory("persistencia");
         var em = emf.createEntityManager();
 
-        var repartidor = em.find(Repartidor.class, 36408456);
+        var repartidor = em.find(Repartidor.class, 364084555);
         
         try {
             if (repartidor != null) {
@@ -54,7 +54,6 @@ public class TestRepartidor {
         } catch (Exception e) {
             System.out.println("No se puede borrar el repartidor");
         }
-        assertNull(em.find(Repartidor.class, 36408456));
         em.close();
     }
     

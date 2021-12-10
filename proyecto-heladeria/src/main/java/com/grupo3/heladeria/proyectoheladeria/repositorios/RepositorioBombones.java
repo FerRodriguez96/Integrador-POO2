@@ -14,6 +14,10 @@ public class RepositorioBombones implements InterfazBombones {
         this.emf = emf;
     }
 
+    
+    /** 
+     * @return List<Bombon>
+     */
     @Override
     public List<Bombon> listar() {
         var em = emf.createEntityManager();
@@ -29,6 +33,11 @@ public class RepositorioBombones implements InterfazBombones {
         return bombones;
     }
 
+    
+    /** 
+     * @param idProducto
+     * @return Bombon
+     */
     @Override
     public Bombon obtener(Integer idProducto) {
         var em = emf.createEntityManager();
@@ -37,6 +46,10 @@ public class RepositorioBombones implements InterfazBombones {
         return bombon;
     }
 
+    
+    /** 
+     * @param bombon
+     */
     @Override
     public void crear(Bombon bombon) {
         var em = emf.createEntityManager();
@@ -46,6 +59,11 @@ public class RepositorioBombones implements InterfazBombones {
         em.close();
     }
 
+    
+    /** 
+     * @param idProducto
+     * @return boolean
+     */
     @Override
     public boolean borrar(Integer idProducto) {
 
@@ -64,6 +82,11 @@ public class RepositorioBombones implements InterfazBombones {
         return (bombon != null);
     }
 
+    
+    /** 
+     * @param bombon
+     * @return Bombon
+     */
     @Override
     public Bombon modificar(Bombon bombon) {
         var em = emf.createEntityManager();

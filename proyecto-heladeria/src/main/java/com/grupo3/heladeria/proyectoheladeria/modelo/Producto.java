@@ -70,11 +70,19 @@ public abstract class Producto implements Serializable {
         this.precio = precio;
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return "Productos [idProducto=" + idProducto + ", precio=" + precio + "]";
     }
 
+    
+    /** 
+     * @return String
+     */
     // Devuelve el tipo de producto
     @Transient
     public String getTipoProducto() {
