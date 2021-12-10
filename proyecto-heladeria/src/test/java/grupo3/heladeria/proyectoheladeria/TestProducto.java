@@ -22,7 +22,7 @@ public class TestProducto {
         em.getTransaction().begin();
         em.persist(bombon);
         em.getTransaction().commit();
-        assertEquals(bombon, em.find(Bombon.class, 1));
+        assertEquals(bombon, em.find(Bombon.class, 2));
         em.close();
     }
 
@@ -32,12 +32,10 @@ public class TestProducto {
         var em = emf.createEntityManager();
 
         var picole = new Picole(500, Sabores.Surtido, 50);
-
         em.getTransaction().begin();
         em.persist(picole);
         em.getTransaction().commit();
-
-        assertEquals(picole, em.find(Picole.class, 2));
+        assertEquals(picole, em.find(Picole.class, 3));
         em.close();
     }
 
